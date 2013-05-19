@@ -60,8 +60,6 @@ function child_theme_setup() {
 
 // ** Backend Functions ** //
 
-
-
 /**
  * Don't Update Theme
  * @since 1.0.0
