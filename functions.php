@@ -36,11 +36,11 @@ function child_theme_setup() {
 	add_theme_support( 'genesis-html5' );
 	add_theme_support( 'genesis-responsive-viewport' );
 	add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'inner', 'footer-widgets', 'footer' ) );
+	add_theme_support( 'genesis-footer-widgets', 3 );
 	add_theme_support( 'genesis-menus', array( 
 		'primary' => 'Primary Navigation Menu',
-		'mobile' => 'Mobile Menu' 
+		'secondary' => 'Secondary Navigation Menu' 
 	) );
-	//add_theme_support( 'genesis-footer-widgets', 4 );
 
 	// Image Sizes
 	// add_image_size( 'be_featured', 400, 100, true );
