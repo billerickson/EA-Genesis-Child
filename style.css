@@ -196,7 +196,7 @@ h4,
 h5,
 h6 {
 	color: #333;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
@@ -327,23 +327,6 @@ Structure and Layout
 /* Column Widths and Positions
 --------------------------------------------- */
 
-/* Wrapping div for .content and .sidebar-primary */
-
-.content-sidebar-sidebar .content-sidebar-wrap,
-.sidebar-content-sidebar .content-sidebar-wrap,
-.sidebar-sidebar-content .content-sidebar-wrap {
-	width: 920px;
-}
-
-.content-sidebar-sidebar .content-sidebar-wrap {
-	float: left;
-}
-
-.sidebar-content-sidebar .content-sidebar-wrap,
-.sidebar-sidebar-content .content-sidebar-wrap {
-	float: right;
-}
-
 /* Content  */
 
 .content {
@@ -351,16 +334,8 @@ Structure and Layout
 	width: 740px;
 }
 
-.content-sidebar .content,
-.content-sidebar-sidebar .content,
-.sidebar-content-sidebar .content {
+.content-sidebar .content {
 	float: left;
-}
-
-.content-sidebar-sidebar .content,
-.sidebar-content-sidebar .content,
-.sidebar-sidebar-content .content {
-	width: 520px;
 }
 
 .full-width-content .content {
@@ -374,20 +349,8 @@ Structure and Layout
 	width: 360px;
 }
 
-.sidebar-content .sidebar-primary,
-.sidebar-sidebar-content .sidebar-primary {
+.sidebar-content .sidebar-primary {
 	float: left;
-}
-
-/* Secondary Sidebar */
-
-.sidebar-secondary {
-	float: left;
-	width: 180px;
-}
-
-.content-sidebar-sidebar .sidebar-secondary {
-	float: right;
 }
 
 /* Column Classes
@@ -663,42 +626,6 @@ Widgets
 Plugins
 ---------------------------------------------------------------------------------------------------- */
 
-/* Genesis eNews Extended
---------------------------------------------- */
-
-.enews-widget {
-	color: #999;
-}
-
-.enews-widget .widgettitle {
-	color: #fff;
-}
-
-.enews-widget input {
-	margin-bottom: 16px;
-	margin-bottom: 1.6rem;
-}
-
-.enews-widget input[type="submit"] {
-	background: #f15123;
-	color: #fff;
-	margin: 0;
-	width: 100%;
-}
-
-.enews-widget input:hover[type="submit"] {
-	background: #fff;
-	color: #333;
-}
-
-/* Genesis Latest Tweets
---------------------------------------------- */
-
-.latest-tweets ul li {
-	margin-bottom: 16px;
-	margin-bottom: 1.6rem;
-}
-
 /* Gravity Forms
 --------------------------------------------- */
 
@@ -726,18 +653,6 @@ div.gform_wrapper form li {
 	font-size: 1.4rem;
 }
 
-/* Jetpack
---------------------------------------------- */
-
-#wpstats {
-	height: 0;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	width: 0;
-}
-
-
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -755,7 +670,7 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	float: left;
 	padding: 16px 0;
@@ -837,7 +752,7 @@ Site Navigation
 .genesis-nav-menu {
 	clear: both;
 	color: #999;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-size: 1.4rem;
 	font-weight: 700;
