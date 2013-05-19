@@ -7,61 +7,6 @@
 	Template: genesis
 */
 
-/* Table of Contents
-
-	- Imports
-	- HTML5 Reset
-		- Baseline Reset
-		- Box Sizing
-		- Float Clearing
-	- Defaults
-		- Typographical Elements
-		- Headings
-		- Objects
-		- Forms
-	- Structure and Layout
-		- Site Containers
-		- Column Widths and Positions
-		- Column Classes
-	- Common Classes
-		- WordPress
-		- Genesis
-		- Headings
-	- Widgets
-		- Featured Page and Featured Post
-	- Plugins
-		- Genesis eNews Extended
-		- Genesis Latest Tweets
-		- Gravity Forms
-		- Jetpack
-	- Site Header
-		- Title Area
-		- Widget Area
-	- Site Navigation
-		- Header Navigation
-		- Primary Navigation
-		- Secondary Navigation
-	- Content Area
-		- Entries
-		- Entry Navigation
-		- Comments
-	- Sidebars
-	- Footer Widgets
-	- Site Footer
-	- Media Queries
-		- max-width: 1139px
-		- max-width: 1023px
-		- max-width: 767px
-
-*/
-
-
-/*
-Imports
----------------------------------------------------------------------------------------------------- */
-
-@import url(//fonts.googleapis.com/css?family=Lato:700);
-
 
 /*
 HTML5 Reset
