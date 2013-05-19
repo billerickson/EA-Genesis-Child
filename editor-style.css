@@ -1,0 +1,83 @@
+/* Column Classes
+------------------------------------------------------------ */
+ 
+.five-sixths,
+.four-fifths,
+.four-sixths,
+.one-fifth,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fifths,
+.three-fourths,
+.three-sixths,
+.two-fifths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+    float: left;
+    margin: 0 0 20px;
+    padding-left: 3%;
+}
+ 
+.one-half,
+.three-sixths,
+.two-fourths {
+    width: 48%;
+}
+ 
+.one-third,
+.two-sixths {
+    width: 31%;
+}
+ 
+.four-sixths,
+.two-thirds {
+    width: 65%;
+}
+ 
+.one-fourth {
+    width: 22.5%;
+}
+ 
+.three-fourths {
+    width: 73.5%;
+}
+ 
+.one-fifth {
+    width: 17.4%;
+}
+ 
+.two-fifths {
+    width: 37.8%;
+}
+ 
+.three-fifths {
+    width: 58.2%;
+}
+ 
+.four-fifths {
+    width: 78.6%;
+}
+ 
+.one-sixth {
+    width: 14%;
+}
+ 
+.five-sixths {
+    width: 82%;
+}
+ 
+.first {
+    clear: both;
+    padding-left: 0;
+}
+
+/* Images
+------------------------------------------------------------ */
+
+img {
+	max-width: 100%;
+	height: auto;
+}
