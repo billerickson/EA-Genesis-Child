@@ -30,7 +30,7 @@ function child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/functions/genesis-cleanup.php' );
 	
 	// Editor Styles
-	add_editor_style( 'editor-style.css' );
+	add_editor_style( 'inc/css/editor-style.css' );
 	
 	// Theme Supports
 	add_theme_support( 'genesis-html5' );
