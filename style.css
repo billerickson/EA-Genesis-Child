@@ -867,12 +867,8 @@ Content Area
 --------------------------------------------- */
 
 .entry {
-	background: #fff;
-	border-radius: 3px;
 	margin-bottom: 40px;
 	margin-bottom: 4rem;
-	padding: 40px 40px 24px;
-	padding: 4rem 4rem 2.4rem;
 }
 
 .entry-content .attachment a,
