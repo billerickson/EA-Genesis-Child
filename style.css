@@ -1043,7 +1043,7 @@ Sidebars
 
 .sidebar {
 	color: #999;
-	display: inline;
+	display: block;
 	font-size: 14px;
 	font-size: 1.4rem;
 }
