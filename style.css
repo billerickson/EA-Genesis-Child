@@ -1152,9 +1152,6 @@ Site Footer
 Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-/* Desktops, laptops and iPads (landscape)
---------------------------------------------- */
-
 @media only screen and (max-width: 1139px) {
 
 	.wrap {
@@ -1170,9 +1167,6 @@ Media Queries
 	}
 
 }
-
-/* iPads (portrait)
---------------------------------------------- */
 
 @media only screen and (max-width: 767px) {
 
