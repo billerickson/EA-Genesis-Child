@@ -562,20 +562,6 @@ img.alignright,
 	color: #666;
 }
 
-.widgettitle {
-	font-size: 14px;
-	font-size: 1.4rem;
-	letter-spacing: 1px;
-	letter-spacing: 0.1rem;
-	margin-bottom: 24px;
-	margin-bottom: 2.4rem;
-	text-transform: uppercase;
-}
-
-.sidebar .widgettitle a {
-	border: none;
-}
-
 .archive-title {
 	font-size: 20px;
 	font-size: 2rem;
