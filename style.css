@@ -827,9 +827,6 @@ Site Navigation
 	padding: 1.4rem 0 0;
 }
 
-.genesis-nav-menu .search-form {
-	width: 100%;
-}
 
 /* Site Header Navigation
 --------------------------------------------- */
@@ -1074,10 +1071,6 @@ Sidebars
 	padding: 4rem;
 }
 
-.sidebar .search-form {
-	width: 100%;
-}
-
 .sidebar .enews-widget {
 	background: #333;
 }
@@ -1141,10 +1134,6 @@ Footer Widgets
 	margin-bottom: 6px;
 	margin-bottom: 0.6rem;
 	word-wrap: break-word;
-}
-
-.footer-widgets .search-form {
-	width: 100%;
 }
 
 
