@@ -1174,7 +1174,7 @@ Media Queries
 /* iPads (portrait)
 --------------------------------------------- */
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 767px) {
 
 	.content,
 	.footer-widgets-1,
@@ -1261,13 +1261,6 @@ Media Queries
 	.footer-widgets-1 {
 		margin: 0;
 	}
-
-}
-
-/* iPhones (portrait and landscape)
---------------------------------------------- */
-
-@media only screen and (max-width: 767px) {
 
 	.five-sixths,
 	.four-fifths,
