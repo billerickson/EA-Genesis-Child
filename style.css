@@ -555,10 +555,6 @@ img.alignright,
 	margin-bottom: 0.4rem;
 }
 
-.author-box a {
-	border-bottom: 1px solid #ddd;
-}
-
 .author-box p {
 	margin: 0;
 }
@@ -913,15 +909,6 @@ Content Area
 	padding: 4rem 4rem 2.4rem;
 }
 
-.entry-content a {
-	border-bottom: 1px solid #ddd;
-	color: #f15123;
-}
-
-.entry-content a:hover {
-	color: #333;
-}
-
 .entry-content .attachment a,
 .entry-content .gallery a {
 	border: none;
@@ -963,7 +950,6 @@ Content Area
 }
 
 .entry-meta a {
-	border-bottom: 1px solid #ddd;
 	font-weight: 700;
 }
 
@@ -1001,10 +987,6 @@ Content Area
 	margin: 4rem 0;
 }
 
-.entry .navigation a {
-	border-bottom: 1px solid #ddd;
-}
-
 .navigation li {
 	display: inline;
 }
@@ -1040,11 +1022,6 @@ Content Area
 #respond {
 	margin-bottom: 40px;
 	margin-bottom: 4rem;
-}
-
-#comments a,
-#respond a {
-	border-bottom: 1px solid #ddd;
 }
 
 #comments .comment-author {
@@ -1109,10 +1086,6 @@ Sidebars
 	display: inline;
 	font-size: 14px;
 	font-size: 1.4rem;
-}
-
-.sidebar a {
-	border-bottom: 1px solid #ddd;
 }
 
 .sidebar p:last-child,
@@ -1187,7 +1160,6 @@ Footer Widgets
 }
 
 .footer-widgets a {
-	border-bottom: 1px solid #666;
 	color: #999;
 }
 
@@ -1227,10 +1199,6 @@ Site Footer
 	padding: 40px 0;
 	padding: 4rem 0;
 	text-align: center;
-}
-
-.site-footer a {
-	border-bottom: 1px solid #ddd;
 }
 
 .site-footer p {
