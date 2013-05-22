@@ -21,8 +21,8 @@
  *
  */
 
-add_action('genesis_setup','child_theme_setup', 15);
-function child_theme_setup() {
+add_action('genesis_setup','ea_child_theme_setup', 15);
+function ea_child_theme_setup() {
 	
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 	
@@ -49,7 +49,7 @@ function child_theme_setup() {
 	//genesis_register_sidebar( array( 'name' => 'Blog Sidebar', 'id' => 'blog-sidebar' ) );
 		
 	// Don't update theme
-	add_filter( 'http_request_args', 'be_dont_update_theme', 5, 2 );
+	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 		
 	// ** Frontend **		
 	
@@ -75,7 +75,7 @@ function child_theme_setup() {
  * @return array request arguments
  */
 
-function be_dont_update_theme( $r, $url ) {
+function ea_dont_update_theme( $r, $url ) {
 	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
 		return $r; // Not a theme update request. Bail immediately.
 	$themes = unserialize( $r['body']['themes'] );
