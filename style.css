@@ -328,7 +328,7 @@ Structure and Layout
 
 .content {
 	float: right;
-	width: 740px;
+	width: 64.912280702%; /* 740/1140 */
 }
 
 .content-sidebar .content {
@@ -343,7 +343,7 @@ Structure and Layout
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 31.578947368%; /* 360/1140 */
 }
 
 .sidebar-content .sidebar-primary {
@@ -1090,17 +1090,10 @@ Footer Widgets
 	padding: 4rem 0 1.6rem;
 }
 
-.footer-widgets-1,
-.footer-widgets-3 {
-	width: 350px;
-}
-
-.footer-widgets-2 {
-	width: 360px;
-}
-
-.footer-widgets-1 {
-	margin-right: 40px;
+.footer-widgets .widget-area {
+	width: 33.3333%;
+	padding: 0 20px;
+	padding: 0 2rem;
 }
 
 .footer-widgets-1,
