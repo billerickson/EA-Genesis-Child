@@ -269,8 +269,8 @@ textarea {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding: 16px;
-	padding: 1.6rem;
+	padding: 5px 10px;
+	padding: .5rem 1rem;
 	width: 100%;
 }
 
@@ -286,8 +286,8 @@ input[type="submit"] {
 	font-weight: 700;
 	letter-spacing: 1px;
 	letter-spacing: 0.1rem;
-	padding: 16px 24px;
-	padding: 1.6rem 2.4rem;
+	padding: 5px 10px;
+	padding: .5rem 1rem;
 	text-transform: uppercase;
 	width: auto;
 }
