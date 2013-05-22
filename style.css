@@ -596,8 +596,8 @@ Plugins
 .site-inner div.gform_wrapper .ginput_complex label {
 	font-size: 16px;
 	font-size: 1.6rem;
-	padding: 16px;
-	padding: 1.6rem;
+	padding: 5px 10px;
+	padding: .5rem 1rem;
 }
 
 .site-inner div.gform_wrapper .ginput_complex label {
