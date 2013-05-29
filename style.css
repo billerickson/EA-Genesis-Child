@@ -265,6 +265,7 @@ textarea {
 	width: 100%;
 }
 
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -295,6 +296,9 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
+.button {
+	display: inline-block;
+}
 
 /*
 Structure and Layout
