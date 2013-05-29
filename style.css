@@ -173,15 +173,6 @@ blockquote::before {
 	top: -10px;
 }
 
-pre {
-	background: #333;
-	color: #ccc;
-	overflow: scroll;
-	padding: 0 2rem;
-	padding: 0 20px;
-	white-space: pre;
-}
-
 cite {
 	font-style: normal;
 }
