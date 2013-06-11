@@ -793,8 +793,6 @@ Content Area
 
 #comments,
 #respond {
-	background: #fff;
-	padding: 40px;
 }
 
 .ping-list,
@@ -879,7 +877,6 @@ Sidebars
 	background: #fff;
 	border-radius: 3px;
 	margin-bottom: 40px;
-	padding: 40px;
 }
 
 .sidebar .enews-widget {
