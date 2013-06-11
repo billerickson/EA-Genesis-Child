@@ -852,9 +852,7 @@ Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	color: #999;
 	display: block;
-	font-size: 14px;
 }
 
 .sidebar p:last-child,
@@ -875,14 +873,8 @@ Sidebars
 
 .sidebar .widget {
 	background: #fff;
-	border-radius: 3px;
 	margin-bottom: 40px;
 }
-
-.sidebar .enews-widget {
-	background: #333;
-}
-
 
 /*
 Footer Widgets
