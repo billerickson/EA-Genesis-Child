@@ -2,11 +2,12 @@
 /**
  * Genesis Cleanup
  *
- * @package      BE_Genesis_Child
+ * @package      EA_Genesis_Child
  * @since        1.0.0
- * @link         https://github.com/billerickson/BE-Genesis-Child
+ * @link         https://github.com/billerickson/EA-Genesis-Child
  * @author       Bill Erickson <bill@billerickson.net>
- * @copyright    Copyright (c) 2011, Bill Erickson
+ * @author       Jared Atchison <jared@jaredatchison.com>
+ * @copyright    Copyright (c) 2013, Bill Erickson & Jared Atchison
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
  *
  */
