@@ -1,0 +1,252 @@
+/*
+Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+blockquote::before {
+	content: "\201D";
+	left: auto;
+	right: -20px;
+}
+
+
+/*
+Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Content  */
+
+.content {
+	float: left;
+}
+
+.content-sidebar .content {
+	float: right;
+}
+
+/* Primary Sidebar */
+
+.sidebar-primary {
+	float: left;
+}
+
+.sidebar-content .sidebar-primary {
+	float: right;
+}
+
+/* Column Classes
+    Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: right;
+	margin-left: auto;
+	margin-right: 2.564102564102564%;
+}
+
+.first {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+
+/*
+Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+/* WordPress
+--------------------------------------------- */
+
+.avatar {
+	float: right;
+}
+
+.alignleft .avatar {
+	margin-left: 24px;
+	margin-right: auto;
+}
+
+.alignright .avatar {
+	margin-left: auto;
+	margin-right: 24px;
+}
+
+.alignleft {
+	float: right;
+	text-align: right;
+}
+
+.alignright {
+	float: left;
+	text-align: left;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 0 24px 24px;
+}
+
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 24px 24px 0;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.author-box .avatar {
+	margin-left: 24px;
+	margin-right: auto;
+}
+
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: right;
+}
+
+/* Logo, hide text */
+
+.header-image .site-header .wrap {
+	background-position: right;
+}
+
+.header-image .site-title a {
+	float: right;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+	float: left;
+	text-align: left;
+}
+
+.site-header .search-form {
+	float: left;
+}
+
+
+/*
+Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu .menu-item {
+	text-align: right;
+}
+
+.genesis-nav-menu .sub-menu {
+	right: -9999px;
+	left: auto;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu {
+	margin: -54px 199px 0 0;
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	left: auto;
+	right: auto;
+}
+
+.genesis-nav-menu > .first > a {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.genesis-nav-menu > .last > a {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.genesis-nav-menu > .right {
+	float: left;
+}
+
+.genesis-nav-menu > .rss > a {
+	margin-left: auto;
+	margin-right: 48px;
+}
+
+
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Entries
+--------------------------------------------- */
+
+.entry-content ol li,
+.entry-content ul li {
+	margin-left: auto;
+	margin-right: 40px;
+}
+
+.entry-meta .entry-comments::before {
+	margin: 0 2px 0 6px;
+}
+
+/* Comments
+--------------------------------------------- */
+
+#respond label {
+	margin-left: 12px;
+	margin-right: auto;
+}
+
+.comment-list li li {
+	margin-left: -32px;
+	margin-right: auto;
+}
+
+li.comment {
+	border-left: none;
+	border-right: none;
+}
+
+.comment .avatar {
+	margin: 0 0 24px 16px;
+}
+
+
+/*
+Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets-1 {
+	margin-left: 40px;
+	margin-right: auto;
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+	float: right;
+}
+
+.footer-widgets-3 {
+	float: left;
+}
