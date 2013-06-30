@@ -20,15 +20,24 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 // Remove unused secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
 
-// Remove unused user settings
-remove_action( 'show_user_profile', 'genesis_user_options_fields' );
-remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
-remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
-remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
-remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
-remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
-remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
-remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
+add_action('admin_init','ea_remove_user_profile_fields');
+/**
+ * Removes Unused Genesis user settings
+ *
+ * Copied and amended from /lib/admin/inpost-metaboxes.php, version 2.0.0.
+ *
+ * @since 1.0.0
+ */
+function ea_remove_user_profile_fields() {
+	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
+	remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
+	remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
+}
 
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 add_action( 'admin_menu', 'ea_add_inpost_seo_box' );
