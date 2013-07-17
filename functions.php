@@ -60,8 +60,6 @@ function ea_child_theme_setup() {
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
-	// ** Frontend **
-
 }
 
 // ** Backend Functions ** //
