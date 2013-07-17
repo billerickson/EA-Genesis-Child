@@ -2,14 +2,10 @@
 /**
  * EA Genesis Child.
  *
- * @package      EA_Genesis_Child
+ * @package      EAGenesisChild
  * @since        1.0.0
- * @link         https://github.com/billerickson/EA-Genesis-Child
- * @author       Bill Erickson <bill@billerickson.net>
- * @author       Jared Atchison <jared@jaredatchison.com>
- * @copyright    Copyright (c) 2013, Bill Erickson & Jared Atchison
+ * @copyright    Copyright (c) 2013, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- *
  */
 
 // Enable HTML5
@@ -17,9 +13,10 @@ add_theme_support( 'genesis-html5' );
 
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 /**
- * Theme setup - attach all of the site-wide functions to the correct hooks and filters.
- *
- * All the functions themselves are defined below this setup function.
+ * Theme setup.
+ * 
+ * Attach all of the site-wide functions to the correct hooks and filters. All 
+ * the functions themselves are defined below this setup function.
  *
  * @since 1.0.0
  */
@@ -69,17 +66,13 @@ function ea_child_theme_setup() {
  *
  * If there is a theme in the repo with the same name, this prevents WP from prompting an update.
  *
- * @since 1.0.0
- *
+ * @since  1.0.0
  * @author Mark Jaquith
- * @link http://markjaquith.wordpress.com/2009/12/14/excluding-your-plugin-or-theme-from-update-checks/
- *
- * @param  array  $r    Existing request arguments.
- * @param  string $url, Request URL.
- *
- * @return array Amended request arguments.
+ * @link   http://markjaquith.wordpress.com/2009/12/14/excluding-your-plugin-or-theme-from-update-checks/
+ * @param  array $r Existing request arguments
+ * @param  string $url Request URL
+ * @return array Amended request arguments
  */
-
 function ea_dont_update_theme( $r, $url ) {
 	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
 		return $r; // Not a theme update request. Bail immediately.

@@ -2,14 +2,10 @@
 /**
  * EA Genesis Child.
  *
- * @package      EA_Genesis_Child
+ * @package      EAGenesisChild
  * @since        1.0.0
- * @link         https://github.com/billerickson/EA-Genesis-Child
- * @author       Bill Erickson <bill@billerickson.net>
- * @author       Jared Atchison <jared@jaredatchison.com>
- * @copyright    Copyright (c) 2013, Bill Erickson & Jared Atchison
+ * @copyright    Copyright (c) 2013, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- *
  */
 
 // Remove Edit link
