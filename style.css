@@ -105,6 +105,10 @@ textarea:focus,
 	transition:         all 0.1s ease-in-out;
 }
 
+.button {
+	display: inline-block;
+}
+
 ::-moz-selection {
 	background-color: #333;
 	color: #fff;
