@@ -8,7 +8,6 @@
  * @license      GPL-2.0+
  */
 
-add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 /**
  * Theme setup.
  * 
@@ -56,6 +55,7 @@ function ea_child_theme_setup() {
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
 }
+add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
 // ** Backend Functions ** //
 

@@ -19,7 +19,6 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 // Remove unused secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
 
-add_action( 'admin_init', 'ea_remove_user_profile_fields' );
 /**
  * Removes Unused Genesis user settings
  *
@@ -35,9 +34,9 @@ function ea_remove_user_profile_fields() {
 	remove_action( 'show_user_profile', 'genesis_user_layout_fields'  );
 	remove_action( 'edit_user_profile', 'genesis_user_layout_fields'  );
 }
+add_action( 'admin_init', 'ea_remove_user_profile_fields' );
 
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-add_action( 'admin_menu', 'ea_add_inpost_seo_box' );
 /**
  * Re-prioritise Genesis SEO metabox from high to default.
  *
@@ -56,9 +55,9 @@ function ea_add_inpost_seo_box() {
 	}
 
 }
+add_action( 'admin_menu', 'ea_add_inpost_seo_box' );
 
 remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
-add_action( 'admin_menu', 'ea_add_inpost_layout_box' );
 /**
  * Re-prioritise layout metabox from high to default.
  *
@@ -77,8 +76,8 @@ function ea_add_inpost_layout_box() {
 	}
 
 }
+add_action( 'admin_menu', 'ea_add_inpost_layout_box' );
 
-add_action( 'widgets_init', 'ea_remove_genesis_widgets', 20 );
 /**
  * Remove Genesis widgets.
  *
@@ -89,8 +88,8 @@ function ea_remove_genesis_widgets() {
     unregister_widget( 'Genesis_Featured_Post' );
     unregister_widget( 'Genesis_User_Profile_Widget' );
 }
+add_action( 'widgets_init', 'ea_remove_genesis_widgets', 20 );
 
-add_action( 'genesis_theme_settings_metaboxes', 'ea_remove_genesis_metaboxes' );
 /**
  * Remove Genesis theme settings metaboxes.
  *
@@ -107,3 +106,4 @@ function ea_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 	remove_meta_box( 'genesis-theme-settings-blogpage',   $_genesis_theme_settings_pagehook, 'main' );
 	//remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
 }
+add_action( 'genesis_theme_settings_metaboxes', 'ea_remove_genesis_metaboxes' );
