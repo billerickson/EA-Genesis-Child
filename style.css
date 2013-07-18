@@ -258,7 +258,6 @@ input[type="submit"],
 	box-shadow: none;
 	color: #fff;
 	cursor: pointer;
-	letter-spacing: 1px;
 	padding: 5px 10px;
 	text-transform: uppercase;
 	width: auto;
@@ -626,7 +625,6 @@ Site Header
 
 .site-title {
 	font-size: 28px;
-	letter-spacing: 2px;
 	line-height: 1;
 	margin: 0 0 8px;
 	text-transform: uppercase;
@@ -697,7 +695,6 @@ Site Navigation
 .genesis-nav-menu {
 	clear: both;
 	color: #999;
-	letter-spacing: 1px;
 	line-height: 1.5;
 	width: 100%;
 }
@@ -747,7 +744,6 @@ Site Navigation
 	border: 1px solid #eee;
 	border-top: none;
 	font-size: 14px;
-	letter-spacing: 0;
 	padding: 16px 20px;
 	position: relative;
 	width: 200px;
