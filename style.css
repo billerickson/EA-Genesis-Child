@@ -272,6 +272,7 @@ input:hover[type="submit"],
 .button:hover,
 .entry-content .button:hover {
 	background-color: #f15123;
+	color: #fff;
 }
 
 .entry-content .button:hover {
