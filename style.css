@@ -993,7 +993,6 @@ Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	color: #999;
 }
 
 .sidebar p:last-child {
@@ -1015,10 +1014,6 @@ Sidebars
 	border-radius: 3px;
 	margin-bottom: 40px;
 	padding: 40px;
-}
-
-.sidebar .enews-widget {
-	background-color: #333;
 }
 
 
