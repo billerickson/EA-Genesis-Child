@@ -366,7 +366,7 @@ Structure and Layout
 
 .content {
 	float: right;
-	width: 740px;
+	width: 64.912280702%; /* 740/1140 */
 }
 
 .content-sidebar .content {
@@ -381,7 +381,7 @@ Structure and Layout
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 31.578947368%; /* 360/1140 */
 }
 
 .sidebar-content .sidebar-primary {
