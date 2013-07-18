@@ -796,31 +796,11 @@ Site Navigation
 	padding: 14px 0 0;
 }
 
-/* Site Header Navigation
---------------------------------------------- */
-
-.site-header .sub-menu {
-	border-top: 1px solid #eee;
-}
-
-.site-header .sub-menu .sub-menu {
-	margin-top: -55px;
-}
-
 /* Primary Navigation
 --------------------------------------------- */
 
 .nav-primary {
 	background-color: #333;
-}
-
-.nav-primary a:hover,
-.nav-primary .current-menu-item > a {
-	color: #fff;
-}
-
-.nav-primary .sub-menu a:hover {
-	color: #333;
 }
 
 /* Secondary Navigation
