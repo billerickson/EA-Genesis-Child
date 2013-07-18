@@ -169,7 +169,6 @@ h4,
 h5,
 h6 {
 	color: #333;
-	font-family: 'Helvetica Neue', sans-serif;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
@@ -512,7 +511,6 @@ img.alignright,
 
 .author-box-title {
 	color: #333;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	margin-bottom: 4px;
 }
@@ -617,7 +615,6 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	font-family: 'Helvetica Neue', sans-serif;
 	font-weight: 700;
 	float: left;
 	padding: 16px 0;
@@ -701,7 +698,6 @@ Site Navigation
 .genesis-nav-menu {
 	clear: both;
 	color: #999;
-	font-family: 'Helvetica Neue', sans-serif;
 	letter-spacing: 1px;
 	line-height: 1.5;
 	width: 100%;
