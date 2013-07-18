@@ -571,10 +571,6 @@ img.alignright,
 	margin-bottom: 0.4rem;
 }
 
-.author-box a {
-	border-bottom: 1px solid #ddd;
-}
-
 .author-box p {
 	margin-bottom: 0;
 }
@@ -950,7 +946,6 @@ Content Area
 }
 
 .entry-content a {
-	border-bottom: 1px solid #ddd;
 	color: #f15123;
 }
 
@@ -1001,10 +996,6 @@ Content Area
 	font-size: 1.4rem;
 }
 
-.entry-meta a {
-	border-bottom: 1px solid #ddd;
-}
-
 .entry-header .entry-meta {
 	margin-bottom: 24px;
 	margin-bottom: 2.4rem;
@@ -1038,10 +1029,6 @@ Content Area
 	font-size: 1.4rem;
 	margin: 40px 0;
 	margin: 4rem 0;
-}
-
-.entry .navigation a {
-	border-bottom: 1px solid #ddd;
 }
 
 .navigation li {
@@ -1083,11 +1070,6 @@ Content Area
 .entry-pings {
 	padding: 40px 40px 16px;
 	padding: 4rem 4rem 1.6rem;
-}
-
-.comment-respond a,
-.entry-comments a {
-	border-bottom: 1px solid #ddd;
 }
 
 .entry-comments .comment-author {
@@ -1158,10 +1140,6 @@ Sidebars
 	color: #999;
 }
 
-.sidebar a {
-	border-bottom: 1px solid #ddd;
-}
-
 .sidebar p:last-child {
 	margin-bottom: 0;
 }
@@ -1227,7 +1205,6 @@ Footer Widgets
 }
 
 .footer-widgets a {
-	border-bottom: 1px solid #666;
 	color: #999;
 }
 
@@ -1268,10 +1245,6 @@ Site Footer
 	padding: 40px 0;
 	padding: 4rem 0;
 	text-align: center;
-}
-
-.site-footer a {
-	border-bottom: 1px solid #ddd;
 }
 
 .site-footer p {
