@@ -182,7 +182,7 @@ h4,
 h5,
 h6 {
 	color: #333;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
@@ -785,7 +785,7 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	font-weight: 700;
 	float: left;
 	padding: 16px 0;
@@ -876,7 +876,7 @@ Site Navigation
 .genesis-nav-menu {
 	clear: both;
 	color: #999;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	letter-spacing: 1px;
 	letter-spacing: 0.1rem;
 	line-height: 1.5;
