@@ -69,16 +69,11 @@ Defaults
 /* Typographical Elements
 --------------------------------------------- */
 
-html {
-	font-size: 62.5%; /* 10px browser default */
-}
-
 body {
 	background-color: #f5f5f5;
 	color: #666;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	font-size: 1.6rem;
 	font-weight: 300;
 	line-height: 1.625;
 }
@@ -115,7 +110,6 @@ a {
 
 a img {
 	margin-bottom: -4px;
-	margin-bottom: -0.4rem;
 }
 
 a:hover {
@@ -124,7 +118,6 @@ a:hover {
 
 p {
 	margin: 0 0 24px;
-	margin: 0 0 2.4rem;
 	padding: 0;
 }
 
@@ -145,14 +138,12 @@ blockquote::before {
 
 blockquote {
 	margin: 40px 40px 24px;
-	margin: 4rem 4rem 2.4rem;
 }
 
 blockquote::before {
 	content: "\201C";
 	display: block;
 	font-size: 30px;
-	font-size: 3rem;
 	height: 0;
 	left: -20px;
 	position: relative;
@@ -183,38 +174,31 @@ h6 {
 	line-height: 1.2;
 	margin: 0;
 	margin-bottom: 16px;
-	margin-bottom: 1.6rem;
 	padding: 0;
 }
 
 h1 {
 	font-size: 36px;
-	font-size: 3.6rem;
 }
 
 h2 {
 	font-size: 30px;
-	font-size: 3rem;
 }
 
 h3 {
 	font-size: 24px;
-	font-size: 2.4rem;
 }
 
 h4 {
 	font-size: 20px;
-	font-size: 2rem;
 }
 
 h5 {
 	font-size: 18px;
-	font-size: 1.8rem;
 }
 
 h6 {
 	font-size: 16px;
-	font-size: 1.6rem;
 }
 
 /* Objects
@@ -246,9 +230,7 @@ textarea {
 	box-shadow: 1px 1px 3px #eee inset;
 	color: #999;
 	font-size: 14px;
-	font-size: 1.4rem;
 	padding: 5px 10px;
-	padding: 1.6rem;
 	width: 100%;
 }
 
@@ -279,9 +261,7 @@ input[type="submit"],
 	color: #fff;
 	cursor: pointer;
 	letter-spacing: 1px;
-	letter-spacing: 0.1rem;
 	padding: 5px 10px;
-	padding: 1.6rem 2.4rem;
 	text-transform: uppercase;
 	width: auto;
 }
@@ -317,7 +297,6 @@ table {
 	border-spacing: 0;
 	line-height: 2;
 	margin-bottom: 40px;
-	margin-bottom: 4rem;
 	width: 100%;
 }
 
@@ -338,7 +317,6 @@ th {
 td {
 	border-top: 1px solid #ddd;
 	padding: 6px 0;
-	padding: 0.6rem 0;
 }
 
 
@@ -458,24 +436,20 @@ Common Classes
 
 .alignleft .avatar {
 	margin-right: 24px;
-	margin-right: 2.4rem;
 }
 
 .alignright .avatar {
 	margin-left: 24px;
-	margin-left: 2.4rem;
 }
 
 img.centered,
 .aligncenter {
 	display: block;
 	margin: 0 auto 24px;
-	margin: 0 auto 2.4rem
 }
 
 img.alignnone {
 	margin-bottom: 12px;
-	margin-bottom: 1.2rem;
 }
 
 .alignleft {
@@ -491,18 +465,15 @@ img.alignnone {
 img.alignleft,
 .wp-caption.alignleft {
 	margin: 0 24px 24px 0;
-	margin: 0 2.4rem 2.4rem 0;
 }
 
 img.alignright,
 .wp-caption.alignright {
 	margin: 0 0 24px 24px;
-	margin: 0 0 2.4rem 2.4rem;
 }
 
 .wp-caption-text {
 	font-size: 14px;
-	font-size: 1.4rem;
 	font-weight: 700;
 	text-align: center;
 }
@@ -523,33 +494,27 @@ img.alignright,
 
 .breadcrumb {
 	margin-bottom: 20px;
-	margin-bottom: 2rem;
 }
 
 .archive-description,
 .author-box {
 	background-color: #fff;
 	margin-bottom: 40px;
-	margin-bottom: 4rem;
 }
 
 .archive-description {
 	padding: 40px 40px 24px;
-	padding: 4rem 4rem 2.4rem;
 }
 
 .author-box {
 	padding: 40px;
-	padding: 4rem;
 }
 
 .author-box-title {
 	color: #333;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	font-size: 1.6rem;
 	margin-bottom: 4px;
-	margin-bottom: 0.4rem;
 }
 
 .author-box p {
@@ -558,7 +523,6 @@ img.alignright,
 
 .author-box .avatar {
 	margin-right: 24px;
-	margin-right: 2.4rem;
 }
 
 /* Headings
@@ -566,7 +530,6 @@ img.alignright,
 
 .entry-title {
 	font-size: 36px;
-	font-size: 3.6rem;
 	line-height: 1;
 }
 
@@ -581,9 +544,7 @@ img.alignright,
 
 .archive-title {
 	font-size: 20px;
-	font-size: 2rem;
 	margin-bottom: 24px;
-	margin-bottom: 2.4rem;
 }
 
 
@@ -597,15 +558,12 @@ Widgets
 .featured-content .entry {
 	border-bottom: 2px solid #f5f5f5;
 	margin-bottom: 20px;
-	margin-bottom: 2rem;
 	padding: 0 0 24px;
-	padding: 0 0 2.4rem;
 }
 
 .featured-content .entry-title {
 	border: none;
 	font-size: 24px;
-	font-size: 2.4rem;
 	line-height: 1.2;
 }
 
@@ -626,9 +584,7 @@ div.gform_wrapper input[type="text"],
 div.gform_wrapper textarea,
 div.gform_wrapper .ginput_complex label {
 	font-size: 16px;
-	font-size: 1.6rem;
 	padding: 5px 10px;
-	padding: 1.6rem;
 }
 
 div.gform_wrapper .ginput_complex label {
@@ -638,12 +594,10 @@ div.gform_wrapper .ginput_complex label {
 div.gform_wrapper li,
 div.gform_wrapper form li {
 	margin: 16px 0 0;
-	margin: 1.6rem 0 0;
 }
 
 div.gform_wrapper .gform_footer input[type="submit"] {
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 
 
@@ -657,7 +611,6 @@ Site Header
 
 .site-header .wrap {
 	padding: 40px 0;
-	padding: 4rem 0;
 }
 
 /* Title Area
@@ -668,7 +621,6 @@ Site Header
 	font-weight: 700;
 	float: left;
 	padding: 16px 0;
-	padding: 1.6rem 0;
 	width: 360px;
 }
 
@@ -678,12 +630,9 @@ Site Header
 
 .site-title {
 	font-size: 28px;
-	font-size: 2.8rem;
 	letter-spacing: 2px;
-	letter-spacing: 0.2rem;
 	line-height: 1;
 	margin: 0 0 8px;
-	margin: 0 0 0.8rem;
 	text-transform: uppercase;
 }
 
@@ -695,7 +644,6 @@ Site Header
 .site-description {
 	color: #999;
 	font-size: 16px;
-	font-size: 1.6rem;
 	font-weight: 300;
 	line-height: 1;
 	margin-bottom: 0;
@@ -738,13 +686,11 @@ Site Header
 
 .header-image .site-header .widget-area {
 	padding: 40px 0;
-	padding: 4rem 0;
 }
 
 .site-header .search-form {
 	float: right;
 	margin-top: 24px;
-	margin-top: 2.4rem;
 }
 
 
@@ -757,7 +703,6 @@ Site Navigation
 	color: #999;
 	font-family: 'Helvetica Neue', sans-serif;
 	letter-spacing: 1px;
-	letter-spacing: 0.1rem;
 	line-height: 1.5;
 	width: 100%;
 }
@@ -772,7 +717,6 @@ Site Navigation
 	color: #999;
 	display: block;
 	padding: 28px 24px;
-	padding: 2.8rem 2.4rem;
 	position: relative;
 }
 
@@ -808,10 +752,8 @@ Site Navigation
 	border: 1px solid #eee;
 	border-top: none;
 	font-size: 14px;
-	font-size: 1.4rem;
 	letter-spacing: 0;
 	padding: 16px 20px;
-	padding: 1.6rem 2rem;
 	position: relative;
 	width: 200px;
 }
@@ -842,7 +784,6 @@ Site Navigation
 	float: right;
 	list-style-type: none;
 	padding: 28px 0;
-	padding: 2.8rem 0;
 	text-transform: uppercase;
 }
 
@@ -853,12 +794,10 @@ Site Navigation
 
 .genesis-nav-menu > .rss > a {
 	margin-left: 48px;
-	margin-left: 4.8rem;
 }
 
 .genesis-nav-menu > .search {
 	padding: 14px 0 0;
-	padding: 1.4rem 0 0;
 }
 
 /* Site Header Navigation
@@ -905,7 +844,6 @@ Content Area
 
 .entry {
 	margin-bottom: 40px;
-	margin-bottom: 4rem;
 }
 
 .entry-content a {
@@ -926,13 +864,11 @@ Content Area
 .entry-content ul,
 .quote-caption {
 	margin-bottom: 26px;
-	margin-bottom: 2.6rem;
 }
 
 .entry-content ol,
 .entry-content ul {
 	margin-left: 40px;
-	margin-left: 4rem;
 }
 
 .entry-content ol li {
@@ -956,24 +892,20 @@ Content Area
 	clear: both;
 	color: #999;
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 
 .entry-header .entry-meta {
 	margin-bottom: 24px;
-	margin-bottom: 2.4rem;
 }
 
 .entry-footer .entry-meta {
 	border-top: 2px solid #f5f5f5;
 	padding: 32px 0 8px;
-	padding: 3.2rem 4rem 0.8rem;
 }
 
 .entry-comments-link::before {
 	content: "\2014";
 	margin: 0 6px 0 2px;
-	margin: 0 0.6rem 0 0.2rem;
 }
 
 .entry-categories,
@@ -987,9 +919,7 @@ Content Area
 .navigation {
 	clear: both;
 	font-size: 14px;
-	font-size: 1.4rem;
 	margin: 40px 0;
-	margin: 4rem 0;
 }
 
 .navigation li {
@@ -1003,7 +933,6 @@ Content Area
 	cursor: pointer;
 	display: inline-block;
 	padding: 8px 12px;
-	padding: 0.8rem 1.2rem;
 }
 
 .navigation li a:hover,
@@ -1019,18 +948,15 @@ Content Area
 .entry-pings {
 	background-color: #fff;
 	margin-bottom: 40px;
-	margin-bottom: 4rem;
 }
 
 .entry-comments {
 	padding: 40px;
-	padding: 4rem;
 }
 
 .comment-respond,
 .entry-pings {
 	padding: 40px 40px 16px;
-	padding: 4rem 4rem 1.6rem;
 }
 
 .entry-comments .comment-author {
@@ -1046,7 +972,6 @@ Content Area
 .comment-respond label {
 	display: block;
 	margin-right: 12px;
-	margin-right: 1.2rem;
 }
 
 .comment-list li,
@@ -1056,14 +981,11 @@ Content Area
 
 .comment-list li {
 	margin-top: 24px;
-	margin-top: 2.4rem;
 	padding: 32px;
-	padding: 3.2rem;
 }
 
 .comment-list li li {
 	margin-right: -32px;
-	margin-right: -3.2rem;
 }
 
 li.comment {
@@ -1074,7 +996,6 @@ li.comment {
 
 .comment .avatar {
 	margin: 0 16px 24px 0;
-	margin: 0 1.6rem 2.4rem 0;
 }
 
 .entry-pings .reply {
@@ -1087,9 +1008,7 @@ li.comment {
 .form-allowed-tags {
 	background-color: #f5f5f5;
 	font-size: 14px;
-	font-size: 1.4rem;
 	padding: 24px;
-	padding: 2.4rem;
 }
 
 
@@ -1108,7 +1027,6 @@ Sidebars
 .sidebar li {
 	list-style-type: none;
 	margin-bottom: 6px;
-	margin-bottom: 0.6rem;
 	word-wrap: break-word;
 }
 
@@ -1120,9 +1038,7 @@ Sidebars
 	background-color: #fff;
 	border-radius: 3px;
 	margin-bottom: 40px;
-	margin-bottom: 4rem;
 	padding: 40px;
-	padding: 4rem;
 }
 
 .sidebar .enews-widget {
@@ -1139,7 +1055,6 @@ Footer Widgets
 	color: #999;
 	clear: both;
 	padding: 40px 0 16px;
-	padding: 4rem 0 1.6rem;
 }
 
 .footer-widgets .widget-area {
@@ -1166,7 +1081,6 @@ Footer Widgets
 
 .footer-widgets .widget {
 	margin-bottom: 24px;
-	margin-bottom: 2.4rem;
 }
 
 .footer-widgets .widgettitle {
@@ -1176,7 +1090,6 @@ Footer Widgets
 .footer-widgets li {
 	list-style-type: none;
 	margin-bottom: 6px;
-	margin-bottom: 0.6rem;
 	word-wrap: break-word;
 }
 
@@ -1193,9 +1106,7 @@ Site Footer
 	background-color: #fff;
 	color: #999;
 	font-size: 14px;
-	font-size: 1.4rem;
 	padding: 40px 0;
-	padding: 4rem 0;
 	text-align: center;
 }
 
@@ -1242,7 +1153,7 @@ Media Queries
 
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 767px) {
 
 	body {
 		background-color: #fff;
@@ -1263,7 +1174,6 @@ Media Queries
 
 	.site-header .wrap {
 		padding: 20px 0;
-		padding: 2rem 0;
 	}
 
 	.header-image .site-header .wrap {
@@ -1305,12 +1215,10 @@ Media Queries
 	.genesis-nav-menu > .first > a,
 	.genesis-nav-menu > .last > a {
 		padding: 20px 16px;
-		padding: 2rem 1.6rem;
 	}
 
 	.site-header .search-form {
 		margin: 16px auto ;
-		margin: 1.6rem auto;
 	}
 
 	.genesis-nav-menu li.right {
@@ -1320,17 +1228,14 @@ Media Queries
 	.entry-footer .entry-meta {
 		margin: 0;
 		padding-top: 12px;
-		padding-top: 1.2rem;
 	}
 
 	.sidebar .widget.enews-widget {
 		padding: 40px;
-		padding: 4rem;
 	}
 
 	.site-footer {
 		padding: 24px 0;
-		padding: 2.4rem 0;
 	}
 
 	.footer-widgets {
@@ -1340,10 +1245,6 @@ Media Queries
 	.footer-widgets-1 {
 		margin: 0;
 	}
-
-}
-
-@media only screen and (max-width: 767px) {
 
 	.five-sixths,
 	.four-sixths,
