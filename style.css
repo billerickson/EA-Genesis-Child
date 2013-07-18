@@ -98,10 +98,6 @@ textarea:focus,
 	transition:         all 0.1s ease-in-out;
 }
 
-.button {
-	display: inline-block;
-}
-
 ::-moz-selection {
 	background-color: #333;
 	color: #fff;
@@ -251,7 +247,7 @@ textarea {
 	color: #999;
 	font-size: 14px;
 	font-size: 1.4rem;
-	padding: 16px;
+	padding: 5px 10px;
 	padding: 1.6rem;
 	width: 100%;
 }
@@ -284,7 +280,7 @@ input[type="submit"],
 	cursor: pointer;
 	letter-spacing: 1px;
 	letter-spacing: 0.1rem;
-	padding: 16px 24px;
+	padding: 5px 10px;
 	padding: 1.6rem 2.4rem;
 	text-transform: uppercase;
 	width: auto;
