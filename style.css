@@ -225,7 +225,6 @@ select,
 textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
-	border-radius: 3px;
 	box-shadow: 1px 1px 3px #eee inset;
 	color: #999;
 	font-size: 14px;
@@ -280,7 +279,6 @@ input:hover[type="submit"],
 }
 
 .button {
-	border-radius: 3px;
 	display: inline-block;
 }
 
@@ -891,7 +889,6 @@ Content Area
 
 .navigation li a {
 	background-color: #333;
-	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
@@ -998,7 +995,6 @@ Sidebars
 
 .sidebar .widget {
 	background-color: #fff;
-	border-radius: 3px;
 	margin-bottom: 40px;
 	padding: 40px;
 }
