@@ -1142,18 +1142,9 @@ Footer Widgets
 	padding: 4rem 0 1.6rem;
 }
 
-.footer-widgets-1,
-.footer-widgets-3 {
-	width: 350px;
-}
-
-.footer-widgets-2 {
-	width: 360px;
-}
-
-.footer-widgets-1 {
-	margin-right: 40px;
-	margin-right: 4rem;
+.footer-widgets .widget-area {
+	width: 33.3333%;
+	padding: 0 20px;
 }
 
 .footer-widgets-1,
