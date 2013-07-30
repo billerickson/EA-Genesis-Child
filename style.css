@@ -1190,6 +1190,13 @@ li.comment {
 
 }
 
+@media only screen and (max-width: 959px) {
+	.site-inner,
+	.wrap {
+		max-width: 767px;
+	}
+}
+
 @media only screen and (max-width: 767px) {
 
 	body {
