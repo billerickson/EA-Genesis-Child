@@ -646,41 +646,6 @@ img.alignright,
 	text-align: center;
 }
 
-/* Genesis
---------------------------------------------- */
-
-.breadcrumb {
-	margin-bottom: 20px;
-}
-
-.archive-description,
-.author-box {
-	background-color: #fff;
-	margin-bottom: 40px;
-}
-
-.archive-description {
-	padding: 40px 40px 24px;
-}
-
-.author-box {
-	padding: 40px;
-}
-
-.author-box-title {
-	color: #333;
-	font-size: 16px;
-	margin-bottom: 4px;
-}
-
-.author-box p {
-	margin-bottom: 0;
-}
-
-.author-box .avatar {
-	margin-right: 24px;
-}
-
 /* Headings
 --------------------------------------------- */
 
