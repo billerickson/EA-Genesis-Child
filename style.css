@@ -776,10 +776,6 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	width: 360px;
 }
 
-.header-image .title-area {
-	padding: 0;
-}
-
 .site-title {
 	font-size: 28px;
 	line-height: 1;
@@ -807,24 +803,6 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	width: 100%;
 }
 
-.header-image .site-description,
-.header-image .site-title a {
-	display: block;
-	text-indent: -9999px;
-}
-
-/* Logo, hide text */
-
-.header-image .site-header .wrap {
-	background: url(images/logo.png) no-repeat left;
-	padding: 0;
-}
-
-.header-image .site-title a {
-	float: left;
-	min-height: 164px;
-	width: 100%;
-}
 
 /* Widget Area
 --------------------------------------------- */
