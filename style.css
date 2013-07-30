@@ -1070,10 +1070,6 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	padding: 32px;
 }
 
-.comment-list li li {
-	margin-right: -32px;
-}
-
 li.comment {
 	background-color: #f5f5f5;
 	border: 2px solid #fff;
