@@ -51,6 +51,9 @@ function ea_child_theme_setup() {
 	// 	)
 	// );
 
+	// Set comment area defaults
+	add_filter( 'comment_form_defaults', 'ea_comment_text' );
+
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
@@ -58,6 +61,22 @@ function ea_child_theme_setup() {
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
 // ** Backend Functions ** //
+
+/**
+ * Change the comment area text
+ *
+ * @since  1.0.0
+ * @param  array $args
+ * @return array
+ */
+function ea_comment_text( $args ) {
+    $args['title_reply']          = __( 'Leave A Reply', 'ea_genesis_child' ),
+    $args['label_submit']         = __( 'Post Comment',  'ea_genesis_child' ),
+    $args['comment_notes_before'] = '';
+    $args['comment_notes_after']  = '';
+    return $args;
+}
+
 
 /**
  * Don't Update Theme.
