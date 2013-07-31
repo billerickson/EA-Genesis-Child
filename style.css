@@ -631,28 +631,6 @@ img.alignright,
 	text-align: center;
 }
 
-/* Headings
---------------------------------------------- */
-
-.entry-title {
-	font-size: 36px;
-	line-height: 1;
-}
-
-.entry-title a,
-.sidebar .widgettitle a {
-	color: #333;
-}
-
-.entry-title a:hover {
-	color: #666;
-}
-
-.archive-title {
-	font-size: 20px;
-	margin-bottom: 24px;
-}
-
 
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
