@@ -875,14 +875,6 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	margin-bottom: 40px;
 }
 
-.entry-content a {
-	color: #f15123;
-}
-
-.entry-content a:hover {
-	color: #333;
-}
-
 .entry-content .attachment a,
 .entry-content .gallery a {
 	border: none;
