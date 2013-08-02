@@ -54,6 +54,9 @@ function ea_child_theme_setup() {
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
+	// Global enqueues
+	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
+
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
@@ -70,11 +73,28 @@ add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
  * @return array
  */
 function ea_comment_text( $args ) {
-    $args['title_reply']          = __( 'Leave A Reply', 'ea_genesis_child' );
-    $args['label_submit']         = __( 'Post Comment',  'ea_genesis_child' );
-    $args['comment_notes_before'] = '';
-    $args['comment_notes_after']  = '';
-    return $args;
+	$args['title_reply']          = __( 'Leave A Reply', 'ea_genesis_child' );
+	$args['label_submit']         = __( 'Post Comment',  'ea_genesis_child' );
+	$args['comment_notes_before'] = '';
+	$args['comment_notes_after']  = '';
+	return $args;
+}
+
+/**
+ * Global enqueues
+ *
+ * @since  1.0.0
+ * @global array $wp_styles
+ */
+function ea_global_enqueues() {
+	global $wp_styles;
+
+	// javascript
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, false );
+
+	// css
+	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
+	// $wp_styles->add_data( 'ea-ie', 'conditional', 'lt IE 9'  );
 }
 
 /**
