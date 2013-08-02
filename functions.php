@@ -70,13 +70,12 @@ add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
  * @return array
  */
 function ea_comment_text( $args ) {
-    $args['title_reply']          = __( 'Leave A Reply', 'ea_genesis_child' ),
-    $args['label_submit']         = __( 'Post Comment',  'ea_genesis_child' ),
+    $args['title_reply']          = __( 'Leave A Reply', 'ea_genesis_child' );
+    $args['label_submit']         = __( 'Post Comment',  'ea_genesis_child' );
     $args['comment_notes_before'] = '';
     $args['comment_notes_after']  = '';
     return $args;
 }
-
 
 /**
  * Don't Update Theme.
