@@ -250,7 +250,7 @@ textarea {
 	box-shadow: 1px 1px 3px #eee inset;
 	color: #999;
 	font-size: 14px;
-	padding: 5px 10px;
+	padding: 10px;
 	width: 100%;
 }
 
@@ -258,6 +258,22 @@ input:focus,
 textarea:focus {
 	border: 1px solid #999;
 	outline: none;
+}
+
+.input-large {
+	font-size: 18px;
+	padding: 15px;
+}
+
+select.input-large {
+	height: 54px;
+	line-height: 54px;
+	padding-top: 12px;
+}
+
+.input-small {
+	font-size: 12px;
+	padding: 5px 10px;
 }
 
 ::-moz-placeholder {
@@ -274,13 +290,13 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button,
-.entry-content .button {
+.button.button-invert:hover {
 	background-color: #333;
 	border: none;
 	box-shadow: none;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px;
+	padding: 10px;
 	text-transform: uppercase;
 	width: auto;
 }
@@ -290,7 +306,7 @@ input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover,
-.entry-content .button:hover {
+.button.button-invert {
 	background-color: #f15123;
 	color: #fff;
 }
@@ -301,6 +317,26 @@ input:hover[type="submit"],
 
 .button {
 	display: inline-block;
+}
+
+.button.button-block {
+	display: block;
+	width: 100%;
+}
+
+.button.button-large {
+	font-size: 28px;
+	padding: 10px 20px;
+}
+
+.button.button-small {
+	font-size: 13px;
+	padding: 8px;
+}
+
+.button.button-mini {
+	font-size: 11px;
+	padding: 5px 8px;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -903,6 +939,16 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 .entry-content ol ol,
 .entry-content ul ul {
 	margin-bottom: 0;
+}
+
+.entry-content ul.list-unstyled,
+.entry-content ol.list-unstyled {
+	margin-left: 20px;
+}
+
+.entry-content ul.list-unstyled > li,
+.entry-content ol.list-unstyled > li {
+	list-style: none;
 }
 
 .entry-content .search-form {
