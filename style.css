@@ -1180,9 +1180,6 @@ li.comment {
 		width: 620px;
 	}
 
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3,
 	.sidebar-primary,
 	.title-area {
 		width: 300px;
@@ -1191,7 +1188,7 @@ li.comment {
 }
 
 @media only screen and (max-width: 959px) {
-	.site-inner,
+
 	.wrap {
 		max-width: 767px;
 	}
@@ -1203,30 +1200,23 @@ li.comment {
 		background-color: #fff;
 	}
 
+	.wrap,
 	.content,
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3,
+	.footer-widgets .widget-area,
 	.sidebar-primary,
 	.sidebar-secondary,
 	.site-header .widget-area,
 	.site-inner,
-	.title-area,
-	.wrap {
+	.title-area {
 		width: 100%;
 	}
 
-	.site-header .wrap {
+	.wrap {
 		padding: 20px 0;
 	}
 
 	.header-image .site-header .wrap {
 		background-position: center top;
-	}
-
-	.site-inner {
-		padding-left: 5%;
-		padding-right: 5%;
 	}
 
 	.archive-description,
@@ -1253,41 +1243,6 @@ li.comment {
 	.site-header .search-form,
 	.site-title {
 		text-align: center;
-	}
-
-	.genesis-nav-menu a,
-	.genesis-nav-menu > .first > a,
-	.genesis-nav-menu > .last > a {
-		padding: 20px 16px;
-	}
-
-	.site-header .search-form {
-		margin: 16px auto ;
-	}
-
-	.genesis-nav-menu li.right {
-		display: none;
-	}
-
-	.entry-footer .entry-meta {
-		margin: 0;
-		padding-top: 12px;
-	}
-
-	.sidebar .widget.enews-widget {
-		padding: 40px;
-	}
-
-	.site-footer {
-		padding: 24px 0;
-	}
-
-	.footer-widgets {
-		padding: 40px 5% 16px;
-	}
-
-	.footer-widgets-1 {
-		margin: 0;
 	}
 
 	.five-sixths,
