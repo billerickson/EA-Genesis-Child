@@ -51,6 +51,9 @@ function ea_child_theme_setup() {
 	// 	)
 	// );
 
+	// Remove metaboxes from home page
+	add_action( 'admin_menu', 'ea_home_remove_metaboxes', 50 );
+
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
@@ -64,6 +67,19 @@ function ea_child_theme_setup() {
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
 // ** Backend Functions ** //
+
+/**
+ * Remove metaboxes we don't need when editing the home page.
+ *
+ * @since 1.0.0
+ */
+function ea_home_remove_metaboxes() {
+	if ( isset( $_GET['post'] ) && $_GET['post'] == get_option( 'page_on_front' ) ) {
+		remove_meta_box( 'genesis_inpost_layout_box',  'page', 'normal');
+		remove_meta_box( 'genesis_inpost_scripts_box', 'page', 'normal');
+		remove_meta_box( 'pageparentdiv',              'page', 'normal');
+	}
+}
 
 /**
  * Change the comment area text
