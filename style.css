@@ -944,17 +944,17 @@ img.alignright,
 /* Entry Navigation
 --------------------------------------------- */
 
-.navigation {
+.pagination {
 	clear: both;
 	font-size: 14px;
 	margin: 40px 0;
 }
 
-.navigation li {
+.pagination li {
 	display: inline;
 }
 
-.navigation li a {
+.pagination li a {
 	background-color: #333;
 	color: #fff;
 	cursor: pointer;
@@ -962,8 +962,8 @@ img.alignright,
 	padding: 8px 12px;
 }
 
-.navigation li a:hover,
-.navigation li.active a {
+.pagination li a:hover,
+.pagination li.active a {
 	background-color: #f15123;
 }
 
