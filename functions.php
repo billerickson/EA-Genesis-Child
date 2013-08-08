@@ -63,6 +63,9 @@ function ea_child_theme_setup() {
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
+        // Remove Header Description
+        remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+        
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
