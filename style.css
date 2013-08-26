@@ -578,56 +578,75 @@ table {
 
 .five-sixths,
 .four-sixths,
+.four-fifths,
+.one-fifth,
 .one-fourth,
 .one-half,
 .one-sixth,
 .one-third,
 .three-fourths,
+.three-fifths,
 .three-sixths,
 .two-fourths,
+.two-fifths,
 .two-sixths,
 .two-thirds {
 	float: left;
 	margin-left: 2.564102564102564%;
 }
-
+ 
 .one-half,
 .three-sixths,
 .two-fourths {
 	width: 48.717948717948715%;
 }
-
+ 
 .one-third,
 .two-sixths {
 	width: 31.623931623931625%;
 }
-
+ 
 .four-sixths,
 .two-thirds {
 	width: 65.81196581196582%;
 }
-
+ 
 .one-fourth {
 	width: 23.076923076923077%;
 }
-
+ 
 .three-fourths {
 	width: 74.35897435897436%;
 }
-
+ 
+.one-fifth {
+	width: 17.9487179487179488%;
+}
+ 
+.two-fifths {
+	width: 38.4615384615384616%;
+}
+ 
+.three-fifths {
+	width: 58.9743589743589744%;
+}
+ 
+.four-fifths {
+	width: 79.4871794871794872%;
+}
+ 
 .one-sixth {
 	width: 14.52991452991453%;
 }
-
+ 
 .five-sixths {
 	width: 82.90598290598291%;
 }
-
+ 
 .first {
 	clear: both;
 	margin-left: 0;
 }
-
 
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
