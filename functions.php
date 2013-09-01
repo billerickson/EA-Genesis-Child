@@ -21,15 +21,15 @@ function ea_child_theme_setup() {
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 	// Remove Unused Genesis Features
-	include_once( get_stylesheet_directory() . '/inc/functions/genesis-cleanup.php' );
+	include_once( get_stylesheet_directory() . '/inc/genesis-cleanup.php' );
 
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
 
 	// Theme Supports
-	add_theme_support( 'genesis-html5'                 );
-	add_theme_support( 'genesis-responsive-viewport'   );
-	add_theme_support( 'genesis-footer-widgets',     3 );
+	add_theme_support( 'html5' );
+	add_theme_support( 'genesis-responsive-viewport' );
+	add_theme_support( 'genesis-footer-widgets', 3 );
 	add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-primary', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
 	// add_theme_support(
 	// 	'genesis-menus',
@@ -51,6 +51,9 @@ function ea_child_theme_setup() {
 	// 	)
 	// );
 
+	// Remove metaboxes from home page
+	add_action( 'admin_menu', 'ea_home_remove_metaboxes', 50 );
+
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
@@ -60,10 +63,26 @@ function ea_child_theme_setup() {
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
+	// Remove Header Description
+	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+        
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
 // ** Backend Functions ** //
+
+/**
+ * Remove metaboxes we don't need when editing the home page.
+ *
+ * @since 1.0.0
+ */
+function ea_home_remove_metaboxes() {
+	if ( isset( $_GET['post'] ) && $_GET['post'] == get_option( 'page_on_front' ) ) {
+		remove_meta_box( 'genesis_inpost_layout_box',  'page', 'normal');
+		remove_meta_box( 'genesis_inpost_scripts_box', 'page', 'normal');
+		remove_meta_box( 'pageparentdiv',              'page', 'normal');
+	}
+}
 
 /**
  * Change the comment area text
@@ -90,7 +109,7 @@ function ea_global_enqueues() {
 	global $wp_styles;
 
 	// javascript
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, false );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, false );
 
 	// css
 	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
