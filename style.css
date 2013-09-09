@@ -299,6 +299,7 @@ input[type="submit"],
 	padding: 10px;
 	text-transform: uppercase;
 	width: auto;
+	-webkit-appearance: none;
 }
 
 button:hover,
