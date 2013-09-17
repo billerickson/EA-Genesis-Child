@@ -1021,6 +1021,10 @@ img.alignright,
 	margin-right: 12px;
 }
 
+.comment-respond label[for="subscribe"] {
+	display: inline-block;
+}
+
 .comment-list li,
 .ping-list li {
 	list-style-type: none;
