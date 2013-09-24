@@ -1120,17 +1120,9 @@ li.comment {
 }
 
 .footer-widgets .widget-area {
-	width: 33.3333%;
-	padding: 0 20px;
-}
-
-.footer-widgets-1,
-.footer-widgets-2 {
 	float: left;
-}
-
-.footer-widgets-3 {
-	float: right;
+	padding: 0 20px;
+	width: 33.3333%;
 }
 
 .footer-widgets a {
