@@ -285,6 +285,11 @@ select.input-large {
 	color: #999;
 }
 
+input:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder{ 
+	color:transparent; 
+}
+
 button,
 input[type="button"],
 input[type="reset"],
