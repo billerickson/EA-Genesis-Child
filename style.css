@@ -285,6 +285,11 @@ select.input-large {
 	color: #999;
 }
 
+input:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder{ 
+	color:transparent; 
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -299,6 +304,7 @@ input[type="submit"],
 	padding: 10px;
 	text-transform: uppercase;
 	width: auto;
+	-webkit-appearance: none;
 }
 
 button:hover,
@@ -1020,6 +1026,10 @@ img.alignright,
 	margin-right: 12px;
 }
 
+.comment-respond label[for="subscribe"] {
+	display: inline-block;
+}
+
 .comment-list li,
 .ping-list li {
 	list-style-type: none;
@@ -1115,17 +1125,9 @@ li.comment {
 }
 
 .footer-widgets .widget-area {
-	width: 33.3333%;
-	padding: 0 20px;
-}
-
-.footer-widgets-1,
-.footer-widgets-2 {
 	float: left;
-}
-
-.footer-widgets-3 {
-	float: right;
+	padding: 0 20px;
+	width: 33.3333%;
 }
 
 .footer-widgets a {
