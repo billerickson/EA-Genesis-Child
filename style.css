@@ -1002,15 +1002,6 @@ img.alignright,
 	margin-bottom: 40px;
 }
 
-.entry-comments {
-	padding: 40px;
-}
-
-.comment-respond,
-.entry-pings {
-	padding: 40px 40px 16px;
-}
-
 .entry-comments .comment-author {
 	margin-bottom: 0;
 }
@@ -1068,26 +1059,6 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-}
-
-.sidebar p:last-child {
-	margin-bottom: 0;
-}
-
-.sidebar li {
-	list-style-type: none;
-	margin-bottom: 6px;
-	word-wrap: break-word;
-}
-
-.sidebar ul > li:last-child {
-	margin-bottom: 0;
-}
-
-.sidebar .widget {
-	background-color: #fff;
-	margin-bottom: 40px;
-	padding: 40px;
 }
 
 
