@@ -1,0 +1,78 @@
+/* Reusable Colors
+	 Often used to set a color scheme. Change
+	 how you please.
+--------------------------------------------- */
+$gray-dark: #333;
+$gray-medium: #666;
+$gray-light: #999;
+$gray-lighter: #e1e1e8;
+$gray-lightest: #f7f7f9;
+$white: #fff; // Because sometimes white isn't always white
+
+/* Header
+--------------------------------------------- */
+$header-background: $white;
+$site-title: $gray-light;
+$site-description: $gray-dark;
+
+/* Navigation
+--------------------------------------------- */
+$nav-text: $gray-dark;
+$nav-link: $gray-dark;
+$nav-sub-border: #eee;
+
+/* Body
+--------------------------------------------- */
+$body-background: $white;
+$body-font: $gray-medium;
+$heading-color: $gray-dark;
+$blockquote-text: $gray-light;
+$code-text: $gray-dark;
+$code-border: $gray-lighter;
+$code-background: $gray-lightest;
+
+/* Links
+--------------------------------------------- */
+$link-color: $gray-dark;
+$link-color-hover: darken($link-color, 20%);
+
+/* Forms
+--------------------------------------------- */
+$form-field-text: $gray-dark;
+$form-field-border: #ddd;
+$form-field-border-focus: $gray-dark;
+$form-field-shadow: #eee;
+$form-button-hover: #f15123;
+$form-placeholder-text: $gray-dark;
+
+/* Tables
+--------------------------------------------- */
+$table-border: #ddd;
+$table-stripe: #f9f9f9;
+$table-hover: #f5f5f5;
+$table-nested-background: $white;
+
+/* Pagination
+--------------------------------------------- */
+$pagination-link: $white;
+$pagination-link-background: $gray-light;
+$pagination-link-background-hover: #f15123;
+
+/* Comments
+--------------------------------------------- */
+$comment-background: #f5f5f5;
+
+/* Widgets
+--------------------------------------------- */
+$widget-background: $white;
+$widget-entry: #f5f5f5;
+$widget-footer-background: $gray-light;
+$widget-footer-text: $gray-dark;
+$widget-footer-link: $gray-dark;
+$widget-footer-link-hover: #ddd;
+$widget-footer-form-border: #ddd;
+
+/* Footer
+--------------------------------------------- */
+$footer-text: $gray-dark;
+$footer-background: $white;

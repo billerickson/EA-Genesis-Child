@@ -1,0 +1,68 @@
+/* Widgets
+---------------------------------------------------------------------------------------------------- */
+
+/* Featured Content
+--------------------------------------------- */
+
+.featured-content {
+
+	.entry {
+		border-bottom: 2px solid $widget-entry;
+		margin-bottom: 20px;
+		padding: 0 0 24px;
+	}
+
+	.entry-title {
+		border: none;
+		@include adjust-font-size-to(24px);
+
+		a {
+			border: none;
+		}
+	}
+
+}
+
+
+/* Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets {
+	background-color: $widget-footer-background;
+	color: $widget-footer-text;
+	clear: both;
+	padding: 40px 0 16px;
+
+	.widget-area {
+		float: left;
+		padding: 0 20px;
+		width: 33.3333%;
+	}
+
+	a {
+		color: $widget-footer-link;
+
+		&:hover {
+			color: $widget-footer-link-hover;
+		}
+	}
+
+	.widget {
+		margin-bottom: 24px;
+	}
+
+	.widgettitle {
+		color: $white;
+	}
+
+	li {
+		list-style-type: none;
+		margin-bottom: 6px;
+		word-wrap: break-word;
+	}
+
+	.search-form input:focus {
+		border: 1px solid $widget-footer-form-border;
+	}
+}
+

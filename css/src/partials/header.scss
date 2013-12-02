@@ -1,0 +1,126 @@
+/* Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	@include column(12);
+	background-color: $header-background;
+}
+
+.site-header .wrap {
+	// padding: 40px 0;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	@include column(4);
+	font-weight: 700;
+	float: left;
+	padding: 16px 0;
+}
+
+.site-title {
+	@include adjust-font-size-to(28px);
+	margin: 0 0 8px;
+	text-transform: uppercase;
+}
+
+.site-title a,
+.site-title a:hover {
+	color: $site-title;
+}
+
+.site-description {
+	color: $site-description;
+	@include adjust-font-size-to(16px);
+	font-weight: 300;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+/* Full width header, no widgets */
+
+.header-full-width .title-area,
+.header-full-width .site-title {
+	@include column(12);
+}
+
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+	@include column(8);
+	float: right;
+	text-align: right;
+}
+
+.header-image .site-header .widget-area {
+	padding: 40px 0;
+}
+
+.site-header .search-form {
+	float: right;
+	margin-top: 24px;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+
+	.header-image .site-header .wrap {
+		background: url(images/logo@2x.png) no-repeat left;
+		background-size: 360px 164px;
+	}
+
+}
+
+@media only screen and (max-width: $break-large) {
+
+	.site-header .widget-area {
+		@include column(8);
+	}
+
+	.title-area {
+		@include column(4);
+	}
+
+}
+
+@media only screen and (max-width: $break-medium) {
+
+}
+
+@media only screen and (max-width: $break-small) {
+
+	.site-header .widget-area,
+	.site-inner,
+	.title-area {
+		@include column(12);
+	}
+
+	.header-image .site-header .wrap {
+		background-position: center top;
+	}
+
+	.header-image .site-header .widget-area,
+	.site-header {
+		padding: 0;
+	}
+
+	.site-header ul.genesis-nav-menu,
+	.site-header .search-form {
+		float: none;
+	}
+
+	.site-description,
+	.site-header .title-area,
+	.site-header .search-form,
+	.site-title {
+		text-align: center;
+	}
+
+}

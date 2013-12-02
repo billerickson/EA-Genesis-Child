@@ -1,0 +1,131 @@
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	background-color: $white;
+	border: 1px solid $form-field-border;
+	@include box-shadow($form-field-shadow 1px 1px 3px inset);
+	color: $form-field-text;
+	@include adjust-font-size-to(14px);
+	padding: 10px;
+	width: 100%;
+}
+
+input:focus,
+textarea:focus {
+	border: 1px solid $form-field-border-focus;
+	outline: none;
+}
+
+.input-large {
+	@include adjust-font-size-to(18px);
+	padding: 15px;
+}
+
+select.input-large {
+	height: 54px;
+	line-height: 54px;
+	padding-top: 12px;
+}
+
+.input-small {
+	@include adjust-font-size-to(12px);
+	padding: 5px 10px;
+}
+
+::-moz-placeholder {
+	color: $form-placeholder-text;
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: $form-placeholder-text;
+}
+
+input:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder{ 
+	color:transparent; 
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	@include button();
+}
+
+button:hover,
+input:hover[type="button"],
+input:hover[type="reset"],
+input:hover[type="submit"],
+.button:hover {
+	@include button-hover();
+}
+
+.button.button-invert {
+	@include button-hover();
+
+	&:hover {
+		@include button();
+	}
+}
+
+.entry-content .button:hover {
+	color: $white;
+}
+
+.button {
+	display: inline-block;
+}
+
+.button.button-block {
+	display: block;
+	width: 100%;
+}
+
+.button.button-large {
+	@include adjust-font-size-to(28px);
+	padding: 10px 20px;
+}
+
+.button.button-small {
+	@include adjust-font-size-to(13px);
+	padding: 8px;
+}
+
+.button.button-mini {
+	@include adjust-font-size-to(11px);
+	padding: 5px 8px;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+/* Gravity Forms
+--------------------------------------------- */
+
+div.gform_wrapper input[type="email"],
+div.gform_wrapper input[type="text"],
+div.gform_wrapper textarea,
+div.gform_wrapper .ginput_complex label {
+	@include adjust-font-size-to(16px);
+	padding: 5px 10px;
+}
+
+div.gform_wrapper .ginput_complex label {
+	padding: 0;
+}
+
+div.gform_wrapper li,
+div.gform_wrapper form li {
+	margin: 16px 0 0;
+}
+
+div.gform_wrapper .gform_footer input[type="submit"] {
+	@include adjust-font-size-to(14px);
+}

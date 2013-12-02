@@ -1,0 +1,31 @@
+/* Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+	@include column(12);
+  background-color: $footer-background;
+  color: $footer-text;
+  @include adjust-font-size-to(14px);
+  padding: 40px 0;
+  text-align: center;
+
+	p {
+    margin-bottom: 0;
+	}
+}
+
+
+@media only screen and (max-width: $break-large) {
+
+}
+
+@media only screen and (max-width: $break-medium) {
+	
+}
+
+@media only screen and (max-width: $break-small) {
+	
+	.footer-widgets .widget-area {
+		@include column(12);
+	}
+}

@@ -1,0 +1,91 @@
+/* Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	background-color: $white;
+	margin-bottom: 40px;
+}
+
+.entry-comments {
+	padding: 40px;
+}
+
+.comment-respond,
+.entry-pings {
+	padding: 40px 40px 16px;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.comment-respond {
+
+	input[type="email"],
+	input[type="text"],
+	input[type="url"] {
+		width: 50%
+	}
+
+	label {
+		display: block;
+		margin-right: 12px;
+	}
+
+	label[for="subscribe"] {
+		display: inline-block;
+	}
+}
+
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+}
+
+.comment-list li {
+	margin-top: 24px;
+	padding: 32px;
+}
+
+li.comment {
+	background-color: $comment-background;
+	border: 2px solid $white;
+	border-right: none;
+}
+
+.comment .avatar {
+	margin: 0 16px 24px 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.bypostauthor {
+}
+
+.form-allowed-tags {
+	background-color: $comment-background;
+	@include adjust-font-size-to(14px);
+	padding: 24px;
+}
+
+@media only screen and (max-width: $break-large) {
+
+}
+
+@media only screen and (max-width: $break-medium) {
+
+}
+
+@media only screen and (max-width: $break-small) {
+
+	.entry-comments,
+	.comment-respond {
+		padding: 0;
+	}
+
+}

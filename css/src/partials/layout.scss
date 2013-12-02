@@ -1,0 +1,173 @@
+/* Setup column dimensions
+--------------------------------------------- */
+$columns: 12;
+$column-width: 60;
+$gutter-width: 20;
+$total-width: 100%;
+
+/* Box Sizing
+--------------------------------------------- */
+*,
+input[type="search"] {
+	@include box-sizing(border-box);
+}
+
+/* Site Containers
+--------------------------------------------- */
+.site-container {
+	position: relative;
+}
+
+.wrap {
+	position: relative;
+	margin: 0 auto;
+	max-width: $site-width;
+}
+
+.site-inner {
+	@include column(12);
+}
+
+.content-sidebar-wrap {
+}
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+/* Content */
+
+.content {
+	// float: right;
+	@include column(8);
+}
+
+.content-sidebar .content {
+	float: left;
+}
+
+.full-width-content .content {
+	@include column(12);
+}
+
+/* Primary Sidebar */
+
+.sidebar-primary {
+	// float: right;
+	@include column(4);
+}
+
+.sidebar-content .sidebar-primary {
+	float: left;
+}
+
+/* Column Classes - Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+
+.one-half,
+.three-sixths,
+.two-fourths {
+	@include column(6);
+}
+ 
+.one-third,
+.two-sixths {
+	@include column(4);
+}
+ 
+.four-sixths,
+.two-thirds {
+	@include column(8);
+}
+ 
+.one-fourth {
+	@include column(3);
+}
+ 
+.three-fourths {
+	@include column(9);
+}
+ 
+.one-fifth {
+	width: 17.9487179487179488%;
+	float: left;
+}
+ 
+.two-fifths {
+	width: 38.4615384615384616%;
+	float: left;
+}
+ 
+.three-fifths {
+	width: 58.9743589743589744%;
+	float: left;
+}
+ 
+.four-fifths {
+	width: 79.4871794871794872%;
+	float: left;
+}
+ 
+.one-sixth {
+	@include column(2);
+}
+ 
+.five-sixths {
+	@include column(10);
+}
+ 
+.first {
+	clear: both;
+	margin-left: 0;
+}
+
+@media only screen and (max-width: $break-large) {
+
+	.wrap {
+		max-width: 960px;
+	}
+
+}
+
+@media only screen and (max-width: $break-medium) {
+
+	.wrap {
+		max-width: 767px;
+	}
+
+}
+
+@media only screen and (max-width: $break-small) {
+
+	body {
+		background-color: $white;
+	}
+	
+	.wrap {
+		@include row(12);
+		padding: 20px 0;
+	}
+
+	.site-inner {
+		@include column(12);
+	}
+
+	.five-sixths,
+	.four-fifths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-fifth,
+	.one-sixth,
+	.one-third,
+	.three-fifths,
+	.three-fourths,
+	.three-sixths,
+	.two-fifths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		@include column(12);
+		margin: 0;
+	}
+
+}

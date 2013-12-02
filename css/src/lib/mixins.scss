@@ -1,0 +1,20 @@
+@mixin break-text() {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+@mixin button() {
+	background-color: $gray-light;
+	border: none;
+	box-shadow: none;
+	color: $white;
+	cursor: pointer;
+	padding: 10px;
+	text-transform: uppercase;
+	width: auto;
+	@include appearance(none);
+}
+
+@mixin button-hover() {
+	background-color: $form-button-hover;
+	color: $white;
+}

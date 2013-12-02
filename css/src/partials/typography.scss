@@ -1,0 +1,187 @@
+@import "compass/typography";
+$base-font-size: 16px;
+$base-line-height: 26px;
+@include establish-baseline( $base-font-size );
+
+
+// Import fonts
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+body {
+	background-color: $body-background;
+	color: $body-font;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.625;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button {
+	@include single-transition(all, 0.1s, ease-in-out)
+}
+
+::-moz-selection, ::selection {
+	background-color: $gray-dark;
+	color: $white;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $link-color-hover;
+}
+
+p {
+	@include break-text();
+	margin: 0;
+	@include margin-trailer();
+	padding: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+blockquote,
+blockquote::before {
+	color: $blockquote-text;
+}
+
+blockquote {
+	margin: 40px 40px 24px;
+}
+
+blockquote::before {
+	content: "\201C";
+	display: block;
+	@include adjust-font-size-to(30px);
+	height: 0;
+	left: -20px;
+	position: relative;
+	top: -10px;
+}
+
+code,
+pre {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	@include adjust-font-size-to(12px);
+	color: $code-text;
+	border: 1px solid $code-border;
+	background-color: $code-background;
+}
+
+code {
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+pre code {
+	padding: 0;
+	color: inherit;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+sup, sub {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.6em;
+	font-size: $base-font-size * 0.7;
+}
+
+sub {
+	top: 0.4em;
+}
+
+var {
+	font-style: italic;
+}
+
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin: 0 0 1em 1em;
+}
+
+address {
+	margin-bottom: 26px;
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $heading-color;
+	font-weight: 700;
+	margin: 0;
+	margin-bottom: 16px;
+	padding: 0;
+}
+
+h1 {
+	@include adjust-font-size-to(36px);
+}
+
+h2 {
+	@include adjust-font-size-to(30px);
+}
+
+h3 {
+	@include adjust-font-size-to(24px);
+}
+
+h4 {
+	@include adjust-font-size-to(20px);
+}
+
+h5 {
+	@include adjust-font-size-to(18px);
+}
+
+h6 {
+	@include adjust-font-size-to(16px);
+}
+

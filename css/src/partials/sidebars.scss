@@ -1,0 +1,51 @@
+/* Sidebars
+---------------------------------------------------------------------------------------------------- */
+
+.sidebar {
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	li {
+		list-style-type: none;
+		margin-bottom: 6px;
+		word-wrap: break-word;
+	}
+
+	ul > li:last-child {
+		margin-bottom: 0;
+	}
+
+	.widget {
+		background-color: $widget-background;
+		margin-bottom: 40px;
+		padding: 40px;
+	}
+
+	&.sidebar-primary {
+	}
+
+	&.sidebar-secondary {
+	}
+}
+
+@media only screen and (max-width: $break-large) {
+
+}
+
+@media only screen and (max-width: $break-medium) {
+	
+}
+
+@media only screen and (max-width: $break-small) {
+	
+	.sidebar-primary,
+	.sidebar-secondary {
+		@include column(12);
+	}
+
+	.sidebar .widget {
+		padding: 0;
+	}
+}
