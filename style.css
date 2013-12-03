@@ -947,7 +947,8 @@ img.alignright,
 }
 
 .entry-content ul.list-unstyled > li,
-.entry-content ol.list-unstyled > li {
+.entry-content ol.list-unstyled > li,
+.entry-content .gform_wrapper ul li {
 	list-style: none;
 }
 
