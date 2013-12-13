@@ -101,12 +101,12 @@ textarea:focus,
 }
 
 a {
-	color: #666;
+	color: #12739f;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #333;
+	text-decoration: underline;
 }
 
 p {
@@ -124,23 +124,16 @@ ul {
 	padding: 0;
 }
 
-blockquote,
-blockquote::before {
-	color: #999;
-}
-
 blockquote {
+	background: rgba(0,0,0,0.10);
 	margin: 40px 40px 24px;
+	font-style: italic;
+	padding: 15px 20px;
+	color: #444;
 }
 
-blockquote::before {
-	content: "\201C";
-	display: block;
-	font-size: 30px;
-	height: 0;
-	left: -20px;
-	position: relative;
-	top: -10px;
+blockquote p:last-of-type {
+	margin: 0;
 }
 
 code,
