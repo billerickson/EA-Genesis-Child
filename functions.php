@@ -57,9 +57,6 @@ function ea_child_theme_setup() {
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
-	// Global enqueues
-	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
-
 	// Don't update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
@@ -114,28 +111,6 @@ function ea_global_enqueues() {
 	// css
 	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
 	// $wp_styles->add_data( 'ea-ie', 'conditional', 'lt IE 9'  );
-}
-
-/**
- * Don't Update Theme.
- *
- * If there is a theme in the repo with the same name, this prevents WP from prompting an update.
- *
- * @since  1.0.0
- * @author Mark Jaquith
- * @link   http://markjaquith.wordpress.com/2009/12/14/excluding-your-plugin-or-theme-from-update-checks/
- * @param  array $r Existing request arguments
- * @param  string $url Request URL
- * @return array Amended request arguments
- */
-function ea_dont_update_theme( $r, $url ) {
-	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
-		return $r; // Not a theme update request. Bail immediately.
-	$themes = unserialize( $r['body']['themes'] );
-	unset( $themes[ get_option( 'template' ) ] );
-	unset( $themes[ get_option( 'stylesheet' ) ] );
-	$r['body']['themes'] = serialize( $themes );
-	return $r;
 }
 
 // ** Frontend Functions ** //
