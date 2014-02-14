@@ -109,7 +109,7 @@ function ea_global_enqueues() {
 	global $wp_styles;
 
 	// javascript
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, false );
+	// wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, false );
 
 	// css
 	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
