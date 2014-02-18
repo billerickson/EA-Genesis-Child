@@ -27,8 +27,6 @@ function ea_child_theme_setup() {
 	add_editor_style( 'css/editor-style.css' );
 
 	// Theme Supports
-	add_theme_support( 'html5' );
-	add_theme_support( 'genesis-responsive-viewport' );
 	add_theme_support( 'genesis-footer-widgets', 3 );
 	add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-primary', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
 	// add_theme_support(

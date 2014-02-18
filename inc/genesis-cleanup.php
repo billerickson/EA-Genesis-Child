@@ -8,6 +8,10 @@
  * @license      GPL-2.0+
  */
 
+// HTML5
+add_theme_support( 'html5' );
+add_theme_support( 'genesis-responsive-viewport' );
+
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
