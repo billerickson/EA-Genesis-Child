@@ -55,9 +55,9 @@ function ea_child_theme_setup() {
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
-	// Don't update theme
-	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
-
+	// Global enqueues
+	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
+ 
 	// Remove Header Description
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
         
