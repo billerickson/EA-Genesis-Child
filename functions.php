@@ -13,7 +13,7 @@
  *
  */
 if ( ! isset( $content_width ) )
-    $content_width = 940; 
+    $content_width = 740; 
 
 /**
  * Theme setup.
