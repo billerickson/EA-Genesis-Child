@@ -9,6 +9,13 @@
  */
 
 /**
+ * Set up the content width value based on the theme's design.
+ *
+ */
+if ( ! isset( $content_width ) )
+    $content_width = 940; 
+
+/**
  * Theme setup.
  * 
  * Attach all of the site-wide functions to the correct hooks and filters. All 
