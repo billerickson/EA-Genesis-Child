@@ -22,6 +22,8 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 // Remove unused secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
+if( class_exists( 'Genesis_Header_Nav' ) )
+	unregister_sidebar( 'header-right' );
 
 /**
  * Removes Unused Genesis user settings
