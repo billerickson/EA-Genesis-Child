@@ -309,6 +309,7 @@ input[type="submit"],
 	cursor: pointer;
 	padding: 10px;
 	text-transform: uppercase;
+	text-decoration: none;
 	width: auto;
 	-webkit-appearance: none;
 }
@@ -321,6 +322,7 @@ input:hover[type="submit"],
 .button.button-invert {
 	background-color: #f15123;
 	color: #fff;
+	text-decoration: none;
 }
 
 .entry-content .button:hover {
