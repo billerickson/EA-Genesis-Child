@@ -290,7 +290,9 @@ select.input-large {
 }
 
 input:focus::-webkit-input-placeholder,
-input:focus:-moz-placeholder{ 
+input:focus::-moz-placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:focus::-moz-placeholder{ 
 	color:transparent; 
 }
 
