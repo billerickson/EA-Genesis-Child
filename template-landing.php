@@ -4,7 +4,7 @@
  *
  * @package      EAGenesisChild
  * @since        1.0.0
- * @copyright    Copyright (c) 2013, Contributors to EA Genesis Child project
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
  */
 
