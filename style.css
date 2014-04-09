@@ -1167,51 +1167,9 @@ li.comment {
 
 @media only screen and (max-width: 767px) {
 
-	body {
-		background-color: #fff;
-	}
-	
-	.title-area,
-	.header-widget-area {
-		float: none;
-		margin: 0 auto;
-	}
-
-	.wrap,
 	.content,
-	.footer-widgets .widget-area,
 	.sidebar-primary,
-	.sidebar-secondary,
-	.site-inner {
-		width: 100%;
-	}
-
-	.wrap {
-		padding: 20px 0;
-	}
-
-	.archive-description,
-	.author-box,
-	.comment-respond,
-	.entry,
-	.entry-comments,
-	.entry-footer .entry-meta,
-	.header-image .site-header .widget-area,
-	.sidebar .widget,
-	.site-header {
-		padding: 0;
-	}
-
-	.genesis-nav-menu li,
-	.site-header ul.genesis-nav-menu,
-	.site-header .search-form {
-		float: none;
-	}
-
-	.genesis-nav-menu {
-		text-align: center;
-	}
-
+	.footer-widgets .widget-area,
 	.five-sixths,
 	.four-fifths,
 	.four-sixths,
@@ -1230,5 +1188,16 @@ li.comment {
 		margin: 0;
 		width: 100%;
 	}
+
+	.title-area,
+	.header-widget-area {
+		float: none;
+		margin: 0 auto;
+	}
+	
+	.wrap {
+		padding: 0 20px;
+	}
+
 
 }
