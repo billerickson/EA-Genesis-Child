@@ -924,7 +924,7 @@ p.site-title {
 	margin-left: 40px;
 }
 
-.entry-content .gform_wrapper ul {
+.entry-content .gform_wrapper ul.gform_fields {
 	margin: 0 0 30px;
 }
 
