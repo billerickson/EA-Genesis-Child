@@ -257,6 +257,12 @@ textarea {
 	width: 100%;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: 10px;
+	width: auto;
+}
+
 input:focus,
 textarea:focus {
 	border: 1px solid #999;
