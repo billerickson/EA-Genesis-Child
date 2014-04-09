@@ -733,45 +733,28 @@ img.alignright,
 	background-color: #fff;
 }
 
-.site-header .wrap {
-	padding: 40px 0;
-}
-
-/* Title Area
---------------------------------------------- */
-
 .title-area {
-	font-weight: 700;
 	float: left;
-	padding: 16px 0;
-	width: 360px;
+	width: 165px;
 }
 
-.site-title {
-	font-size: 28px;
-	line-height: 1;
-	margin: 0 0 8px;
-	text-transform: uppercase;
+h1.site-title,
+p.site-title {
+	margin: 0;
 }
 
-.site-title a,
-.site-title a:hover {
-	color: #333;
+.site-title a {
+	background: url(images/logo.png) no-repeat;
+	display: block;
+	height: 69px;
+	text-indent: -9999em;
+	width: 165px;
 }
 
-.site-description {
-	color: #999;
-	font-size: 16px;
-	font-weight: 300;
-	line-height: 1;
-	margin-bottom: 0;
-}
-
-/* Full width header, no widgets */
-
-.header-full-width .title-area,
-.header-full-width .site-title {
-	width: 100%;
+.header-widget-area {
+	float: right;
+	text-align: right;
+	max-width: 975px;
 }
 
 
@@ -1160,7 +1143,7 @@ li.comment {
 	only screen and (-o-min-device-pixel-ratio: 3/2),
 	only screen and (min-device-pixel-ratio: 1.5) {
 
-	.header-image .site-header .wrap {
+	.site-title a {
 		background: url(images/logo@2x.png) no-repeat left;
 		background-size: 360px 164px;
 	}
@@ -1171,14 +1154,6 @@ li.comment {
 
 	.wrap {
 		max-width: 960px;
-	}
-
-	.site-header .widget-area {
-		width: 620px;
-	}
-
-	.title-area {
-		width: 300px;
 	}
 
 }
@@ -1195,24 +1170,24 @@ li.comment {
 	body {
 		background-color: #fff;
 	}
+	
+	.title-area,
+	.header-widget-area {
+		float: none;
+		margin: 0 auto;
+	}
 
 	.wrap,
 	.content,
 	.footer-widgets .widget-area,
 	.sidebar-primary,
 	.sidebar-secondary,
-	.site-header .widget-area,
-	.site-inner,
-	.title-area {
+	.site-inner {
 		width: 100%;
 	}
 
 	.wrap {
 		padding: 20px 0;
-	}
-
-	.header-image .site-header .wrap {
-		background-position: center top;
 	}
 
 	.archive-description,
@@ -1233,11 +1208,7 @@ li.comment {
 		float: none;
 	}
 
-	.genesis-nav-menu,
-	.site-description,
-	.site-header .title-area,
-	.site-header .search-form,
-	.site-title {
+	.genesis-nav-menu {
 		text-align: center;
 	}
 
