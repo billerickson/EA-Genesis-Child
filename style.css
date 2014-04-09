@@ -918,6 +918,10 @@ p.site-title {
 	margin-left: 40px;
 }
 
+.entry-content .gform_wrapper ul {
+	margin: 0 0 30px;
+}
+
 .entry-content ol li {
 	list-style-type: decimal;
 }
