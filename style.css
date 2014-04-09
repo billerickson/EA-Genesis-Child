@@ -1199,5 +1199,7 @@ li.comment {
 		padding: 0 20px;
 	}
 
-
+	.sidebar-primary {
+		min-height: 0 !important;
+	}
 }
