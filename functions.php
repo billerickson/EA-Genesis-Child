@@ -72,7 +72,7 @@ function ea_child_theme_setup() {
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 	
 	// Mobile Menu
-	// include_once( get_stylesheet_directory() . '/inc/nav-menu-dropdown' );
+	// include_once( get_stylesheet_directory() . '/inc/nav-menu-dropdown.php' );
 
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
