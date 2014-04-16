@@ -26,6 +26,20 @@ if( class_exists( 'Genesis_Header_Nav' ) )
 	unregister_sidebar( 'header-right' );
 
 /**
+ * Remove Breadcrumb Labels
+ *
+ * @since 1.0.0
+ * @param array $args
+ * @return array
+ */
+function ea_breadcrumb_args( $args ) {
+	foreach( $args['labels'] as $key => &$label )
+		$label = '';
+	return $args;
+}
+add_filter( 'genesis_breadcrumb_args', 'ea_breadcrumb_args', 5 );
+
+/**
  * Removes Unused Genesis user settings
  *
  * @since 1.0.0
