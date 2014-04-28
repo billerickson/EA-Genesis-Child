@@ -400,8 +400,51 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	font-size: 14px;
 }
 
+/* Gallery
+--------------------------------------------- */
 
+.gallery {
+    margin: auto;
+}
 
+.gallery-item {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.gallery-columns-2 .gallery-item {
+    width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+    width: 33%;
+}
+.gallery-columns-4 .gallery-item {
+    width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+    width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+    width: 16.6666%;
+}
+.gallery-columns-7 .gallery-item {
+    width: 14.2857%;
+}
+.gallery-columns-8 .gallery-item {
+    width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+    width: 11.1111%;
+}
+
+.gallery img {
+    border: 2px solid #cfcfcf;
+}
+
+.gallery-caption {
+    margin-left: 0;
+}
 
 /* Tables
 --------------------------------------------- */
