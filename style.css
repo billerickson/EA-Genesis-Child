@@ -239,7 +239,7 @@ video,
 
 img {
 	height: auto;
-	width: auto; /* IE8 */
+	max-width: 100%;
 }
 
 /* Forms
