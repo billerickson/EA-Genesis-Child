@@ -290,14 +290,17 @@ select.input-large {
 	opacity: 1;
 }
 
+:-ms-input-placeholder,
 ::-webkit-input-placeholder {
 	color: #999;
 }
 
 input:focus::-webkit-input-placeholder,
 input:focus::-moz-placeholder,
+input:focus:-ms-input-placeholder,
 textarea:focus::-webkit-input-placeholder,
-textarea:focus::-moz-placeholder{ 
+textarea:focus::-moz-placeholder,
+textarea:focus:-ms-input-placeholder { 
 	color:transparent; 
 }
 
