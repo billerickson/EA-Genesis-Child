@@ -26,6 +26,17 @@ if( class_exists( 'Genesis_Header_Nav' ) )
 	unregister_sidebar( 'header-right' );
 
 /**
+ * Remove Genesis Templates
+ *
+ */
+function ea_remove_genesis_templates( $page_templates ) {
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'ea_remove_genesis_templates' );
+
+/**
  * Remove Breadcrumb Labels
  *
  * @since 1.0.0
