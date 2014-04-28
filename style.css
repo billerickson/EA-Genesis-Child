@@ -363,6 +363,19 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
+/* Search Form
+--------------------------------------------- */
+
+.search-form {
+	max-width: 500px;
+}
+
+.search-form input[type="search"] {
+	max-width: 300px;
+}
+
+
+
 /* Gravity Forms
 --------------------------------------------- */
 
@@ -930,10 +943,6 @@ p.site-title {
 .entry-content ol.list-unstyled > li,
 .entry-content .gform_wrapper ul li {
 	list-style: none;
-}
-
-.entry-content .search-form {
-	width: 50%;
 }
 
 .entry-meta {
