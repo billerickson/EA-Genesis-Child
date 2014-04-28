@@ -112,6 +112,11 @@ cite {
 	font-style: normal;
 }
 
+img {
+	height: auto;
+	max-width: 100%;
+}
+
 /* Headings
 --------------------------------------------- */
 
