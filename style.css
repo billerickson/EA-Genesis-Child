@@ -763,26 +763,6 @@ p.site-title {
 	max-width: 975px;
 }
 
-
-/* Widget Area
---------------------------------------------- */
-
-.site-header .widget-area {
-	float: right;
-	text-align: right;
-	width: 740px;
-}
-
-.header-image .site-header .widget-area {
-	padding: 40px 0;
-}
-
-.site-header .search-form {
-	float: right;
-	margin-top: 24px;
-}
-
-
 /* Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
