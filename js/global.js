@@ -4,12 +4,15 @@ jQuery(document).ready(function($){
 	$('.entry-content').fitVids();
 
 	// Content and Sidebar, Equal Heights
-	var sidebarHeight = $(".sidebar-primary").outerHeight();
-	var bodyHeight = $(".content-sidebar-wrap > .content").outerHeight();
+	function sidebar_height() {
+		var sidebarHeight = $(".sidebar-primary").outerHeight();
+		var bodyHeight = $(".content-sidebar-wrap > .content").outerHeight();
 	
-	if (bodyHeight > sidebarHeight) {
-		$(".sidebar-primary").css( 'min-height', bodyHeight );
-	};
+		if ( bodyHeight > sidebarHeight) {
+			$(".sidebar-primary").css( 'min-height', sidebarHeight );
+		};
+	}
+	$('body').one('load', sidebar_height);
 	
 /*	
 	// Footer Widgets, Equal Heights
