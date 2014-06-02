@@ -826,7 +826,7 @@ p.site-title {
 	position: relative;
 }
 
-.genesis-nav-menu a:hover,
+.genesis-nav-menu .menu-item:hover > a,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
 	color: #333;
