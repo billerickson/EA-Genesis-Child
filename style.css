@@ -1109,7 +1109,7 @@ li.comment {
 	background-color: #333;
 	color: #999;
 	clear: both;
-	padding: 40px 0 16px;
+	padding: 40px 0;
 }
 
 .footer-widgets .widget-area {
@@ -1128,6 +1128,10 @@ li.comment {
 
 .footer-widgets .widget {
 	margin-bottom: 24px;
+}
+
+.footer-widgets .widget-area .widget:last-of-type {
+	margin-bottom: 0;
 }
 
 .footer-widgets .widgettitle {
