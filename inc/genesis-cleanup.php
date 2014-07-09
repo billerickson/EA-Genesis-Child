@@ -138,3 +138,21 @@ function ea_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 	//remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
 }
 add_action( 'genesis_theme_settings_metaboxes', 'ea_remove_genesis_metaboxes' );
+
+/**
+ * Default Titles for Term Archives
+ *
+ * @author Bill Erickson
+ * @url http://www.billerickson.net/default-category-and-tag-titles
+ *
+ * @param string $headline
+ * @param object $term
+ * @return string $headline
+ */
+function ea_default_term_title( $headline, $term ) {
+	if( ( is_category() || is_tag() || is_tax() ) && empty( $headline ) )
+		$headline = $term->name;
+		
+	return $headline;
+}
+add_filter( 'genesis_term_meta_headline', 'ea_default_term_title', 10, 2 );
