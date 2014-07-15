@@ -28,7 +28,7 @@ function ea_child_theme_setup() {
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 	// Remove Unused Genesis Features
-	include_once( get_stylesheet_directory() . '/inc/genesis-cleanup.php' );
+	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
 
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
