@@ -12,7 +12,8 @@ jQuery(document).ready(function($){
 			$(".sidebar-primary").css( 'min-height', bodyHeight );
 		};
 	}
-	$('body').one('load', sidebar_height);
+	$('body').on('load', sidebar_height);
+	sidebar_height();
 	
 /*	
 	// Footer Widgets, Equal Heights
