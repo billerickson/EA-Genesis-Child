@@ -1015,7 +1015,6 @@ p.site-title {
 .comment-respond,
 .entry-comments,
 .entry-pings {
-	background-color: #fff;
 	margin-bottom: 40px;
 }
 
@@ -1049,8 +1048,6 @@ p.site-title {
 }
 
 li.comment {
-	background-color: #f5f5f5;
-	border: 2px solid #fff;
 	border-right: none;
 }
 
