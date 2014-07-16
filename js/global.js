@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 		var bodyHeight = $(".content-sidebar-wrap > .content").outerHeight();
 	
 		if ( bodyHeight > sidebarHeight) {
-			$(".sidebar-primary").css( 'min-height', sidebarHeight );
+			$(".sidebar-primary").css( 'min-height', bodyHeight );
 		};
 	}
 	$('body').one('load', sidebar_height);
