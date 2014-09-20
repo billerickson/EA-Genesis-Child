@@ -59,6 +59,13 @@ function ea_child_theme_setup() {
 	// Dont update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
+	// Duplicate 'the_content' filters
+	add_filter( 'ea_the_content', 'wptexturize'        );
+	add_filter( 'ea_the_content', 'convert_chars'      );
+	add_filter( 'ea_the_content', 'wpautop'            );
+	add_filter( 'ea_the_content', 'shortcode_unautop'  );
+	add_filter( 'ea_the_content', 'do_shortcode'       );
+
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
