@@ -291,7 +291,7 @@ select.input-large {
 	opacity: 1;
 }
 
-:-ms-input-placeholder,
+::-ms-input-placeholder,
 ::-webkit-input-placeholder {
 	color: #999;
 }
