@@ -158,3 +158,12 @@ function ea_default_term_title( $headline, $term ) {
 	return $headline;
 }
 add_filter( 'genesis_term_meta_headline', 'ea_default_term_title', 10, 2 );
+
+/**
+ * Excerpt More
+ *
+ */
+function ea_excerpt_more( $more ) {
+    return '&hellip;';
+}
+add_filter( 'excerpt_more', 'ea_excerpt_more' );
