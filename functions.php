@@ -130,7 +130,6 @@ function ea_comment_text( $args ) {
 function ea_global_enqueues() {
 
 	// javascript
-	//wp_enqueue_script( 'equalheights', get_stylesheet_directory_uri() . '/js/jquery.equalheights.min.js', array( 'jquery' ), '1.5.1', true );
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'fitvids' ), '1.0', true );
 
