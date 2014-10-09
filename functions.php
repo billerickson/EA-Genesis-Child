@@ -27,22 +27,11 @@ function ea_child_theme_setup() {
 
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
-	// Remove Unused Genesis Features
+	// Genesis Specific Changes
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
 
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
-
-	// Theme Supports
-	add_theme_support( 'genesis-footer-widgets', 3 );
-	add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-primary', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
-	// add_theme_support(
-	// 	'genesis-menus',
-	// 	array(
-	// 		'primary'   => __( 'Primary Navigation Menu', 'ea_genesis_child' ),
-	// 		'secondary' => __( 'Secondary Navigation Menu', 'ea_genesis_child' ),
-	// 	)
-	// );
 
 	// Image Sizes
 	// add_image_size( 'ea_featured', 400, 100, true );
@@ -71,10 +60,7 @@ function ea_child_theme_setup() {
 
 	// Global enqueues
 	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
- 
-	// Remove Header Description
-	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
-	
+ 	
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 

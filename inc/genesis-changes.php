@@ -8,12 +8,18 @@
  * @license      GPL-2.0+
  */
 
-// HTML5
+// Theme Supports
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery' ) );
 add_theme_support( 'genesis-responsive-viewport' );
+add_theme_support( 'genesis-footer-widgets', 3 );
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-primary', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
+add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu', 'secondary' => 'Secondary Navigation Menu' ) );
 
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
+
+// Remove Header Description
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
 // Remove unused page layouts
 genesis_unregister_layout( 'content-sidebar-sidebar' );
