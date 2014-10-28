@@ -25,6 +25,22 @@ input[type="search"] {
 	display: table;	
 }
 
+hr,
+.clear-line {
+	overflow: hidden;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	margin: 0 0 20px;
+	padding: 20px 0 0;
+}
+
+.column-wrapper {
+	margin-bottom: 24px;
+	border: 2px dotted #eee;
+	padding: 5px;
+}
+
 /* Typographical Elements
 --------------------------------------------- */
 
@@ -471,6 +487,8 @@ table {
 .two-thirds {
 	float: left;
 	margin-left: 2.564102564102564%;
+	border: 1px dotted #999;
+	padding: 10px;
 }
  
 .one-half,

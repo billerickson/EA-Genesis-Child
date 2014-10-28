@@ -184,6 +184,9 @@ hr,
 	padding: 20px 0 0;
 }
 
+.column-wrapper {
+	margin-bottom: 24px;
+}
 
 /* Headings
 --------------------------------------------- */
