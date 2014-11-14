@@ -414,7 +414,7 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 
 .gallery-item {
     float: left;
-    margin-top: 10px;
+    margin: 10px 0 0;
     text-align: center;
 }
 
