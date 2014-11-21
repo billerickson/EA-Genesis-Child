@@ -942,6 +942,9 @@ p.site-title {
 .entry-content ol,
 .entry-content p,
 .entry-content ul,
+.entry-content .wp-video,
+.entry-content .wp-audio-shortcode,
+.entry-content .video-player,
 .quote-caption {
 	margin-bottom: 26px;
 }
