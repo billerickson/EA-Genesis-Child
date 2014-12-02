@@ -409,7 +409,9 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 --------------------------------------------- */
 
 .gallery {
-    margin: auto;
+    margin: 0 auto 40px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .gallery-item {
