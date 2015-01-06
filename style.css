@@ -267,7 +267,7 @@ input[type="radio"] {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border-color: #999;
 	outline: none;
 }
 
