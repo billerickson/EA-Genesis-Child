@@ -74,6 +74,10 @@ add_filter( 'genesis_breadcrumb_args', 'ea_breadcrumb_args', 5 );
  */
 function ea_wrap_last_breadcrumb( $crumbs, $args ) {
 
+	// Don't run on home or front page
+	if( is_home() || is_front_page() )
+		return $crumbs;
+
 	// Ensure duplicate and empty crumb entries are handled.
 	$crumbs = array_filter( array_unique( $crumbs ) );
 
