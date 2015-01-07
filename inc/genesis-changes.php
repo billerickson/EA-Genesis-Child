@@ -45,15 +45,21 @@ function ea_remove_genesis_templates( $page_templates ) {
 add_filter( 'theme_page_templates', 'ea_remove_genesis_templates' );
 
 /**
- * Remove Breadcrumb Labels
+ * Remove Breadcrumb Arguments
  *
  * @since 1.0.0
  * @param array $args
  * @return array
  */
 function ea_breadcrumb_args( $args ) {
+
+	// Remove labels
 	foreach( $args['labels'] as $key => &$label )
 		$label = '';
+		
+	// Separator
+	$args['sep'] = ' <span class="sep" aria-label="breadcrumb-separator">/</span> ';
+	
 	return $args;
 }
 add_filter( 'genesis_breadcrumb_args', 'ea_breadcrumb_args', 5 );
