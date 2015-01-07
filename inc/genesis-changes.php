@@ -30,7 +30,7 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 
 // Remove header-right widget area if genesis-header-nav plugin is active
-if( class_exists( 'Genesis_Header_Nav' ) )
+if( class_exists( '\\Gamajo\\GenesisHeaderNav\\Plugin' ) )
 	unregister_sidebar( 'header-right' );
 
 /**
