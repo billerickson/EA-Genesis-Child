@@ -37,7 +37,7 @@ function ea_child_theme_setup() {
 	// add_image_size( 'ea_featured', 400, 100, true );
 
 	// Sidebars
-	// genesis_register_sidebar(
+	// genesis_register_widget_area(
 	// 	array(
 	// 		'id'          => 'blog-sidebar',
 	// 		'name'        => __( 'Blog Sidebar', 'ea_genesis_child' ),
