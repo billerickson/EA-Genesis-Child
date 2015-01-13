@@ -68,11 +68,6 @@ input[type="search"] {
 /* Typographical Elements
 --------------------------------------------- */
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
 	background-color: #fff;
 	color: #666;
