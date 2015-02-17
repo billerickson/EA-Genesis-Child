@@ -642,51 +642,6 @@ img.alignright,
 	text-align: center;
 }
 
-
-/* Structure and Layout
----------------------------------------------------------------------------------------------------- */
-
-/* Site Containers
---------------------------------------------- */
-
-.wrap {
-	margin: 0 auto;
-	max-width: 1140px;
-}
-
-.site-inner {
-	clear: both;
-}
-
-/* Column Widths and Positions
---------------------------------------------- */
-
-/* Content */
-
-.content {
-	float: right;
-	width: 64.912280702%; /* 740/1140 */
-}
-
-.content-sidebar .content {
-	float: left;
-}
-
-.full-width-content .content {
-	width: 100%;
-}
-
-/* Primary Sidebar */
-
-.sidebar-primary {
-	float: right;
-	width: 31.578947368%; /* 360/1140 */
-}
-
-.sidebar-content .sidebar-primary {
-	float: left;
-}
-
 /* 
  * Column Classes 
  *
@@ -765,6 +720,51 @@ img.alignright,
 .first {
 	clear: both;
 	margin-left: 0;
+}
+
+
+/* Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Site Containers
+--------------------------------------------- */
+
+.wrap {
+	margin: 0 auto;
+	max-width: 1140px;
+}
+
+.site-inner {
+	clear: both;
+}
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+/* Content */
+
+.content {
+	float: right;
+	width: 64.912280702%; /* 740/1140 */
+}
+
+.content-sidebar .content {
+	float: left;
+}
+
+.full-width-content .content {
+	width: 100%;
+}
+
+/* Primary Sidebar */
+
+.sidebar-primary {
+	float: right;
+	width: 31.578947368%; /* 360/1140 */
+}
+
+.sidebar-content .sidebar-primary {
+	float: left;
 }
 
 
