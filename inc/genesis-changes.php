@@ -26,12 +26,15 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 
-// Remove unused secondary sidebar
+// Remove unused sidebars
 unregister_sidebar( 'sidebar-alt' );
 
 // Remove header-right widget area if genesis-header-nav plugin is active
 if( class_exists( '\\Gamajo\\GenesisHeaderNav\\Plugin' ) )
 	unregister_sidebar( 'header-right' );
+	
+// Add New Sidebars
+// genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
 
 /**
  * Remove Genesis Templates

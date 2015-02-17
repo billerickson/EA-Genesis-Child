@@ -36,15 +36,6 @@ function ea_child_theme_setup() {
 	// Image Sizes
 	// add_image_size( 'ea_featured', 400, 100, true );
 
-	// Sidebars
-	// genesis_register_widget_area(
-	// 	array(
-	// 		'id'          => 'blog-sidebar',
-	// 		'name'        => __( 'Blog Sidebar', 'ea_genesis_child' ),
-	// 		'description' => __( '', 'ea_genesis_child' ),
-	// 	)
-	// );
-
 	// Dont update theme
 	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
