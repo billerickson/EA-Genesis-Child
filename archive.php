@@ -12,10 +12,10 @@
  * Blog Archive Body Class
  *
  */
-function be_blog_archive_body_class( $classes ) {
+function ea_blog_archive_body_class( $classes ) {
 	$classes[] = 'blog-archive';
 	return $classes;
 }
-add_filter( 'body_class', 'be_blog_archive_body_class' );
+add_filter( 'body_class', 'ea_blog_archive_body_class' );
 
 genesis();
