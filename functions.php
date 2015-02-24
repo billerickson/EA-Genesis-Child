@@ -56,7 +56,7 @@ function ea_child_theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
 	
 	// Blog Template
-	add_filter( 'template_include', 'be_blog_template' );
+	add_filter( 'template_include', 'ea_blog_template' );
  	
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
@@ -125,7 +125,7 @@ function ea_global_enqueues() {
  * Blog Template
  *
  */
-function be_blog_template( $template ) {
+function ea_blog_template( $template ) {
 	if( is_home() || is_search() )
 		$template = get_query_template( 'archive' );
 	return $template;
