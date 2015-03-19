@@ -186,6 +186,12 @@ hr,
 	padding: 20px 0 0;
 }
 
+i[class^="icon-"]:before {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
 
 /* Headings
 --------------------------------------------- */
