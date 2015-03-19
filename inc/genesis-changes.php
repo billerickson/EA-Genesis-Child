@@ -192,6 +192,24 @@ function ea_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 add_action( 'genesis_theme_settings_metaboxes', 'ea_remove_genesis_metaboxes' );
 
 /**
+ * Remove Genesis Customizer Settings
+ *
+ * @since  1.0.0
+ * @param object $wp_customize
+ */
+function ea_remove_genesis_customizer( $wp_customize ) {
+    $wp_customize->remove_section( 'static_front_page'    );
+    $wp_customize->remove_section( 'title_tagline'        );
+    $wp_customize->remove_section( 'nav'                  );
+    $wp_customize->remove_section( 'genesis_layout'       );
+    $wp_customize->remove_section( 'genesis_comments'     );
+    $wp_customize->remove_section( 'genesis_breadcrumbs'  );
+    $wp_customize->remove_section( 'genesis_archives'     );
+    $wp_customize->remove_section( 'genesis_color_scheme' );
+}
+//add_action( 'customize_register', 'ea_remove_genesis_customizer', 30 );
+
+/**
  * Default Titles for Term Archives
  *
  * @author Bill Erickson
