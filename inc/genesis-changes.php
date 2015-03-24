@@ -108,8 +108,8 @@ add_filter( 'genesis_build_crumbs', 'ea_wrap_last_breadcrumb', 10, 2 );
  * @since 1.0.0
  */
 function ea_remove_user_profile_fields() {
-	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
-	remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
+//	remove_action( 'show_user_profile', 'genesis_user_options_fields' );
+//	remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
 	remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
 	remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
 	remove_action( 'show_user_profile', 'genesis_user_seo_fields'     );
