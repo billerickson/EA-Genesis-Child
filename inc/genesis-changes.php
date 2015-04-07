@@ -187,6 +187,7 @@ function ea_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 	//remove_meta_box( 'genesis-theme-settings-comments',   $_genesis_theme_settings_pagehook, 'main' );
 	//remove_meta_box( 'genesis-theme-settings-posts',      $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-blogpage',   $_genesis_theme_settings_pagehook, 'main' );
+	//remove_meta_box( 'genesis-theme-settings-layout', $_genesis_theme_settings_pagehook, 'main' );
 	//remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
 }
 add_action( 'genesis_theme_settings_metaboxes', 'ea_remove_genesis_metaboxes' );
