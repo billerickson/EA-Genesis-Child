@@ -646,6 +646,10 @@ img.alignright,
 	margin: 0 0 24px 24px;
 }
 
+img.block {
+	display: block;
+}
+
 .wp-caption-text {
 	font-size: 14px;
 	font-weight: 700;
