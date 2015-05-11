@@ -260,7 +260,6 @@ select,
 textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
-	box-shadow: 1px 1px 3px #eee inset;
 	color: #999;
 	font-size: 14px;
 	padding: 10px;
