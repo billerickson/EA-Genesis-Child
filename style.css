@@ -885,34 +885,6 @@ p.site-title {
 	opacity: 1;
 }
 
-.genesis-nav-menu > .first > a {
-	padding-left: 0;
-}
-
-.genesis-nav-menu > .last > a {
-	padding-right: 0;
-}
-
-.genesis-nav-menu > .right {
-	float: right;
-	list-style-type: none;
-	padding: 28px 0;
-	text-transform: uppercase;
-}
-
-.genesis-nav-menu > .right > a {
-	display: inline;
-	padding: 0;
-}
-
-.genesis-nav-menu > .rss > a {
-	margin-left: 48px;
-}
-
-.genesis-nav-menu > .search {
-	padding: 14px 0 0;
-}
-
 /* Primary Navigation
 --------------------------------------------- */
 
