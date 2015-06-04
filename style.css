@@ -802,7 +802,9 @@ p.site-title {
 	background: url(images/logo.png) no-repeat;
 	display: block;
 	height: 69px;
-	text-indent: -9999em;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
 	width: 165px;
 }
 
