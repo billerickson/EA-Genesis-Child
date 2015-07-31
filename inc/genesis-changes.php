@@ -65,6 +65,35 @@ function ea_breadcrumb_args( $args ) {
 add_filter( 'genesis_breadcrumb_args', 'ea_breadcrumb_args', 5 );
 
 /**
+ * Wrap last breadcrumb in a span for styling
+ * @author Gary Jones
+ *
+ * @param array $crumbs, existing HTML markup for breadcrumbs
+ * @param array $args, breadcrumb arguments
+ * @return array $crumbs, amended breadcrumbs
+ */
+function ea_wrap_last_breadcrumb( $crumbs, $args ) {
+	// Don't run on home or front page
+	if( is_home() || is_front_page() )
+		return $crumbs;
+	// Ensure duplicate and empty crumb entries are handled.
+	$crumbs = array_filter( array_unique( $crumbs ) );
+	$last_crumb_index = count( $crumbs ) - 1;
+	// Some "crumbs" actually contain multiple separated crumbs (i.e. sub-pages)
+	// so make sure we're really only getting the last separated crumb
+	$crumb_parts = explode( $args['sep'], $crumbs[ $last_crumb_index ] );
+	if ( count( $crumb_parts ) > 1 ) {
+		$last_crumb_part_index = count( $crumb_parts ) - 1;
+		$crumb_parts[ $last_crumb_part_index ] = '<span class="last-breadcrumb">' . $crumb_parts[ $last_crumb_part_index ] . '</span>';
+		$crumbs[ $last_crumb_index ] = join( $args['sep'], $crumb_parts );
+	} else {
+		$crumbs[ $last_crumb_index ] = '<span class="last-breadcrumb">' . $crumbs[ $last_crumb_index ] . '</span>';
+	}
+	return $crumbs;
+}
+add_filter( 'genesis_build_crumbs', 'ea_wrap_last_breadcrumb', 10, 2 );
+
+/**
  * Removes Unused Genesis user settings
  *
  * @since 1.0.0
