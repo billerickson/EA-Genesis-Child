@@ -13,6 +13,9 @@ jQuery(function($){
 				if ( $('.site-header').css('position') == 'fixed' ) {
 					top_offset = $('.site-header').height();
 				}
+				if( $('body').hasClass('admin-bar') ) {
+					top_offset = $('#wpadminbar').height();
+				}
 				 $('html,body').animate({
 					 scrollTop: target.offset().top - top_offset
 				}, 1000);
