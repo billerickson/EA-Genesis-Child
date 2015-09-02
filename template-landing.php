@@ -31,6 +31,11 @@ remove_action( 'genesis_footer',        'genesis_footer_markup_close',       15 
 // No Nav Extras in Menu (ex: search)
 add_filter( 'genesis_pre_get_option_nav_extras_enable', '__return_false' );
 
+// Remove Header Nav
+if ( function_exists( 'Gamajo\GenesisHeaderNav\get_plugin' ) ) {
+	remove_action( 'genesis_header', array( Gamajo\GenesisHeaderNav\get_plugin(), 'show_menu' ), apply_filters( 'genesis_header_nav_priority', 12 ) );
+}
+
 /**
  * No Header Right widget area
  *
