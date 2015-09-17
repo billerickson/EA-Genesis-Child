@@ -8,6 +8,16 @@
  * @license      GPL-2.0+
  */
 
+// Duplicate 'the_content' filters
+global $wp_embed;
+add_filter( 'ea_the_content', array( $wp_embed, 'run_shortcode' ), 8 );
+add_filter( 'ea_the_content', array( $wp_embed, 'autoembed'     ), 8 );
+add_filter( 'ea_the_content', 'wptexturize'        );
+add_filter( 'ea_the_content', 'convert_chars'      );
+add_filter( 'ea_the_content', 'wpautop'            );
+add_filter( 'ea_the_content', 'shortcode_unautop'  );
+add_filter( 'ea_the_content', 'do_shortcode'       );
+
 /**
  * Shortcut function for get_post_meta();
  *
