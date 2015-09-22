@@ -81,7 +81,7 @@ function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = fals
 /**
  * Conditional CSS Classes
  *
- * @param string $base_classes, classes applied always applied
+ * @param string $base_classes, classes always applied
  * @param string $optional_class, additional class applied if $conditional is true
  * @param bool $conditional, whether to add $optional_class or not
  * @return string $classes
