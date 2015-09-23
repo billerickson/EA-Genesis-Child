@@ -95,9 +95,17 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
  *
  * @param int $type, number from 2-6
  * @param int $count, current count in the loop
+ * @param int $tablet_type, number of columns used on tablets
+ * @return string $classes
  */
-function ea_column_class( $type, $count ) {
+function ea_column_class( $type, $count, $tablet_type = false ) {
+	$output = '';
 	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
 	if( isset( $classes[$type] ) )
-		return ea_class( $classes[$type], 'first', 0 == $count % $type );
+		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
+		
+	if( $tablet_type && isset( $classes[$tablet_type] ) )
+		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
+		
+	return $output;
 }
