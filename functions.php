@@ -29,6 +29,9 @@ function ea_child_theme_setup() {
 
 	// Genesis Specific Changes
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
+	
+	// Helper Functions
+	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
