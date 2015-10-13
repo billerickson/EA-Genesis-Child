@@ -16,4 +16,13 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_title'                 )
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open',  5  );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
+/**
+ * Use h1 for site title
+ *
+ */
+function ea_h1_for_site_title( $wrap ) {
+	return 'h1';
+}
+add_filter( 'genesis_site_title_wrap', 'ea_h1_for_site_title' );
+
 genesis();
