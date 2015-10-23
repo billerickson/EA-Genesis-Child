@@ -973,26 +973,18 @@ p.site-title {
 --------------------------------------------- */
 
 .pagination {
-	clear: both;
-	font-size: 14px;
 	margin: 40px 0;
+	overflow: hidden;
+	width: 100%;
 }
 
 .pagination li {
-	display: inline;
+	display: inline-block;
 }
 
 .pagination li a {
-	background-color: #333;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
+	display: block;
 	padding: 8px 12px;
-}
-
-.pagination li a:hover,
-.pagination li.active a {
-	background-color: #f15123;
 }
 
 /* Comments
