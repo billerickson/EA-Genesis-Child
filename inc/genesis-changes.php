@@ -230,3 +230,26 @@ function ea_excerpt_more( $more ) {
     return '&hellip;';
 }
 add_filter( 'excerpt_more', 'ea_excerpt_more' );
+
+/**
+ * Echo the post image on archive pages.
+ * Same as genesis_do_post_image(), except we've added a class of .entry-image-link
+ *
+ */
+function ea_do_post_image() {
+
+	if ( ! is_singular() && genesis_get_option( 'content_archive_thumbnail' ) ) {
+		$img = genesis_get_image( array(
+			'format'  => 'html',
+			'size'    => genesis_get_option( 'image_size' ),
+			'context' => 'archive',
+			'attr'    => genesis_parse_attr( 'entry-image', array ( 'alt' => get_the_title() ) ),
+		) );
+
+		if ( ! empty( $img ) )
+			printf( '<a href="%s" class="entry-image-link" aria-hidden="true">%s</a>', get_permalink(), $img );
+	}
+
+}
+add_action( 'genesis_entry_content', 'ea_do_post_image', 8 );
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
