@@ -56,21 +56,41 @@ function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = 
  * @return string/object
  */
 function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = false ) {
+
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$terms = get_the_terms( $post_id, $taxonomy );
+	
 	if( empty( $terms ) || is_wp_error( $terms ) )
 		return false;
-	
-	// Sort by post count
-	$list = array();	
-	foreach( $terms as $term )
-		$list[$term->count] = $term;
-	ksort( $list, SORT_NUMERIC );
-	
-	// Grab first in array
-	$list = array_reverse( $list );
-	$term = array_shift( $list );
 		
+	// If there's only one term, use that
+	if( 1 == count( $terms ) ) {
+		$term = array_shift( $terms );
+
+	// If there's more than one...
+	} else {	
+	
+		// Sort by term order if available
+		// @uses WP Term Order plugin
+		if( isset( $terms[0]->order ) ) {
+			$list = array();
+			foreach( $terms as $term )
+				$list[$term->order] = $term;
+			ksort( $list, SORT_NUMERIC );
+		
+		// Or sort by post count
+		} else {
+			$list = array();	
+			foreach( $terms as $term )
+				$list[$term->count] = $term;
+			ksort( $list, SORT_NUMERIC );
+			$list = array_reverse( $list );		
+		}
+		
+		$term = array_shift( $list );
+	}
+		
+	// Output 	
 	if( $field && isset( $term->$field ) )
 		return $term->$field;
 	
