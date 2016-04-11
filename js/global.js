@@ -27,7 +27,7 @@ jQuery(function($){
 		ea_scroll( window.location.hash );
 	}
 	// -- Smooth scroll on click
-	$('a[href*=#]:not([href=#]):not(.no-scroll)').click(function() {
+	$('a[href*="#"]:not([href="#"]):not(.no-scroll)').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
 			ea_scroll( this.hash );
 		}
