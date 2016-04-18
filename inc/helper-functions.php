@@ -121,10 +121,10 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 function ea_column_class( $type, $count, $tablet_type = false ) {
 	$output = '';
 	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
-	if( isset( $classes[$type] ) )
+	if( !empty( $classes[$type] ) )
 		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
 		
-	if( $tablet_type && isset( $classes[$tablet_type] ) )
+	if( $tablet_type && !empty( $classes[$tablet_type] ) )
 		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
 		
 	return $output;
