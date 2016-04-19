@@ -7,7 +7,7 @@ jQuery(function($){
 	// Smooth scrolling anchor links
 	function ea_scroll( hash ) {
 		var target = $( hash );
-		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		target = target.length ? target : $('[name=' + hash.slice(1) +']');
 		if (target.length) {
 			var top_offset = 0;
 			if ( $('.site-header').css('position') == 'fixed' ) {
