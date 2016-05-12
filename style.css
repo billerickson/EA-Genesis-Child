@@ -380,43 +380,6 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-/* Search Form
---------------------------------------------- */
-
-.search-form {
-	max-width: 500px;
-}
-
-.search-form input[type="search"] {
-	max-width: 300px;
-}
-
-
-
-/* Gravity Forms
---------------------------------------------- */
-
-div.gform_wrapper input[type="email"],
-div.gform_wrapper input[type="text"],
-div.gform_wrapper textarea,
-div.gform_wrapper .ginput_complex label {
-	font-size: 16px;
-	padding: 5px 10px;
-}
-
-div.gform_wrapper .ginput_complex label {
-	padding: 0;
-}
-
-div.gform_wrapper li,
-div.gform_wrapper form li {
-	margin: 16px 0 0;
-}
-
-div.gform_wrapper .gform_footer input[type="submit"] {
-	font-size: 14px;
-}
-
 /* Gallery
 --------------------------------------------- */
 
