@@ -14,6 +14,9 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support( 'genesis-footer-widgets', 3 );
 add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-primary', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
 add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu', 'secondary' => 'Secondary Navigation Menu' ) );
+add_theme_support( 'genesis-inpost-layouts' );
+add_theme_support( 'genesis-archive-layouts' );
+
 
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
