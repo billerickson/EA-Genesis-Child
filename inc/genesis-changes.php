@@ -217,13 +217,26 @@ function ea_remove_genesis_customizer( $wp_customize ) {
  * @param object $term
  * @return string $headline
  */
-function ea_default_term_title( $headline, $term ) {
-	if( ( is_category() || is_tag() || is_tax() ) && empty( $headline ) )
-		$headline = $term->name;
-		
-	return $headline;
+function ea_default_term_title( $value, $term_id, $meta_key, $single ) {
+
+	if( ( is_category() || is_tag() || is_tax() ) && 'headline' == $meta_key && ! is_admin() ) {
+	
+		// Grab the current value, be sure to remove and re-add the hook to avoid infinite loops
+		remove_action( 'get_term_metadata', 'ea_default_term_title', 10 );
+		$value = get_term_meta( $term_id, 'headline', true );
+		add_action( 'get_term_metadata', 'ea_default_term_title', 10, 4 );
+
+		// Use term name if empty
+		if( empty( $value ) ) {
+			$term = get_term_by( 'term_taxonomy_id', $term_id, 'category' );
+			$value = $term->name;
+		}
+	
+	}
+
+	return $value;		
 }
-add_filter( 'genesis_term_meta_headline', 'ea_default_term_title', 10, 2 );
+add_filter( 'get_term_metadata', 'ea_default_term_title', 10, 4 );
 
 /**
  * Excerpt More
