@@ -228,7 +228,7 @@ function ea_default_term_title( $value, $term_id, $meta_key, $single ) {
 
 		// Use term name if empty
 		if( empty( $value ) ) {
-			$term = get_term_by( 'term_taxonomy_id', $term_id, 'category' );
+			$term = get_term_by( 'term_taxonomy_id', $term_id );
 			$value = $term->name;
 		}
 	
