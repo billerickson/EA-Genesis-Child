@@ -1180,25 +1180,6 @@ li.comment {
 		max-width: 960px;
 	}
 
-	.one-third.tablet-one-half,
-	.one-fourth.tablet-one-half {
-		width: 49.166666666667%;
-	}
-	
-	.one-third.first.tablet-one-half,
-	.one-fourth.first.tablet-one-half {
-		margin-left: 1.6666666666667%;	
-		clear: none;
-	}
-	
-	.one-third.tablet-one-half.tablet-first,
-	.one-third.first.tablet-one-half.tablet-first,
-	.one-fourth.tablet-one-half.tablet-first,
-	.one-fourth.first.tablet-one-half.tablet-first {
-		clear: both;
-		margin-left: 0;
-	}
-	
 }
 
 @media only screen and (max-width: 959px) {
@@ -1213,14 +1194,6 @@ li.comment {
 	.content,
 	.sidebar-primary,
 	.footer-widgets .widget-area,
-	.one-third.tablet-one-half,
-	.one-third.first.tablet-one-half,
-	.one-fourth.tablet-one-half,
-	.one-fourth.first.tablet-one-half,
-	.one-third.tablet-one-half.tablet-first,
-	.one-third.first.tablet-one-half.tablet-first,
-	.one-fourth.tablet-one-half.tablet-first,
-	.one-fourth.first.tablet-one-half.tablet-first,
 	.five-sixths,
 	.four-fifths,
 	.four-sixths,
