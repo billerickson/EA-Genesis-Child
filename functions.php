@@ -111,7 +111,8 @@ function ea_global_enqueues() {
 
 	// javascript
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'fitvids' ), '1.0', true );
+	wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.2.0', true );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'fitvids', 'sidr' ), '1.0', true );
 
 	// css
 	// global $wp_styles;
@@ -162,3 +163,12 @@ function ea_blog_template( $template ) {
 		$template = get_query_template( 'archive' );
 	return $template;
 }
+
+/**
+ * Mobile Menu Toggle
+ *
+ */
+function ea_mobile_menu_toggle() {
+	echo '<a class="mobile-menu-toggle" href="#"><i class="icon-menu"></i><i class="icon-close"></i></a>';
+}
+add_action( 'genesis_header', 'ea_mobile_menu_toggle', 12 );

@@ -3,7 +3,29 @@ jQuery(function($){
 	// FitVids
 	$('.entry-content').fitVids();
 
-	
+	// Mobile Menu
+	$('.mobile-menu-toggle').sidr({
+		name: 'sidr-mobile-menu',
+		source: '.nav-primary',
+		side: 'right',
+		renaming: false,
+	});
+	$('.menu-item-has-children').prepend('<span class="submenu-toggle">' );
+	$('.menu-item-has-children.sidr-class-current-menu-item').addClass('submenu-active');
+	$('.menu-item-has-children > .submenu-toggle').click(function(e){
+		$(this).parent().toggleClass('submenu-active');
+		e.preventDefault();
+	});
+	$('.sidr a').click(function(){
+		$.sidr('close', 'sidr-mobile-menu');
+	});
+	$(document).mouseup(function (e){
+		var container = $("#sidr-mobile-menu");
+		if (!container.is(e.target) && container.has(e.target).length === 0) { 
+			$.sidr('close', 'sidr-mobile-menu'); 
+		}
+	});
+		
 	// Smooth scrolling anchor links
 	function ea_scroll( hash ) {
 		var target = $( hash );
