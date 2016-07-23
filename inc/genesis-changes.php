@@ -239,6 +239,37 @@ function ea_default_term_title( $value, $term_id, $meta_key, $single ) {
 add_filter( 'get_term_metadata', 'ea_default_term_title', 10, 4 );
 
 /**
+ * Default Description for Term Archives
+ *
+ * @author Bill Erickson
+ * @see http://www.billerickson.net/default-category-and-tag-titles
+ *
+ * @param string $headline
+ * @param object $term
+ * @return string $headline
+ */
+function ea_default_term_description( $value, $term_id, $meta_key, $single ) {
+
+    if( ( is_category() || is_tag() || is_tax() ) && 'intro_text' == $meta_key && ! is_admin() ) {
+
+        // Grab the current value, be sure to remove and re-add the hook to avoid infinite loops
+        remove_action( 'get_term_metadata', 'ea_default_term_description', 10 );
+        $value = get_term_meta( $term_id, 'intro_text', true );
+        add_action( 'get_term_metadata', 'ea_default_term_description', 10, 4 );
+
+        // Use term name if empty
+        if( empty( $value ) ) {
+            $term = get_term_by( 'term_taxonomy_id', $term_id );
+            $value = $term->description;
+        }
+
+    }
+
+    return $value;      
+}
+add_filter( 'get_term_metadata', 'ea_default_term_description', 10, 4 );
+
+/**
  * Excerpt More
  *
  */
