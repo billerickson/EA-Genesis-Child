@@ -48,6 +48,10 @@ function ea_child_theme_setup() {
 	// Global enqueues
 	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
 	
+	// Extra TinyMCE Styles
+	add_filter( 'mce_buttons_2', 'ea_mce_editor_buttons' );
+	add_filter( 'tiny_mce_before_init', 'ea_mce_before_init' );
+	
 	// Blog Template
 	add_filter( 'template_include', 'ea_blog_template' );
  	
@@ -110,6 +114,38 @@ function ea_global_enqueues() {
 	// global $wp_styles;
 	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
 	// $wp_styles->add_data( 'ea-ie', 'conditional', 'lt IE 9'  );
+}
+
+/** 
+ * Add "Styles" drop-down to TinyMCE
+ *
+ * @since 1.0.0
+ * @param array $buttons
+ * @return array
+ */
+function ea_mce_editor_buttons( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+
+/** 
+ * Add styles/classes to the TinyMCE "Formats" drop-down 
+ *
+ * @since 1.0.0
+ * @param array $settings
+ * @return array
+ */
+function ea_mce_before_init( $settings ) {
+
+	$style_formats = array(
+		array(
+			'title'    => 'Button',
+			'selector' => 'a',
+			'classes'  => 'button',
+		),
+	);
+	$settings['style_formats'] = json_encode( $style_formats );
+	return $settings;
 }
 
 // ** Frontend Functions ** //
