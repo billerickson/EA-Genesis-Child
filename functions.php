@@ -26,6 +26,9 @@ if ( ! isset( $content_width ) )
 function ea_child_theme_setup() {
 
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
+	
+	// WordPress Cleanup
+	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 
 	// Genesis Specific Changes
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
