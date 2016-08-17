@@ -922,7 +922,7 @@ p.site-title {
 }
 
 .sidr-open .mobile-menu-toggle .icon-close {
-	display: block;
+	display: inline;
 }
  
 .sidr {
