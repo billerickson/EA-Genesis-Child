@@ -38,7 +38,7 @@ unregister_sidebar( 'sidebar-alt' );
 // Remove header-right widget area if genesis-header-nav plugin is active
 if( class_exists( '\\Gamajo\\GenesisHeaderNav\\Plugin' ) )
 	unregister_sidebar( 'header-right' );
-	
+
 // Add New Sidebars
 // genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
 
@@ -65,7 +65,7 @@ function ea_breadcrumb_args( $args ) {
 	// Remove labels
 	foreach( $args['labels'] as $key => &$label )
 		$label = '';
-		
+
 	return $args;
 }
 add_filter( 'genesis_breadcrumb_args', 'ea_breadcrumb_args', 5 );
@@ -220,7 +220,7 @@ function ea_remove_genesis_customizer( $wp_customize ) {
 function ea_default_term_title( $value, $term_id, $meta_key, $single ) {
 
 	if( ( is_category() || is_tag() || is_tax() ) && 'headline' == $meta_key && ! is_admin() ) {
-	
+
 		// Grab the current value, be sure to remove and re-add the hook to avoid infinite loops
 		remove_action( 'get_term_metadata', 'ea_default_term_title', 10 );
 		$value = get_term_meta( $term_id, 'headline', true );
@@ -231,10 +231,10 @@ function ea_default_term_title( $value, $term_id, $meta_key, $single ) {
 			$term = get_term_by( 'term_taxonomy_id', $term_id );
 			$value = $term->name;
 		}
-	
+
 	}
 
-	return $value;		
+	return $value;
 }
 add_filter( 'get_term_metadata', 'ea_default_term_title', 10, 4 );
 
@@ -265,7 +265,7 @@ function ea_default_term_description( $value, $term_id, $meta_key, $single ) {
 
     }
 
-    return $value;      
+    return $value;
 }
 add_filter( 'get_term_metadata', 'ea_default_term_description', 10, 4 );
 

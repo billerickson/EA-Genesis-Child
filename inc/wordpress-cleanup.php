@@ -16,32 +16,32 @@ function ea_clean_nav_menu_classes( $classes ) {
 
 	if( ! is_array( $classes ) )
 		return $classes;
-		
+
 	$allowed_classes = array(
 		'menu-item',
 		'current-menu-item',
 		'current-menu-ancestor',
 		'menu-item-has-children',
 	);
-	
+
 	return array_intersect( $classes, $allowed_classes );
 }
 add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes', 5 );
 
 /**
- * Clean Post Classes 
+ * Clean Post Classes
  *
  */
 function ea_clean_post_classes( $classes ) {
 
 	if( ! is_array( $classes ) )
 		return $classes;
-		
+
 	$allowed_classes = array(
 		'hentry',
 		'type-' . get_post_type(),
 	);
-	
+
 	return array_intersect( $classes, $allowed_classes );
 }
 add_filter( 'post_class', 'ea_clean_post_classes', 5 );

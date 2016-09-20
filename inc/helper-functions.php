@@ -39,7 +39,7 @@ function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = 
 		$value = $prepend . $value;
 	if( $value && $append )
 		$value .= $append;
-		
+
 	if ( $echo ) {
 		echo $value;
 	} else {
@@ -59,17 +59,17 @@ function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = fals
 
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$terms = get_the_terms( $post_id, $taxonomy );
-	
+
 	if( empty( $terms ) || is_wp_error( $terms ) )
 		return false;
-		
+
 	// If there's only one term, use that
 	if( 1 == count( $terms ) ) {
 		$term = array_shift( $terms );
 
 	// If there's more than one...
-	} else {	
-	
+	} else {
+
 		// Sort by term order if available
 		// @uses WP Term Order plugin
 		if( isset( $terms[0]->order ) ) {
@@ -77,23 +77,23 @@ function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = fals
 			foreach( $terms as $term )
 				$list[$term->order] = $term;
 			ksort( $list, SORT_NUMERIC );
-		
+
 		// Or sort by post count
 		} else {
-			$list = array();	
+			$list = array();
 			foreach( $terms as $term )
 				$list[$term->count] = $term;
 			ksort( $list, SORT_NUMERIC );
-			$list = array_reverse( $list );		
+			$list = array_reverse( $list );
 		}
-		
+
 		$term = array_shift( $list );
 	}
-		
-	// Output 	
+
+	// Output
 	if( $field && isset( $term->$field ) )
 		return $term->$field;
-	
+
 	else
 		return $term;
 }
@@ -123,9 +123,9 @@ function ea_column_class( $type, $count, $tablet_type = false ) {
 	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
 	if( !empty( $classes[$type] ) )
 		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
-		
+
 	if( $tablet_type && !empty( $classes[$tablet_type] ) )
 		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
-		
+
 	return $output;
 }

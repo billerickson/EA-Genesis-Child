@@ -21,11 +21,11 @@ jQuery(function($){
 	});
 	$(document).on( 'mouseup touchend', (function (e){
 		var container = $("#sidr-mobile-menu");
-		if (!container.is(e.target) && container.has(e.target).length === 0) { 
-			$.sidr('close', 'sidr-mobile-menu'); 
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+			$.sidr('close', 'sidr-mobile-menu');
 		}
 	}));
-		
+
 	// Smooth scrolling anchor links
 	function ea_scroll( hash ) {
 		var target = $( hash );
@@ -54,6 +54,6 @@ jQuery(function($){
 			ea_scroll( this.hash );
 		}
 	});
-	
-	
+
+
 });

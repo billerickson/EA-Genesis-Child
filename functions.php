@@ -13,12 +13,12 @@
  *
  */
 if ( ! isset( $content_width ) )
-    $content_width = 740; 
+    $content_width = 740;
 
 /**
  * Theme setup.
- * 
- * Attach all of the site-wide functions to the correct hooks and filters. All 
+ *
+ * Attach all of the site-wide functions to the correct hooks and filters. All
  * the functions themselves are defined below this setup function.
  *
  * @since 1.0.0
@@ -26,13 +26,13 @@ if ( ! isset( $content_width ) )
 function ea_child_theme_setup() {
 
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
-	
+
 	// WordPress Cleanup
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 
 	// Genesis Specific Changes
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
-	
+
 	// Helper Functions
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 
@@ -50,14 +50,14 @@ function ea_child_theme_setup() {
 
 	// Global enqueues
 	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
-	
+
 	// Extra TinyMCE Styles
 	add_filter( 'mce_buttons_2', 'ea_mce_editor_buttons' );
 	add_filter( 'tiny_mce_before_init', 'ea_mce_before_init' );
-	
+
 	// Blog Template
 	add_filter( 'template_include', 'ea_blog_template' );
- 	
+
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
 
@@ -84,8 +84,8 @@ function ea_dont_update_theme( $r, $url ) {
  	$r['body']['themes'] = json_encode( $themes );
  	return $r;
  }
- 
- 
+
+
 /**
  * Change the comment area text
  *
@@ -120,7 +120,7 @@ function ea_global_enqueues() {
 	// $wp_styles->add_data( 'ea-ie', 'conditional', 'lt IE 9'  );
 }
 
-/** 
+/**
  * Add "Styles" drop-down to TinyMCE
  *
  * @since 1.0.0
@@ -132,8 +132,8 @@ function ea_mce_editor_buttons( $buttons ) {
 	return $buttons;
 }
 
-/** 
- * Add styles/classes to the TinyMCE "Formats" drop-down 
+/**
+ * Add styles/classes to the TinyMCE "Formats" drop-down
  *
  * @since 1.0.0
  * @param array $settings
