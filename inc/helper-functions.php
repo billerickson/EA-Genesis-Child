@@ -58,36 +58,48 @@ function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = 
 function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = false ) {
 
 	$post_id = $post_id ? $post_id : get_the_ID();
-	$terms = get_the_terms( $post_id, $taxonomy );
+	$term = false;
 
-	if( empty( $terms ) || is_wp_error( $terms ) )
-		return false;
+	// Use WP SEO Primary Term
+	// from https://github.com/Yoast/wordpress-seo/issues/4038
+	if( class_exists( 'WPSEO_Primary_Term' ) ) {
+		$term = get_term( ( new WPSEO_Primary_Term( $taxonomy,  $post_id ) )->get_primary_term(), $taxonomy );
+	}
 
-	// If there's only one term, use that
-	if( 1 == count( $terms ) ) {
-		$term = array_shift( $terms );
+	// Fallback on term with highest post count
+	if( ! $term || is_wp_error( $term ) ) {
 
-	// If there's more than one...
-	} else {
+		$terms = get_the_terms( $post_id, $taxonomy );
 
-		// Sort by term order if available
-		// @uses WP Term Order plugin
-		if( isset( $terms[0]->order ) ) {
-			$list = array();
-			foreach( $terms as $term )
-				$list[$term->order] = $term;
-			ksort( $list, SORT_NUMERIC );
+		if( empty( $terms ) || is_wp_error( $terms ) )
+			return false;
 
-		// Or sort by post count
+		// If there's only one term, use that
+		if( 1 == count( $terms ) ) {
+			$term = array_shift( $terms );
+
+		// If there's more than one...
 		} else {
-			$list = array();
-			foreach( $terms as $term )
-				$list[$term->count] = $term;
-			ksort( $list, SORT_NUMERIC );
-			$list = array_reverse( $list );
-		}
 
-		$term = array_shift( $list );
+			// Sort by term order if available
+			// @uses WP Term Order plugin
+			if( isset( $terms[0]->order ) ) {
+				$list = array();
+				foreach( $terms as $term )
+					$list[$term->order] = $term;
+				ksort( $list, SORT_NUMERIC );
+
+			// Or sort by post count
+			} else {
+				$list = array();
+				foreach( $terms as $term )
+					$list[$term->count] = $term;
+				ksort( $list, SORT_NUMERIC );
+				$list = array_reverse( $list );
+			}
+
+			$term = array_shift( $list );
+		}
 	}
 
 	// Output
