@@ -188,24 +188,6 @@ img.wp-more-tag {
 	padding: 20px 0 0;
 }
 
-i.fa,
-i[class^="icon-"],
-i[class*="icon-"] {
-  display: inline-block;
-  text-indent: -9999em;
-}
-
-i.fa:before,
-i[class^="icon-"]:before,
-i[class*="icon-"]:before {
-    display: inline-block;
-    float: left;
-    margin: 0;
-    text-decoration: none;
-    text-indent: 0;
-    vertical-align: middle;
-}
-
 
 /* Headings
 --------------------------------------------- */
