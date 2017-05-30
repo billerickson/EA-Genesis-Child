@@ -1,0 +1,180 @@
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Box Sizing
+--------------------------------------------- */
+
+html,
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+	color: $base-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.nav-menu .sub-menu,
+.sidr li.menu-item-has-children > .submenu-toggle {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+a {
+	color: $highlight;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	margin: 0 0 $base-margin;
+	padding: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+blockquote {
+	background: rgba(0,0,0,0.10);
+	margin: 0 0 $base-margin;
+	font-style: italic;
+	padding: 0;
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+code,
+pre {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 12px;
+}
+
+code {
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+pre code {
+	padding: 0;
+	color: inherit;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+hr,
+.clear-line,
+img.wp-more-tag {
+	overflow: hidden;
+	width: 100%;
+	height: 1px;
+	border: none;
+	border-top: 1px solid $border_color;
+	margin: 0 0 $base-margin;
+}
+
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $base-color;
+	line-height: 1.2;
+	margin: 0;
+	margin-bottom: $base-margin / 2;
+	padding: 0;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}

@@ -1,0 +1,39 @@
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: 400;
+$base-font-size: 18px;
+$base-line-height: 1.4;
+$base-margin: 32px;
+
+// Colors
+$base-color: #58595B;
+$highlight: #50BD3A;
+$border-color: #ccc;
+$white: #fff;
+
+// Bootstrap
+$grid-gutter-width: 30px;
+$screen-xs: 520px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$max-width: 1356px;
+
+// Sidr
+$sidr_width: 345px;
+$sidr_close: 44px;
+$sidr_total: $sidr_width + $sidr_close;
+
+// Breakpoints
+$breakpoints: (
+  'mobile': $screen-xs,
+  'tablet': $screen-sm,
+  'medium': $screen-md,
+  'large' : $screen-lg,
+  'max'   : $max-width,
+  'sidr_total': $sidr_total,
+);
+
+@import "../vendor/bootstrap"; // Note: Unused CSS parts have been disabled
+@import "../vendor/include-media";
+@import "../modules/helpers";

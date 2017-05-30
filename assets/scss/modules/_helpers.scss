@@ -1,0 +1,81 @@
+/**
+ * Margin, No Edge
+ * Removes left margin from first item, right margin from last item
+ */
+@mixin margin-no-edge( $margin ) {
+  margin: $margin;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+
+/**
+ * Block Cover
+ * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
+ */
+@mixin block-cover() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/**
+ * Placeholder Color
+ *
+ */
+@mixin placeholder-color( $color ) {
+
+  ::-moz-placeholder {
+  	color: $color;
+  	opacity: 1;
+  }
+
+  ::-ms-input-placeholder {
+  	color: $color;
+  }
+
+  ::-webkit-input-placeholder {
+  	color: $color;
+  }
+
+  input:focus::-webkit-input-placeholder,
+  input:focus::-moz-placeholder,
+  input:focus:-ms-input-placeholder,
+  textarea:focus::-webkit-input-placeholder,
+  textarea:focus::-moz-placeholder,
+  textarea:focus:-ms-input-placeholder {
+  	color:transparent;
+  }
+
+}
+
+
+/**
+ * Icon Font
+ *
+ */
+@mixin icon-font() {
+    /* use !important to prevent issues with browser extensions that change fonts */
+     font-family: 'icomoon' !important;
+     speak: none;
+     font-style: normal;
+     font-weight: normal;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+
+     /* Better Font Rendering =========== */
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}

@@ -8,6 +8,11 @@
  * @license      GPL-2.0+
  */
 
+/*
+BEFORE MODIFYING THIS THEME:
+Please read the instructions here: https://github.com/billerickson/EA-Genesis-Child/blob/master/README.md
+*/
+
 /**
  * Set up the content width value based on the theme's design.
  *
@@ -113,9 +118,8 @@ function ea_global_enqueues() {
 	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), '1.0', true );
 
 	// css
-	// global $wp_styles;
-	// wp_enqueue_style( 'ea-ie', CHILD_URL . '/css/ie.css' );
-	// $wp_styles->add_data( 'ea-ie', 'conditional', 'lt IE 9'  );
+    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
+    wp_dequeue_style( 'child-theme' );
 }
 
 /**

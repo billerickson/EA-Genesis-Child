@@ -1,0 +1,53 @@
+/* Add left/right padding to these containers */
+.wrap {
+    @include container-fixed( $grid-gutter-width );
+    max-width: $max_width;
+    margin: 0 auto;
+
+    @include media(">=tablet", "<medium") {
+        .col-sm-first {
+            clear: both;
+        }
+    }
+
+    @include media(">=medium", "<large") {
+        .col-md-first {
+            clear: both;
+        }
+    }
+
+    @include media(">=large") {
+        .col-lg-first {
+            clear: both;
+        }
+    }
+}
+
+.sidebar-content,
+.content-sidebar {
+
+    .content-sidebar-wrap {
+
+        .content {
+            @include make-sm-column(8);
+        }
+
+        .sidebar-primary {
+            @include make-sm-column(4);
+        }
+    }
+}
+
+.sidebar-content {
+
+    .content-sidebar-wrap {
+
+        .content {
+            @include make-sm-column-push(4);
+        }
+
+        .sidebar-primary {
+            @include make-sm-column-pull(8);
+        }
+    }
+}
