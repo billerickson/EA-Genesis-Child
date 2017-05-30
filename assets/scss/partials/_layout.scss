@@ -27,7 +27,8 @@
 .content-sidebar {
 
     .content-sidebar-wrap {
-
+        @include make-row;
+        
         .content {
             @include make-sm-column(8);
         }
