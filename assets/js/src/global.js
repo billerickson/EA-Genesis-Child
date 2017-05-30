@@ -1,3 +1,6 @@
+// @codekit-prepend "jquery.fitvids.js"
+// @codekit-prepend "jquery.sidr.min.js"
+
 jQuery(function($){
 
 	// FitVids
@@ -6,9 +9,9 @@ jQuery(function($){
 	// Mobile Menu
 	$('.mobile-menu-toggle').sidr({
 		name: 'sidr-mobile-menu',
-		source: '.nav-primary',
 		side: 'right',
 		renaming: false,
+		displace: false,
 	});
 	$('.menu-item-has-children').prepend('<span class="submenu-toggle">' );
 	$('.menu-item-has-children.sidr-class-current-menu-item').addClass('submenu-active');
@@ -18,6 +21,9 @@ jQuery(function($){
 	});
 	$('.sidr a').click(function(){
 		$.sidr('close', 'sidr-mobile-menu');
+	});
+	$('.sidr-menu-close').click(function(e){
+		e.preventDefault();
 	});
 	$(document).on( 'mouseup touchend', (function (e){
 		var container = $("#sidr-mobile-menu");
@@ -29,7 +35,7 @@ jQuery(function($){
 	// Smooth scrolling anchor links
 	function ea_scroll( hash ) {
 		var target = $( hash );
-		target = target.length ? target : $('[name=' + hash.slice(1) +']');
+		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 		if (target.length) {
 			var top_offset = 0;
 			if ( $('.site-header').css('position') == 'fixed' ) {

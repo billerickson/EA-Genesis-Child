@@ -110,9 +110,7 @@ function ea_comment_text( $args ) {
 function ea_global_enqueues() {
 
 	// javascript
-	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
-	wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.2.0', true );
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'fitvids', 'sidr' ), '1.0', true );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), '1.0', true );
 
 	// css
 	// global $wp_styles;
