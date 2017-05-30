@@ -32,13 +32,10 @@ function ea_child_theme_setup() {
 
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 
-	// WordPress Cleanup
+	// Includes
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
-
-	// Genesis Specific Changes
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
-
-	// Helper Functions
+    include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 
 	// Editor Styles
@@ -47,49 +44,17 @@ function ea_child_theme_setup() {
 	// Image Sizes
 	// add_image_size( 'ea_featured', 400, 100, true );
 
-	// Dont update theme
-	add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
-
 	// Set comment area defaults
 	add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
 	// Global enqueues
 	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
 
-	// Extra TinyMCE Styles
-	add_filter( 'mce_buttons_2', 'ea_mce_editor_buttons' );
-	add_filter( 'tiny_mce_before_init', 'ea_mce_before_init' );
-
 	// Blog Template
 	add_filter( 'template_include', 'ea_blog_template' );
 
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
-
-// ** Backend Functions ** //
-
-/**
- * Dont Update the Theme
- *
- * If there is a theme in the repo with the same name, this prevents WP from prompting an update.
- *
- * @since  1.0.0
- * @author Bill Erickson
- * @link   http://www.billerickson.net/excluding-theme-from-updates
- * @param  array $r Existing request arguments
- * @param  string $url Request URL
- * @return array Amended request arguments
- */
-function ea_dont_update_theme( $r, $url ) {
-	if ( 0 !== strpos( $url, 'https://api.wordpress.org/themes/update-check/1.1/' ) )
- 		return $r; // Not a theme update request. Bail immediately.
- 	$themes = json_decode( $r['body']['themes'] );
- 	$child = get_option( 'stylesheet' );
-	unset( $themes->themes->$child );
- 	$r['body']['themes'] = json_encode( $themes );
- 	return $r;
- }
-
 
 /**
  * Change the comment area text
@@ -121,40 +86,6 @@ function ea_global_enqueues() {
     wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
     wp_dequeue_style( 'child-theme' );
 }
-
-/**
- * Add "Styles" drop-down to TinyMCE
- *
- * @since 1.0.0
- * @param array $buttons
- * @return array
- */
-function ea_mce_editor_buttons( $buttons ) {
-	array_unshift( $buttons, 'styleselect' );
-	return $buttons;
-}
-
-/**
- * Add styles/classes to the TinyMCE "Formats" drop-down
- *
- * @since 1.0.0
- * @param array $settings
- * @return array
- */
-function ea_mce_before_init( $settings ) {
-
-	$style_formats = array(
-		array(
-			'title'    => 'Button',
-			'selector' => 'a',
-			'classes'  => 'button',
-		),
-	);
-	$settings['style_formats'] = json_encode( $style_formats );
-	return $settings;
-}
-
-// ** Frontend Functions ** //
 
 /**
  * Blog Template

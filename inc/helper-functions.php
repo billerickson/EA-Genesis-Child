@@ -1,8 +1,8 @@
 <?php
 /**
- * EA Genesis Child.
+ * EA Starter
  *
- * @package      EAGenesisChild
+ * @package      EAStarter
  * @since        1.0.0
  * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
@@ -17,35 +17,6 @@ add_filter( 'ea_the_content', 'convert_chars'      );
 add_filter( 'ea_the_content', 'wpautop'            );
 add_filter( 'ea_the_content', 'shortcode_unautop'  );
 add_filter( 'ea_the_content', 'do_shortcode'       );
-
-/**
- * Shortcut function for get_post_meta();
- *
- * @since 1.2.0
- * @param string $key
- * @param int $id
- * @param boolean $echo
- * @param string $prepend
- * @param string $append
- * @param string $escape
- * @return string
- */
-function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = false, $escape = false ) {
-	$id    = ( empty( $id ) ? get_the_ID() : $id );
-	$value = get_post_meta( $id, $key, true );
-	if( $escape )
-		$value = call_user_func( $escape, $value );
-	if( $value && $prepend )
-		$value = $prepend . $value;
-	if( $value && $append )
-		$value .= $append;
-
-	if ( $echo ) {
-		echo $value;
-	} else {
-		return $value;
-	}
-}
 
 /**
  * Get the first term attached to post
@@ -125,19 +96,30 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 /**
  * Column Classes
  *
- * @param int $type, number from 2-6
- * @param int $count, current count in the loop
- * @param int $tablet_type, number of columns used on tablets
- * @return string $classes
+ * Adds "-first" classes when appropriate for clearing float
+ * @see /assets/scss/partials/layout.scss
+ *
+ * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
+ * @param int $current, current post in loop
+ * @return array $classes
  */
-function ea_column_class( $type, $count, $tablet_type = false ) {
-	$output = '';
-	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
-	if( !empty( $classes[$type] ) )
-		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
+function ea_column_class( $classes = array(), $current = false ) {
 
-	if( $tablet_type && !empty( $classes[$tablet_type] ) )
-		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
+	if( false === $current )
+		return $classes;
 
-	return $output;
+	$columns = array( 2, 3, 4, 6 );
+	foreach( $columns as $column ) {
+		if( 0 == $current % $column ) {
+
+			$col = 12 / $column;
+			foreach( $classes as $class ) {
+				if( false != strstr( $class, (string) $col ) ) {
+					$classes[] = str_replace( $col, 'first', $class );
+				}
+			}
+		}
+	}
+
+	return $classes;
 }
