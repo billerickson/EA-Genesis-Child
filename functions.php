@@ -30,7 +30,7 @@ if ( ! isset( $content_width ) )
  */
 function ea_child_theme_setup() {
 
-	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
+	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 
 	// WordPress Cleanup
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
@@ -42,7 +42,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 
 	// Editor Styles
-	add_editor_style( 'css/editor-style.css' );
+	add_editor_style( 'assets/css/editor-style.css' );
 
 	// Image Sizes
 	// add_image_size( 'ea_featured', 400, 100, true );
