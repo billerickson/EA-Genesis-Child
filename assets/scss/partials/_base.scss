@@ -1,15 +1,17 @@
 // Base Font
 $base-font-family: sans-serif;
-$base-font-weight: 400;
-$base-font-size: 18px;
-$base-line-height: 1.4;
 $base-margin: 32px;
 
 // Colors
-$base-color: #58595B;
-$highlight: #50BD3A;
-$border-color: #ccc;
 $white: #fff;
+$grey_1: #ccc;
+$grey_2: #333;
+$black: #000;
+$green_1: #50BD3A;
+
+$base-color: $grey_2;
+$highlight: $green_1;
+$border-color: $grey_1;
 
 // Bootstrap
 $grid-gutter-width: 30px;
