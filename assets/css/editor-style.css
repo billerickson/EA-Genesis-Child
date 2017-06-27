@@ -1506,42 +1506,34 @@ input[type="search"]::-webkit-search-results-button {
 .avatar {
   float: left; }
 
-.alignleft .avatar {
-  margin-right: 24px; }
-
-.alignright .avatar {
-  margin-left: 24px; }
-
 .wp-caption {
-  margin: 0 0 24px; }
-
-.wp-caption-text {
-  font-size: 14px;
-  font-style: italic;
-  text-align: center; }
-
-img.centered,
-.aligncenter {
-  display: block;
-  margin: 0 auto 24px; }
+  margin: 0 0 32px; }
+  .wp-caption img {
+    margin-bottom: 12px; }
+  .wp-caption .wp-caption-text {
+    font-size: 14px;
+    text-align: center; }
+  .wp-caption.alignleft {
+    margin: 0 32px 32px 0; }
+  .wp-caption.aligncenter {
+    margin: 0 auto 32px; }
+  .wp-caption.alignright {
+    margin: 0 0 32px 32px; }
 
 img.alignnone {
-  margin-bottom: 12px; }
+  margin: 0; }
 
-.alignleft {
+img.alignleft {
   float: left;
-  text-align: left; }
+  margin: 0 32px 32px 0; }
 
-.alignright {
-  float: right; }
+img.aligncenter {
+  display: block;
+  margin: 0 auto 32px; }
 
-img.alignleft,
-.wp-caption.alignleft {
-  margin: 0 24px 24px 0; }
-
-img.alignright,
-.wp-caption.alignright {
-  margin: 0 0 24px 24px; }
+img.alignright {
+  float: right;
+  margin: 0 0 32px 32px; }
 
 img.block {
   display: block; }
