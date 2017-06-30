@@ -99,6 +99,7 @@
     }
 
     &.alignleft {
+        float: left;
         margin: 0 $base-margin $base-margin 0;
     }
 
@@ -107,6 +108,7 @@
     }
 
     &.alignright {
+        float: right;
         margin: 0 0 $base-margin $base-margin;
     }
 }

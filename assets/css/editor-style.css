@@ -237,7 +237,6 @@ img {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -1237,7 +1236,6 @@ textarea:focus,
 .button,
 .nav-menu .sub-menu,
 .sidr li.menu-item-has-children > .submenu-toggle {
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out; }
 
 a {
@@ -1514,10 +1512,12 @@ input[type="search"]::-webkit-search-results-button {
     font-size: 14px;
     text-align: center; }
   .wp-caption.alignleft {
+    float: left;
     margin: 0 32px 32px 0; }
   .wp-caption.aligncenter {
     margin: 0 auto 32px; }
   .wp-caption.alignright {
+    float: right;
     margin: 0 0 32px 32px; }
 
 img.alignnone {
