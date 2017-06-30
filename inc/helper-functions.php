@@ -26,7 +26,7 @@ add_filter( 'ea_the_content', 'do_shortcode'       );
  * @param int $post_id
  * @return string/object
  */
-function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = false ) {
+function ea_first_term( $taxonomy = 'category', $field = false, $post_id = false ) {
 
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$term = false;
