@@ -1305,6 +1305,22 @@ img.wp-more-tag {
   border-top: 1px solid #ccc;
   margin: 0 0 32px; }
 
+/* List Items
+--------------------------------------------- */
+ol {
+  margin: 0 0 32px 32px; }
+  ol li {
+    list-style-type: decimal; }
+  ol ol {
+    margin-bottom: 0; }
+
+ul {
+  margin: 0 0 32px 32px; }
+  ul li {
+    list-style-type: disc; }
+  ul ul {
+    margin-bottom: 0; }
+
 /* Headings
 --------------------------------------------- */
 h1,

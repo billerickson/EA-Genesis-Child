@@ -121,6 +121,32 @@ img.wp-more-tag {
 	margin: 0 0 $base-margin;
 }
 
+/* List Items
+--------------------------------------------- */
+
+ol {
+    margin: 0 0 $base-margin $base-margin;
+
+    li {
+        list-style-type: decimal;
+    }
+
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    margin: 0 0 $base-margin $base-margin;
+
+    li {
+        list-style-type: disc;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+}
 
 /* Headings
 --------------------------------------------- */
