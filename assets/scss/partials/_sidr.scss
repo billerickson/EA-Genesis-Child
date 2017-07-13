@@ -49,10 +49,12 @@ body.sidr-open:before {
 	max-width: $sidr_width;
 	overflow-y: scroll;
 
-	.menu {
+	ul.menu {
+		margin: 0;
 
 		li {
 			list-style-type: none;
+			padding: 0;
 			position: relative;
 
 			a {
@@ -104,6 +106,7 @@ body.sidr-open:before {
 
 			ul {
 				display: none;
+				margin: 0;
 
 				li {
 					a {
