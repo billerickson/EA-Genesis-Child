@@ -101,9 +101,10 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
  *
  * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
  * @param int $current, current post in loop
- * @return array $classes
+ * @param bool $join, whether to join classes (return string) or not (return array)
+ * @return string/array $classes
  */
-function ea_column_class( $classes = array(), $current = false ) {
+function ea_column_class( $classes = array(), $current = false, $join = true ) {
 
 	if( false === $current )
 		return $classes;
@@ -121,5 +122,9 @@ function ea_column_class( $classes = array(), $current = false ) {
 		}
 	}
 
-	return $classes;
+	if( $join ) {
+		return join( ' ', $classes );
+	} else {
+		return $classes;
+	}
 }
