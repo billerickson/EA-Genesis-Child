@@ -165,27 +165,27 @@ h6 {
 }
 
 h1 {
-	font-size: 36px;
+    @include font-sizes( 40px, 36px, 30px );
 }
 
 h2 {
-	font-size: 30px;
+    @include font-sizes( 36px, 30px, 24px );
 }
 
 h3 {
-	font-size: 24px;
+    @include font-sizes( 30px, 24px, 20px );
 }
 
 h4 {
-	font-size: 20px;
+    @include font-sizes( 24px, 20px, 18px );
 }
 
 h5 {
-	font-size: 18px;
+    @include font-sizes( 20px, 18px, 16px );
 }
 
 h6 {
-	font-size: 16px;
+    @include font-sizes( 18px, 16px );
 }
 
 /* Objects

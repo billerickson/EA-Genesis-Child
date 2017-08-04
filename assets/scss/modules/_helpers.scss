@@ -79,3 +79,34 @@
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
 }
+
+
+/**
+ * Font Sizes
+ *
+**/
+@mixin font-sizes( $base: null, $tablet: null, $medium: null, $large: null ) {
+
+    @if ( $base ) {
+        font-size: base;
+    }
+
+    @if( $tablet ) {
+        @include media(">=tablet") {
+            font-size: $tablet;
+        }
+    }
+
+    @if( $medium ) {
+        @include media(">=medium") {
+            font-size: $medium;
+        }
+    }
+
+    @if( $large ) {
+        @include media(">=large") {
+            font-size: $large;
+        }
+    }
+
+}

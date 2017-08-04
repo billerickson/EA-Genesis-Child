@@ -1206,6 +1206,10 @@ table th[class*="col-"] {
  * Icon Font
  *
  */
+/**
+ * Font Sizes
+ *
+**/
 /* Defaults
 ---------------------------------------------------------------------------------------------------- */
 /* Box Sizing
@@ -1336,22 +1340,55 @@ h6 {
   padding: 0; }
 
 h1 {
-  font-size: 36px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 36px; } }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 30px; } }
 
 h2 {
-  font-size: 30px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 30px; } }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 24px; } }
 
 h3 {
-  font-size: 24px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 24px; } }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 20px; } }
 
 h4 {
-  font-size: 20px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 20px; } }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 18px; } }
 
 h5 {
-  font-size: 18px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h5 {
+      font-size: 18px; } }
+  @media (min-width: 1024px) {
+    h5 {
+      font-size: 16px; } }
 
 h6 {
-  font-size: 16px; }
+  font-size: base; }
+  @media (min-width: 768px) {
+    h6 {
+      font-size: 16px; } }
 
 /* Objects
 --------------------------------------------- */
