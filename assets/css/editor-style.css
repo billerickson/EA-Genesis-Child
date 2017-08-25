@@ -93,7 +93,8 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0; }
 
 pre {
@@ -143,7 +144,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0; }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -152,7 +154,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: content-box; }
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -182,10 +185,12 @@ th {
   padding: 0; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 *:before,
 *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -237,6 +242,7 @@ img {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -1216,10 +1222,12 @@ table th[class*="col-"] {
 --------------------------------------------- */
 html,
 input[type="search"] {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 *, *:before, *:after {
-  box-sizing: inherit; }
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
 
 /* Typographical Elements
 --------------------------------------------- */
@@ -1240,6 +1248,7 @@ textarea:focus,
 .button,
 .nav-menu .sub-menu,
 .sidr li.menu-item-has-children > .submenu-toggle {
+  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out; }
 
 a {
@@ -1308,6 +1317,20 @@ img.wp-more-tag {
   border: none;
   border-top: 1px solid #ccc;
   margin: 0 0 32px; }
+
+/* Extra Paragraph Styles
+--------------------------------------------- */
+p.large {
+  font-size: base; }
+  @media (min-width: 1024px) {
+    p.large {
+      font-size: 20px; } }
+
+p.small {
+  font-size: 12px; }
+
+p.extra-margin {
+  margin-bottom: calc( 32px * 2); }
 
 /* List Items
 --------------------------------------------- */
@@ -1451,7 +1474,8 @@ input[type="submit"],
   background: #50BD3A;
   border: none;
   border-radius: 4px;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #fff;
   cursor: pointer;
   padding: 10px;
@@ -1617,7 +1641,8 @@ img.block {
   z-index: 100000;
   /* Above WP toolbar. */
   text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
 
 /*
  * Column Classes

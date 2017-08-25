@@ -36,6 +36,21 @@
  			'selector' => 'a',
  			'classes'  => 'button',
  		),
+		array(
+			'title'    => 'Large Paragraph',
+			'selector' => 'p',
+			'classes'  => 'large',
+		),
+		array(
+			'title'    => 'Small Paragraph',
+			'selector' => 'p',
+			'classes'  => 'small',
+		),
+		array(
+			'title'    => 'Extra Margin Paragraph',
+			'selector' => 'p',
+			'classes'  => 'extra-margin',
+		)
  	);
  	$settings['style_formats'] = json_encode( $style_formats );
  	return $settings;

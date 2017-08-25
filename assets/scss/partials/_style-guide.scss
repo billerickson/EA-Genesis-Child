@@ -121,6 +121,24 @@ img.wp-more-tag {
 	margin: 0 0 $base-margin;
 }
 
+/* Extra Paragraph Styles
+--------------------------------------------- */
+
+p {
+
+	&.large {
+    	@include font-sizes( 18px, null, 20px );
+	}
+
+	&.small {
+	    font-size: 12px;
+	}
+
+	&.extra-margin {
+		margin-bottom: calc( #{$base-margin} * 2 );
+	}
+}
+
 /* List Items
 --------------------------------------------- */
 
