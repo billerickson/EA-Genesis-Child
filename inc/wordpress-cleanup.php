@@ -89,3 +89,12 @@ function ea_remove_custom_fields_metabox() {
 	}
 }
 add_action( 'admin_menu' , 'ea_remove_custom_fields_metabox' );
+
+/**
+ * Excerpt More
+ *
+ */
+function ea_excerpt_more() {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'ea_excerpt_more' );
