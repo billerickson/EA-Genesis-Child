@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1301,6 +1302,13 @@ blockquote {
   margin: 0 0 32px;
   font-style: italic;
   padding: 0; }
+  blockquote cite {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 17px; }
+    blockquote cite:before {
+      content: '— '; }
   blockquote p:last-of-type {
     margin-bottom: 0; }
 

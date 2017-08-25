@@ -70,6 +70,17 @@ blockquote {
 	font-style: italic;
 	padding: 0;
 
+	cite {
+		display: block;
+		font-size: 18px;
+		font-weight: 500;
+		margin-top: 17px;
+
+		&:before {
+			content: '— ';
+		}
+	}
+
     p:last-of-type {
         margin-bottom: 0;
     }
