@@ -115,7 +115,7 @@ function ea_column_class( $classes = array(), $current = false, $join = true ) {
 
 			$col = 12 / $column;
 			foreach( $classes as $class ) {
-				if( false != strstr( $class, (string) $col ) ) {
+				if( false != strstr( $class, (string) $col ) && false == strstr( $class, '12' ) ) {
 					$classes[] = str_replace( $col, 'first', $class );
 				}
 			}
