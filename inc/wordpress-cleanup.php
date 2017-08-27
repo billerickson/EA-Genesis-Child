@@ -32,6 +32,18 @@
  add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
 /**
+ * Dequeue jQuery Migrate
+ *
+ */
+function ea_dequeue_jquery_migrate( &$scripts ){
+	if( !is_admin() ) {
+		$scripts->remove( 'jquery');
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+	}
+}
+add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
+
+/**
  * Clean Nav Menu Classes
  *
  */
