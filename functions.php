@@ -85,6 +85,11 @@ function ea_global_enqueues() {
 	// css
     wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
     wp_dequeue_style( 'child-theme' );
+
+	// Move jQuery to footer
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+	wp_enqueue_script( 'jquery' );
 }
 
 /**
