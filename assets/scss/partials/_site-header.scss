@@ -5,7 +5,7 @@
 	position: relative;
 }
 
-.title-area {
+.site-branding {
 	float: left;
 	width: 165px;
 
@@ -31,20 +31,26 @@
 /* Admin Bar
 --------------------------------------------- */
 
-@include media(">tablet") {
-  .admin-bar .site-container {
-    padding-top: 32px;
-  }
+@include media(">=tablet" ) {
+	.admin-bar .site-container {
+		padding-top: 32px;
+	}
 }
 
-@include media("<=tablet") {
-  #wpadminbar {
-    display: none !important;
-  }
+@include media("<tablet") {
+	#wpadminbar {
+		display: none !important;
+	}
 }
 
 /* Site Navigation
 --------------------------------------------- */
+
+.mobile-menu-toggle {
+	@include media(">=tablet") {
+		display: none;
+	}
+}
 
 .nav-primary {
 	float: right;

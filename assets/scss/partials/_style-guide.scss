@@ -22,6 +22,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.6;
+	margin: 0;
 }
 
 a,
@@ -132,6 +133,10 @@ img.wp-more-tag {
 	margin: 0 0 $base-margin;
 }
 
+.clearfix {
+	@include clearfix;
+}
+
 /* Extra Paragraph Styles
 --------------------------------------------- */
 
@@ -191,30 +196,39 @@ h6 {
 	margin: 0;
 	margin-bottom: $base-margin / 2;
 	padding: 0;
+
+	a {
+		color: $base-color;
+
+		&:hover {
+			color: $highlight;
+			text-decoration: none;
+		}
+	}
 }
 
 h1 {
-    @include font-sizes( 40px, 36px, 30px );
+    @include font-sizes( 30px, 36px, 40px );
 }
 
 h2 {
-    @include font-sizes( 36px, 30px, 24px );
+    @include font-sizes( 24px, 30px, 36px );
 }
 
 h3 {
-    @include font-sizes( 30px, 24px, 20px );
+    @include font-sizes( 20px, 24px, 30px );
 }
 
 h4 {
-    @include font-sizes( 24px, 20px, 18px );
+    @include font-sizes( 18px, 20px, 24px );
 }
 
 h5 {
-    @include font-sizes( 20px, 18px, 16px );
+    @include font-sizes( 16px, 18px, 20px );
 }
 
 h6 {
-    @include font-sizes( 18px, 16px );
+    @include font-sizes( 16px, 18px );
 }
 
 /* Objects

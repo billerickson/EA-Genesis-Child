@@ -60,6 +60,17 @@
 
 }
 
+/**
+ * Clearfix
+ *
+ */
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 
 /**
  * Icon Font
@@ -88,7 +99,7 @@
 @mixin font-sizes( $base: null, $tablet: null, $medium: null, $large: null ) {
 
     @if ( $base ) {
-        font-size: base;
+        font-size: $base;
     }
 
     @if( $tablet ) {
@@ -104,7 +115,7 @@
     }
 
     @if( $large ) {
-        @include media(">=large") {
+        @include media(">=desktop") {
             font-size: $large;
         }
     }

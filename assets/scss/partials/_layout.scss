@@ -1,54 +1,24 @@
 /* Add left/right padding to these containers */
 .wrap {
-    @include container-fixed( $grid-gutter-width );
-    max-width: $max_width;
+    max-width: map-get( $breakpoints, 'desktop' );
     margin: 0 auto;
-
-    @include media(">=tablet", "<medium") {
-        .col-sm-first {
-            clear: both;
-        }
-    }
-
-    @include media(">=medium", "<large") {
-        .col-md-first {
-            clear: both;
-        }
-    }
-
-    @include media(">=large") {
-        .col-lg-first {
-            clear: both;
-        }
-    }
+	padding-left:  ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+	@include clearfix;
 }
 
-.sidebar-content,
-.content-sidebar {
+/* Single
+--------------------------------------------- */
 
-    .content-sidebar-wrap {
-        @include make-row;
-        
-        .content {
-            @include make-sm-column(8);
-        }
+.layout-standard {
 
-        .sidebar-primary {
-            @include make-sm-column(4);
-        }
-    }
-}
+	.site-main {
+		@include make-row;
 
-.sidebar-content {
-
-    .content-sidebar-wrap {
-
-        .content {
-            @include make-sm-column-push(4);
-        }
-
-        .sidebar-primary {
-            @include make-sm-column-pull(8);
-        }
-    }
+		& > .entry {
+			@include make-sm-column(12);
+			@include make-lg-column(10);
+			@include make-lg-column-offset(1);
+		}
+	}
 }

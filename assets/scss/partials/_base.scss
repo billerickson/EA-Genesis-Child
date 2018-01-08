@@ -13,37 +13,44 @@ $base-color: $grey_2;
 $highlight: $green_1;
 $border-color: $grey_1;
 
-// Brand Colors
-$bc_facebook: #3b5998;
-$bc_twitter: #1da1f2;
-$bc_googleplus: #dd4b39;
-$bc_pinterest: #bd081c;
-$bc_email: $grey_2;
-$bc_print: $grey_2;
-
-// Bootstrap
-$grid-gutter-width: 30px;
-$screen-xs: 767px;
-$screen-sm: 768px;
-$screen-md: 1024px;
-$screen-lg: 1200px;
-$max-width: 1356px;
+// Socials
+$social_email: #424345;
+$social_facebook: #3B5998;
+$social_googleplus: #DF4A32;
+$social_linkedin: #007BB6;
+$social_pinterest: #CB2027;
+$social_twitter: #00B6F1;
+$social_youtube: #FF0000;
+$social_instagram: #C32AA3;
+$social_snapchat: #fffc00;
+$social_tumblr: #35465d;
+$social_vimeo: #45bbff;
+$social_stumbleupon: #eb4924;
+$social_yahoo: #430297;
+$social_soundcloud: #ff5500;
+$social_dribble: #ea4c89;
+$social_reddit: #ff5700;
 
 // Sidr
 $sidr_width: 345px;
 $sidr_close: 44px;
 $sidr_total: $sidr_width + $sidr_close;
 
-// Breakpoints
+// Grid
+$grid-max-width: 1200px;
+$grid-columns: 12;
+$grid-gutter-width: 32px;
+
+// Include Media
 $breakpoints: (
-  'mobile': $screen-xs,
-  'tablet': $screen-sm,
-  'medium': $screen-md,
-  'large' : $screen-lg,
-  'max'   : $max-width,
-  'sidr_total': $sidr_total,
+  'phone'  : 360px,
+  'small'  : 768px,
+  'tablet' : 768px, // required for include-media
+  'medium' : 992px,
+  'large'  : 1200px,
+  'desktop': $grid-max-width + $grid-gutter-width, // required for include-media
 );
 
-@import "../vendor/bootstrap"; // Note: Unused CSS parts have been disabled
-@import "../vendor/include-media";
+@import "../vendor/_include-media";
 @import "../modules/helpers";
+@import "../modules/_grid";

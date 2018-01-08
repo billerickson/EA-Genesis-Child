@@ -1,10 +1,17 @@
 /* Content Area
 ---------------------------------------------------------------------------------------------------- */
 
+.site-inner {
+	padding: 20px 0;
+	@include media(">=tablet") {
+		padding: 40px 0;
+	}
+}
+
 /* Entries
 --------------------------------------------- */
 
-.hentry {
+.entry {
 	margin-bottom: 40px;
 }
 
@@ -16,7 +23,7 @@
 /* Entry Navigation
 --------------------------------------------- */
 
-.archive-pagination {
+.posts-navigation {
 	overflow: hidden;
 	width: 100%;
 
@@ -33,7 +40,7 @@
 /* Comments
 --------------------------------------------- */
 
-.entry-comments {
+.comments-area {
 
 	.comment-list {
 
@@ -43,23 +50,23 @@
 			padding: 16px 0 0;
 		}
 	}
-}
 
-.comment-respond {
+	.comment-respond {
 
-	input[type="email"],
-	input[type="text"],
-	input[type="url"] {
-		width: 50%
-	}
-
-	label {
-		display: block;
-		margin-right: 12px;
-
-		&[for="subscribe"] {
-			display: inline-block;
+		input[type="email"],
+		input[type="text"],
+		input[type="url"] {
+			width: 50%
 		}
-	}
 
+		label {
+			display: block;
+			margin-right: 12px;
+
+			&[for="subscribe"] {
+				display: inline-block;
+			}
+		}
+
+	}
 }

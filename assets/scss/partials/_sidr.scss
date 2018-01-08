@@ -24,7 +24,7 @@ body.sidr-open:before {
 	width: $sidr_close;
 	z-index:999999;
 
-	@include media("<sidr_total") {
+	@include media("<#{$sidr_total}") {
 		right: calc(100% - #{$sidr_close});
 	}
 

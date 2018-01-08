@@ -28,8 +28,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button,
-.button.button-invert:hover {
+.button {
 	background: $highlight;
 	border: none;
 	border-radius: 4px;
@@ -37,6 +36,7 @@ input[type="submit"],
 	color: $white;
 	cursor: pointer;
 	padding: 10px;
+	text-align: center;
 	text-decoration: none;
 	width: auto;
 	-webkit-appearance: none;
@@ -46,8 +46,7 @@ button:hover,
 input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
-.button:hover,
-.button.button-invert {
+.button:hover {
 	background-color: darken( $highlight, 10%);
 	color: $white;
 	text-decoration: none;
@@ -59,11 +58,11 @@ input:hover[type="submit"],
 
 .button {
 	display: inline-block;
-}
 
-.button.button-block {
-	display: block;
-	width: 100%;
+	&.button-block {
+		display: block;
+		width: 100%;
+	}
 }
 
 input[type="search"]::-webkit-search-cancel-button,
