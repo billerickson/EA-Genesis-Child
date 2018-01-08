@@ -37,6 +37,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
     include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
+	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
 
 	// Editor Styles
 	add_editor_style( 'assets/css/editor-style.css' );
@@ -101,12 +102,3 @@ function ea_blog_template( $template ) {
 		$template = get_query_template( 'archive' );
 	return $template;
 }
-
-/**
- * Mobile Menu Toggle
- *
- */
-function ea_mobile_menu_toggle() {
-	echo '<a class="mobile-menu-toggle" href="#"><i class="icon-menu"></i><i class="icon-close"></i></a>';
-}
-add_action( 'genesis_header', 'ea_mobile_menu_toggle', 12 );

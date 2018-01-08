@@ -128,3 +128,14 @@ function ea_column_class( $classes = array(), $current = false, $join = true ) {
 		return $classes;
 	}
 }
+
+
+/**
+ * Get Icon
+ *
+ */
+function ea_icon( $slug = '' ) {
+	$icon_path = get_template_directory() . '/assets/icons/' . $slug . '.svg';
+	if( file_exists( $icon_path ) )
+		return file_get_contents( $icon_path );
+}
