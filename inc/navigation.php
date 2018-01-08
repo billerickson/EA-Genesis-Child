@@ -8,6 +8,10 @@
  * @license      GPL-2.0+
  */
 
+// Primary Nav in Header
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 11 );
+
 /**
  * Mobile Menu Toggle
  *
@@ -16,7 +20,7 @@ function ea_mobile_menu_toggle() {
 
 	if( ! has_nav_menu( 'mobile' ) )
 		return;
-		
+
     echo '<div class="nav-mobile">';
 	echo '<a class="mobile-menu-toggle" href="#">' . ea_icon( 'menu' ) . '</a>';
 	echo '</div>';

@@ -5,7 +5,7 @@
 	position: relative;
 }
 
-.site-branding {
+.title-area {
 	float: left;
 	width: 165px;
 
@@ -14,9 +14,10 @@
 		margin: 0;
 	}
 
+/*
 	.site-title a {
-		//background-image: url(../images/logo@2x.png);
-	  	//background-image: url(../images/logo.svg), none;
+		background-image: url(../images/logo@2x.png);
+	  	background-image: url(../images/logo.svg), none;
 	  	background-size: contain;
 	  	background-repeat: no-repeat;
 		background-position: center center;
@@ -26,6 +27,7 @@
 		height: 0;
 		padding-bottom: 69px / 165px * 100%;
 	}
+*/
 }
 
 /* Admin Bar
