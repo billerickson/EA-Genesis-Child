@@ -80,11 +80,13 @@ function ea_comment_text( $args ) {
  */
 function ea_global_enqueues() {
 
+	$version = function_exists( 'ea_is_dev_site' ) && ea_is_dev_site() ? time() : '1.0.0';
+
 	// javascript
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), $version, true );
 
 	// css
-    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
+    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), $version );
     wp_dequeue_style( 'child-theme' );
 
 	// Move jQuery to footer
