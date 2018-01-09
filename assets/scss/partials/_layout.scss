@@ -7,18 +7,51 @@
 	@include clearfix;
 }
 
-/* Single
+/* Content and Sidebar
 --------------------------------------------- */
 
-.layout-standard {
+.content-sidebar-wrap {
+	@include make-row;
+}
 
-	.site-main {
-		@include make-row;
+.full-width-content .content {
+	@include make-sm-column(12);
+	@include make-md-column(10);
+	@include make-md-column-offset(1);
+}
 
-		& > .entry {
-			@include make-sm-column(12);
-			@include make-lg-column(10);
-			@include make-lg-column-offset(1);
-		}
+.content-sidebar,
+.sidebar-content {
+
+	.content {
+		@include make-sm-column(12);
+		@include make-md-column(7);
+		@include make-lg-column(8);
+	}
+
+	.sidebar-primary {
+		@include make-sm-column(12);
+		@include make-md-column(4);
+		@include make-lg-column(3);
+	}
+}
+
+.content-sidebar {
+
+	.sidebar-primary {
+		@include make-md-column-offset(1);
+	}
+}
+
+.sidebar-content {
+
+	.content {
+		@include make-md-column-push(5);
+		@include make-lg-column-push(4);
+	}
+
+	.sidebar-primary {
+		@include make-md-column-pull(7);
+		@include make-lg-column-pull(8);
 	}
 }
