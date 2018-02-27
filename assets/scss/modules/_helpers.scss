@@ -16,6 +16,25 @@
 }
 
 /**
+ * Center Image
+ *
+ */
+@mixin center-image() {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+
+	img {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+/**
  * Block Cover
  * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
  */
@@ -71,26 +90,6 @@
 		clear: both;
 	}
 }
-
-/**
- * Icon Font
- *
- */
-@mixin icon-font() {
-    /* use !important to prevent issues with browser extensions that change fonts */
-     font-family: 'icomoon' !important;
-     speak: none;
-     font-style: normal;
-     font-weight: normal;
-     font-variant: normal;
-     text-transform: none;
-     line-height: 1;
-
-     /* Better Font Rendering =========== */
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-}
-
 
 /**
  * Font Sizes

@@ -1,57 +1,94 @@
-/* Add left/right padding to these containers */
+/* Box Sizing
+--------------------------------------------- */
+
+html,
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Wrap
+--------------------------------------------- */
+
 .wrap {
     max-width: map-get( $breakpoints, 'desktop' );
     margin: 0 auto;
-	padding-left:  ($grid-gutter-width / 2);
-	padding-right: ($grid-gutter-width / 2);
+	padding-left:  ($grid-gutter / 2);
+	padding-right: ($grid-gutter / 2);
 	@include clearfix;
 }
 
-/* Content and Sidebar
+
+/* Sidebar Layouts
 --------------------------------------------- */
 
-.content-sidebar-wrap {
-	@include make-row;
-}
-
-.full-width-content .content {
-	@include make-sm-column(12);
-	@include make-md-column(10);
-	@include make-md-column-offset(1);
-}
-
-.content-sidebar,
-.sidebar-content {
-
-	.content {
-		@include make-sm-column(12);
-		@include make-md-column(7);
-		@include make-lg-column(8);
-	}
+@include media("<medium") {
 
 	.sidebar-primary {
-		@include make-sm-column(12);
-		@include make-md-column(4);
-		@include make-lg-column(3);
+		max-width: 450px;
+		margin: 0 auto;
 	}
 }
 
-.content-sidebar {
+@include media(">=medium") {
 
-	.sidebar-primary {
-		@include make-md-column-offset(1);
+	// IE Fallback
+	.sidebar-content,
+	.content-sidebar {
+
+		.site-main {
+			float: left;
+			width: 768px / 1168px * 100%;
+		}
+
+		.sidebar-primary {
+			float: right;
+			width: 335px / 1168px * 100%;
+		}
 	}
-}
 
-.sidebar-content {
-
-	.content {
-		@include make-md-column-push(5);
-		@include make-lg-column-push(4);
+	.sidebar-content .site-main {
+		float: right;
 	}
 
-	.sidebar-primary {
-		@include make-md-column-pull(7);
-		@include make-lg-column-pull(8);
+	.sidebar-content .sidebar-primary {
+		float: left;
+	}
+
+	// Modern Browsers
+	@supports( display:grid ) {
+
+		.sidebar-content,
+		.content-sidebar {
+
+			.content-area {
+				display: grid;
+				grid-column-gap: $grid-gutter;
+				grid-template-columns: 1fr 335px;
+				grid-template-areas: "content sidebar";
+			}
+
+			.site-main,
+			.sidebar-primary {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.sidebar-content .content-area {
+			grid-template-areas: "sidebar content";
+			grid-template-columns: 335px 1fr;
+		}
+
+		.site-main {
+			grid-area: content;
+		}
+
+		.sidebar-primary {
+			grid-area: sidebar;
+		}
 	}
 }

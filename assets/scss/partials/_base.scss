@@ -1,7 +1,3 @@
-// Base Font
-$base-font-family: sans-serif;
-$base-margin: 32px;
-
 // Colors
 $white: #fff;
 $grey_1: #ccc;
@@ -38,8 +34,8 @@ $sidr_total: $sidr_width + $sidr_close;
 
 // Grid
 $grid-max-width: 1200px;
-$grid-columns: 12;
-$grid-gutter-width: 32px;
+$grid-gutter: 32px;
+$base-margin: 32px;
 
 // Include Media
 $breakpoints: (
@@ -48,9 +44,9 @@ $breakpoints: (
   'tablet' : 768px, // required for include-media
   'medium' : 992px,
   'large'  : 1200px,
-  'desktop': $grid-max-width + $grid-gutter-width, // required for include-media
+  'desktop': $grid-max-width + $grid-gutter, // required for include-media
 );
 
 @import "../vendor/_include-media";
 @import "../modules/helpers";
-@import "../modules/_grid";
+@import "../modules/placeholders";
