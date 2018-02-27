@@ -43,6 +43,7 @@ function ea_child_theme_setup() {
 	add_editor_style( 'assets/css/editor-style.css' );
 
 	// Image Sizes
+	add_theme_support( 'align-wide' );
 	// add_image_size( 'ea_featured', 400, 100, true );
 
 
