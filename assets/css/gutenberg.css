@@ -3,6 +3,10 @@
  * Removes left margin from first item, right margin from last item
  */
 /**
+ * Icon Margin
+ *
+ */
+/**
  * Center Image
  *
  */
@@ -42,6 +46,8 @@
   padding: 10px;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   width: auto;
   -webkit-appearance: none; }
   .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover {

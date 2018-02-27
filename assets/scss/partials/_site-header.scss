@@ -48,15 +48,36 @@
 /* Site Navigation
 --------------------------------------------- */
 
-.mobile-menu-toggle {
+.nav-mobile {
+	float: right;
+	width: auto;
+
 	@include media(">=tablet") {
 		display: none;
+	}
+}
+
+.mobile-menu-toggle {
+	display: block;
+	width: $sidr_close;
+	height: $sidr_close;
+	text-align: center;
+	@extend %button;
+	border-radius: 0;
+	padding: 0;
+
+	svg {
+		width: 16px;
+		height: 16px;
+		fill: $white;
+		@include icon-margin( 16px, $sidr_close );
 	}
 }
 
 .nav-primary {
 	float: right;
 	width: auto;
+
 	@include media("<tablet") {
 		display: none;
 	}
