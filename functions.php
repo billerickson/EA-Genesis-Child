@@ -1,16 +1,17 @@
 <?php
 /**
- * EA Genesis Child.
+ * Functions
  *
  * @package      EAGenesisChild
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 /*
 BEFORE MODIFYING THIS THEME:
-Please read the instructions here: https://github.com/billerickson/EA-Genesis-Child/blob/master/README.md
+Please read the instructions here (private repo): https://github.com/billerickson/EA-Starter/wiki
+Devs, contact me if you need access
 */
 
 /**

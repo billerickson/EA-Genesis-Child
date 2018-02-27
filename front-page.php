@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Genesis Child.
+ * Front Page
  *
  * @package      EAGenesisChild
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 // Full width layout
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );

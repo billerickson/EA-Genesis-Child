@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Genesis Child.
+ * Genesis Changes
  *
  * @package      EAGenesisChild
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 // Theme Supports
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery' ) );

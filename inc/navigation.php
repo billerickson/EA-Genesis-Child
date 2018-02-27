@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Starter
+ * Navigation
  *
- * @package      EAStarter
+ * @package      EAGenesisChild
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 // Primary Nav in Header
 remove_action( 'genesis_after_header', 'genesis_do_nav' );

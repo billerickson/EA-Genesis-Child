@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Genesis Child.
+ * Archive
  *
  * @package      EAGenesisChild
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 /**
  * Blog Archive Body Class
