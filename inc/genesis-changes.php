@@ -282,3 +282,15 @@ function ea_nav_menu_class( $open, $args ) {
 }
 add_filter( 'genesis_markup_nav-primary_open', 'ea_nav_menu_class', 10, 2 );
 add_filter( 'genesis_markup_nav-secondary_open', 'ea_nav_menu_class', 10, 2 );
+
+/**
+ * Change '.content-sidebar-wrap' to '.content-area'
+ *
+ * @param string $open, opening markup
+ * @param array $args, markup args
+ * @return string
+ */
+function ea_change_content_sidebar_wrap( $open, $args ) {
+	return str_replace( 'content-sidebar-wrap', 'content-area', $open );
+}
+add_filter( 'genesis_markup_content-sidebar-wrap_open', 'ea_change_content_sidebar_wrap', 10, 2 );
