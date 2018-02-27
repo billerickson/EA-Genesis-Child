@@ -67,10 +67,8 @@
 	padding: 0;
 
 	svg {
-		width: 16px;
-		height: 16px;
+		@include icon-position( 16px, $sidr_close );
 		fill: $white;
-		@include icon-margin( 16px, $sidr_close );
 	}
 }
 

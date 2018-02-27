@@ -14,15 +14,18 @@ body.sidr-open:before {
 
 .sidr-menu-close {
 	background: $highlight;
-	color: $white;
 	display: none;
 	position: fixed;
 	right: $sidr_width;
-	line-height: $sidr_close;
 	height: $sidr_close;
 	text-align: center;
 	width: $sidr_close;
 	z-index:999999;
+
+	svg {
+		@include icon-position( 16px, $sidr_close );
+		fill: $white;
+	}
 
 	@include media("<#{$sidr_total}") {
 		right: calc(100% - #{$sidr_close});
