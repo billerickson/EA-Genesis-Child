@@ -268,3 +268,16 @@ function ea_default_term_description( $value, $term_id, $meta_key, $single ) {
     return $value;
 }
 add_filter( 'get_term_metadata', 'ea_default_term_description', 10, 4 );
+
+/**
+ * Nav Menu Class
+ *
+ */
+function ea_nav_menu_class( $args ) {
+
+	if( !empty( $args['menu_class'] ) )
+		$args['menu_class'] = str_replace( 'genesis-nav-menu', 'nav-menu', $args['menu_class'] );
+		
+	return $args;
+}
+add_filter( 'wp_nav_menu_args', 'ea_nav_menu_class' );
