@@ -13,7 +13,7 @@
  *
  */
 function ea_blog_archive_body_class( $classes ) {
-	$classes[] = 'blog-archive';
+	$classes[] = 'archive';
 	return $classes;
 }
 add_filter( 'body_class', 'ea_blog_archive_body_class' );

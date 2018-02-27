@@ -18,7 +18,7 @@ Please read the instructions here: https://github.com/billerickson/EA-Genesis-Ch
  *
  */
 if ( ! isset( $content_width ) )
-    $content_width = 740;
+    $content_width = 1024;
 
 /**
  * Theme setup.
@@ -80,19 +80,19 @@ function ea_comment_text( $args ) {
  */
 function ea_global_enqueues() {
 
-	$version = function_exists( 'ea_is_dev_site' ) && ea_is_dev_site() ? time() : '1.0.0';
-
 	// javascript
-	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), $version, true );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/global-min.js' ), true );
 
 	// css
-    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), $version );
     wp_dequeue_style( 'child-theme' );
+    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), CHILD_THEME_VERSION );
 
 	// Move jQuery to footer
-	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-	wp_enqueue_script( 'jquery' );
+	if( ! is_admin() ) {
+		wp_deregister_script( 'jquery' );
+		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+		wp_enqueue_script( 'jquery' );
+	}
 }
 
 /**

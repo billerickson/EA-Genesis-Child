@@ -53,6 +53,7 @@ function ea_clean_nav_menu_classes( $classes ) {
 		return $classes;
 
 	$allowed_classes = array(
+		'home',
 		'menu-item',
 		'current-menu-item',
 		'current-menu-ancestor',
@@ -90,17 +91,6 @@ function ea_clean_post_classes( $classes ) {
 	return array_intersect( $classes, $allowed_classes );
 }
 add_filter( 'post_class', 'ea_clean_post_classes', 5 );
-
-/**
- * Remove ancient Custom Fields Metabox because it's slow and most often useless anymore
- * ref: https://core.trac.wordpress.org/ticket/33885
- */
-function ea_remove_custom_fields_metabox() {
-	foreach ( get_post_types( '', 'names' ) as $post_type ) {
-		remove_meta_box( 'postcustom' , $post_type , 'normal' );
-	}
-}
-add_action( 'admin_menu' , 'ea_remove_custom_fields_metabox' );
 
 /**
  * Excerpt More
