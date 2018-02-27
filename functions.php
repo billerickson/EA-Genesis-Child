@@ -45,14 +45,6 @@ function ea_child_theme_setup() {
 	// Image Sizes
 	// add_image_size( 'ea_featured', 400, 100, true );
 
-	// Set comment area defaults
-	add_filter( 'comment_form_defaults', 'ea_comment_text' );
-
-	// Global enqueues
-	add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
-
-	// Blog Template
-	add_filter( 'template_include', 'ea_blog_template' );
 
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
@@ -71,6 +63,7 @@ function ea_comment_text( $args ) {
 	$args['comment_notes_after']  = '';
 	return $args;
 }
+add_filter( 'comment_form_defaults', 'ea_comment_text' );
 
 /**
  * Global enqueues
@@ -94,6 +87,7 @@ function ea_global_enqueues() {
 		wp_enqueue_script( 'jquery' );
 	}
 }
+add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
 
 /**
  * Blog Template
@@ -104,3 +98,4 @@ function ea_blog_template( $template ) {
 		$template = get_query_template( 'archive' );
 	return $template;
 }
+add_filter( 'template_include', 'ea_blog_template' );
