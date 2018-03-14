@@ -1,16 +1,5 @@
-@import "partials/base";
-
 .edit-post-visual-editor {
-
-	&,
-	& p {
-		@extend %base-style;
-	}
-
-	.editor-block-list__block {
-		max-width: $grid-max-width;
-	}
-
+	@import "partials/base";
 	@import "partials/style-guide";
 	@import "partials/post-elements";
 	@import "partials/blocks";

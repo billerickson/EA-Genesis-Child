@@ -1,0 +1,20 @@
+&,
+& p {
+	@extend %base-style;
+}
+
+.editor-block-list__block {
+	max-width: $grid-max-width;
+}
+
+&,
+.wp-block-freeform.blocks-rich-text__tinymce {
+
+	blockquote,
+	.wp-block-quote:not(.is-large) {
+		border-left: 0;
+		padding-left: 0;
+	}
+
+	@include button-styles;
+}
