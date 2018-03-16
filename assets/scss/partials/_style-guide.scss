@@ -73,7 +73,8 @@ p {
 	margin: 0 0 $base-margin;
 	padding: 0;
 
-	&.large {
+	&.large,
+	&.wp-block-subhead {
     	@include font-sizes( 18px, null, 20px );
 	}
 
