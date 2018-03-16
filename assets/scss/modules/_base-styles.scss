@@ -31,7 +31,7 @@
 
 @mixin button-styles() {
 
-	.button {
+	.button:not(.components-button) {
 		@extend %button;
 
 		&.button-block {
