@@ -80,6 +80,7 @@ function ea_global_enqueues() {
 
 	// css
     wp_dequeue_style( 'child-theme' );
+	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
     wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), CHILD_THEME_VERSION );
 
 	// Move jQuery to footer
@@ -96,9 +97,25 @@ add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
  *
  */
 function ea_gutenberg_scripts() {
+	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
 	wp_enqueue_style( 'ea', get_stylesheet_directory_uri() . '/assets/css/gutenberg.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/gutenberg.css' ) );
 }
 add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_scripts' );
+
+
+/**
+ * Theme Fonts URL
+ *
+ */
+function ea_theme_fonts_url() {
+	$font_families = apply_filters( 'ea_theme_fonts', array( 'Source+Sans+Pro:400,400i,700,700i' ) );
+	$query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin,latin-ext' ),
+	);
+	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	return esc_url_raw( $fonts_url );
+}
 
 /**
  * Blog Template
