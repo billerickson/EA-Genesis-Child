@@ -17,7 +17,6 @@ add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu
 add_theme_support( 'genesis-inpost-layouts' );
 add_theme_support( 'genesis-archive-layouts' );
 
-
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 

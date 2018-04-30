@@ -55,9 +55,9 @@ input[type="submit"],
   width: auto;
   -webkit-appearance: none; }
   button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover,
+  input:hover[type="button"],
+  input:hover[type="reset"],
+  input:hover[type="submit"],
   .button:hover {
     background-color: #3f962e;
     color: #fff;
@@ -452,41 +452,111 @@ ul {
 
 /* Blockquote
 --------------------------------------------- */
-blockquote {
+blockquote,
+blockquote.wp-block-quote {
   background: transparent;
-  margin: 0 0 32px;
-  font-size: 18px;
+  color: #333;
+  margin: 0;
+  margin-top: 128px;
+  margin-bottom: 128px;
+  font-size: 20px;
   font-style: italic;
   padding: 0;
   text-align: center; }
-  @media (min-width: 768px) {
-    blockquote {
-      font-size: 19px; } }
   @media (min-width: 992px) {
-    blockquote {
-      font-size: 22px; } }
-  blockquote cite {
+    blockquote,
+    blockquote.wp-block-quote {
+      font-size: 24px; } }
+  blockquote::before, blockquote::after,
+  blockquote.wp-block-quote::before,
+  blockquote.wp-block-quote::after {
+    background: #50BD3A;
+    content: '';
     display: block;
-    font-size: 18px;
-    margin-top: 17px; }
-  blockquote p:last-of-type {
+    width: 100%;
+    max-width: 286px;
+    height: 8px;
+    margin: 0 auto 25px; }
+  blockquote::after,
+  blockquote.wp-block-quote::after {
+    margin: 25px auto 0; }
+  blockquote cite,
+  blockquote.wp-block-quote cite {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 16px; }
+    @media (min-width: 768px) {
+      blockquote cite,
+      blockquote.wp-block-quote cite {
+        font-size: 18px; } }
+  blockquote p:last-of-type,
+  blockquote.wp-block-quote p:last-of-type {
     margin-bottom: 0; }
-  blockquote.is-large.wp-block-quote {
+  blockquote.is-large,
+  blockquote.wp-block-quote.is-large {
     font-size: 22px;
     margin: 0 0 32px;
     padding: 0; }
     @media (min-width: 768px) {
-      blockquote.is-large.wp-block-quote {
+      blockquote.is-large,
+      blockquote.wp-block-quote.is-large {
         font-size: 26px; } }
     @media (min-width: 992px) {
-      blockquote.is-large.wp-block-quote {
+      blockquote.is-large,
+      blockquote.wp-block-quote.is-large {
         font-size: 32px; } }
-    blockquote.is-large.wp-block-quote cite {
+    blockquote.is-large cite,
+    blockquote.wp-block-quote.is-large cite {
       text-align: center; }
-  blockquote.wp-block-pullquote {
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
-    padding: 32px 0; }
+  blockquote.wp-block-pullquote,
+  blockquote.wp-block-quote.wp-block-pullquote {
+    border: none;
+    color: #333;
+    padding: 0; }
+    blockquote.wp-block-pullquote, blockquote.wp-block-pullquote.alignleft, blockquote.wp-block-pullquote.alignright,
+    blockquote.wp-block-quote.wp-block-pullquote,
+    blockquote.wp-block-quote.wp-block-pullquote.alignleft,
+    blockquote.wp-block-quote.wp-block-pullquote.alignright {
+      max-width: 286px;
+      margin-top: 10px;
+      margin-bottom: 0; }
+      blockquote.wp-block-pullquote,
+      blockquote.wp-block-pullquote > p, blockquote.wp-block-pullquote.alignleft,
+      blockquote.wp-block-pullquote.alignleft > p, blockquote.wp-block-pullquote.alignright,
+      blockquote.wp-block-pullquote.alignright > p,
+      blockquote.wp-block-quote.wp-block-pullquote,
+      blockquote.wp-block-quote.wp-block-pullquote > p,
+      blockquote.wp-block-quote.wp-block-pullquote.alignleft,
+      blockquote.wp-block-quote.wp-block-pullquote.alignleft > p,
+      blockquote.wp-block-quote.wp-block-pullquote.alignright,
+      blockquote.wp-block-quote.wp-block-pullquote.alignright > p {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700; }
+        @media (min-width: 992px) {
+          blockquote.wp-block-pullquote,
+          blockquote.wp-block-pullquote > p, blockquote.wp-block-pullquote.alignleft,
+          blockquote.wp-block-pullquote.alignleft > p, blockquote.wp-block-pullquote.alignright,
+          blockquote.wp-block-pullquote.alignright > p,
+          blockquote.wp-block-quote.wp-block-pullquote,
+          blockquote.wp-block-quote.wp-block-pullquote > p,
+          blockquote.wp-block-quote.wp-block-pullquote.alignleft,
+          blockquote.wp-block-quote.wp-block-pullquote.alignleft > p,
+          blockquote.wp-block-quote.wp-block-pullquote.alignright,
+          blockquote.wp-block-quote.wp-block-pullquote.alignright > p {
+            font-size: 24px; } }
+    blockquote.wp-block-pullquote cite,
+    blockquote.wp-block-quote.wp-block-pullquote cite {
+      color: #333;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: none; }
+      @media (min-width: 768px) {
+        blockquote.wp-block-pullquote cite,
+        blockquote.wp-block-quote.wp-block-pullquote cite {
+          font-size: 18px; } }
 
 /* Horizontal Rule
 --------------------------------------------- */
