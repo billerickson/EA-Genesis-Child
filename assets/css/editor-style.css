@@ -425,7 +425,9 @@ p {
   margin: 0 0 32px;
   padding: 0; }
   p.large, p.wp-block-subhead {
-    font-size: 18px; }
+    font-size: 18px;
+    font-style: normal;
+    opacity: 1; }
     @media (min-width: 992px) {
       p.large, p.wp-block-subhead {
         font-size: 20px; } }

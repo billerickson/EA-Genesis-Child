@@ -76,6 +76,8 @@ p {
 	&.large,
 	&.wp-block-subhead {
     	@include font-sizes( 18px, null, 20px );
+		font-style: normal;
+		opacity: 1;
 	}
 
 	&.small {
