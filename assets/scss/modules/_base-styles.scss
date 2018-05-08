@@ -7,6 +7,16 @@
 	margin: 0;
 }
 
+%large-margin {
+	margin-top: $margin_2x;
+	margin-bottom: $margin_2x;
+
+	@include media(">=large") {
+		margin-top: $margin_4x;
+		margin-bottom: $margin_4x;
+	}
+}
+
 %button {
 	background: $highlight;
 	border: none;

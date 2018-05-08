@@ -85,7 +85,7 @@ p {
 	}
 
 	&.extra-margin {
-		margin-bottom: calc( #{$base-margin} * 2 );
+		margin-bottom: $margin_2x;
 	}
 }
 
@@ -93,7 +93,7 @@ p {
 --------------------------------------------- */
 
 ol {
-    margin: 0 0 $base-margin $base-margin;
+    margin: 0 0 $margin_2x 32px;
 
     li {
         list-style-type: decimal;
@@ -105,7 +105,7 @@ ol {
 }
 
 ul {
-    margin: 0 0 $base-margin $base-margin;
+    margin: 0 0 $margin_2x 32px;
 
     li {
         list-style-type: disc;
@@ -123,11 +123,10 @@ blockquote,
 blockquote.wp-block-quote {
 	background: transparent;
 	color: $base-color;
-	margin: 0;
-	margin-top: ( $base-margin * 4 );
-	margin-bottom: ( $base-margin * 4 );
 	@include font-sizes( 20px, null, 24px );
 	font-style: italic;
+	margin: 0;
+	@extend %large-margin;
 	padding: 0;
 	text-align: center;
 
@@ -211,7 +210,7 @@ img.wp-more-tag {
 	height: 1px;
 	border: none;
 	border-top: 1px solid $border_color;
-	margin: 0 0 $base-margin;
+	margin: $margin_2x 0;
 }
 
 
@@ -227,7 +226,7 @@ h6 {
 	color: $base-color;
 	line-height: 1.2;
 	margin: 0;
-	margin-bottom: $base-margin / 2;
+	margin-bottom: $base-margin;
 	padding: 0;
 
 	a {
@@ -272,6 +271,7 @@ iframe,
 object,
 video {
 	max-width: 100%;
+	margin-bottom: $base-margin;
 }
 
 img {
@@ -311,6 +311,13 @@ figure {
 	margin-right: auto;
 }
 
+.alignfull {
+	margin-left: - #{$wrap_edge};
+	margin-right: - #{$wrap_edge};
+	width: calc( 100% + #{$wrap_edge} * 2 );
+	max-width: calc( 100% + #{$wrap_edge} * 2 );
+}
+
 @include media(">=tablet") {
 
     .alignfull {
@@ -337,12 +344,15 @@ figure {
 
 .wp-caption,
 .wp-block-image {
-	margin-bottom: $base-margin;
+	margin-bottom: $margin_2x;
 	text-align: center;
 
 	figcaption {
 		font-style: italic;
 		font-size: 14px;
-		margin: #{$base-margin / 2} auto;
+	}
+
+	&.alignfull {
+		@extend %large-margin;
 	}
 }
