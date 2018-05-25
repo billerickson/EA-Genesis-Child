@@ -137,7 +137,7 @@
  */
 @mixin columns( $columns, $wrapper_width: null ) {
 
-	@if( length( $wrapper_width ) == 0 ) {
+	@if( $wrapper_width == null ) {
 		$wrapper_width: $grid-max-width;
 	}
 
