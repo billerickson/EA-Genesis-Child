@@ -135,13 +135,13 @@
  * Columns
  *
  */
-@mixin columns( $columns, $wrapper_width: null ) {
+@mixin columns( $columns, $wrapper_width: null, $grid_item_element: article ) {
 
 	@if( $wrapper_width == null ) {
 		$wrapper_width: $grid-max-width;
 	}
 
-	article {
+	#{$grid_item_element} {
 		float: left;
 		margin-left: $grid-gutter / $wrapper_width * 100%;
 		width: ( ( $wrapper_width - $grid-gutter * ( $columns - 1 ) ) / $columns ) / $wrapper_width * 100%;
@@ -157,12 +157,12 @@
 		grid-column-gap: $grid-gutter;
 		grid-template-columns: repeat( $columns, 1fr );
 
-		article {
+		#{$grid_item_element} {
 			margin-left: 0;
 			width: 100%;
 		}
 
-		header, nav, footer {
+		header, nav, aside, footer {
 			grid-column: 1 / -1;
 		}
 	}
@@ -172,10 +172,10 @@
  * Columns, Mobile
  *
  */
-@mixin columns-mobile( $columns, $wrapper_width: null ) {
+@mixin columns-mobile( $columns, $wrapper_width: null, $grid_item_element: article ) {
 
 	@include media("<tablet") {
-		@include columns( $columns, $wrapper_width );
+		@include columns( $columns, $wrapper_width, $grid_item_element );
 	}
 }
 
@@ -183,10 +183,10 @@
  * Columns, Tablet
  *
  */
-@mixin columns-tablet( $columns, $wrapper_width: null ) {
+@mixin columns-tablet( $columns, $wrapper_width: null, $grid_item_element: article ) {
 
 	@include media(">=tablet", "<medium") {
-		@include columns( $columns, $wrapper_width );
+		@include columns( $columns, $wrapper_width, $grid_item_element );
 	}
 
 }
@@ -195,10 +195,10 @@
  * Columns, Tablet Up
  *
  */
-@mixin columns-tablet-up( $columns, $wrapper_width: null ) {
+@mixin columns-tablet-up( $columns, $wrapper_width: null, $grid_item_element: article ) {
 
 	@include media(">=tablet") {
-		@include columns( $columns, $wrapper_width );
+		@include columns( $columns, $wrapper_width, $grid_item_element );
 	}
 
 }
@@ -207,8 +207,8 @@
  * Columns, Desktop
  *
  */
-@mixin columns-desktop( $columns, $wrapper_width: null ) {
+@mixin columns-desktop( $columns, $wrapper_width: null, $grid_item_element: article ) {
 	@include media(">=medium") {
-		@include columns( $columns, $wrapper_width );
+		@include columns( $columns, $wrapper_width, $grid_item_element );
 	}
 }
