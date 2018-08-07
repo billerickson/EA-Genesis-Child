@@ -112,6 +112,16 @@ function ea_staff_comment_class( $classes, $class, $comment_id, $comment, $post_
 add_filter( 'comment_class', 'ea_staff_comment_class', 10, 5 );
 
 /**
+ * Remove avatars from comment list
+ *
+ */
+function ea_remove_avatars_from_comments( $avatar ) {
+	global $in_comment_loop;
+	return $in_comment_loop ? '' : $avatar;
+}
+add_filter( 'get_avatar', 'ea_remove_avatars_from_comments' );
+
+/**
  * Excerpt More
  *
  */
