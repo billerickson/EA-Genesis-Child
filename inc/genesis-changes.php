@@ -314,3 +314,14 @@ function ea_main_content_id( $open, $args ) {
 	return str_replace ('>', ' id="main-content">', $open );
 }
 add_filter( 'genesis_markup_site-inner_open', 'ea_main_content_id', 10, 2 );
+
+/**
+ * Custom search form
+ *
+ */
+function ea_search_form() {
+	ob_start();
+	get_template_part( 'searchform' );
+	return ob_get_clean();
+}
+add_filter( 'genesis_search_form', 'ea_search_form' );
