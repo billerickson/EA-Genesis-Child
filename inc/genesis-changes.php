@@ -293,3 +293,24 @@ function ea_change_content_sidebar_wrap( $open, $args ) {
 	return str_replace( 'content-sidebar-wrap', 'content-area', $open );
 }
 add_filter( 'genesis_markup_content-sidebar-wrap_open', 'ea_change_content_sidebar_wrap', 10, 2 );
+
+/**
+ * Change '.content' to '.site-main'
+ *
+ * @param string $open, opening markup
+ * @param array $args, markup args
+ * @return string
+ */
+function ea_change_content( $open, $args ) {
+	return str_replace( 'content', 'site-main', $open );
+}
+add_filter( 'genesis_markup_content_open', 'ea_change_content', 10, 2 );
+
+/**
+ * Add #main-content to .site-inner
+ *
+ */
+function ea_main_content_id( $open, $args ) {
+	return str_replace ('>', ' id="main-content">', $open );
+}
+add_filter( 'genesis_markup_site-inner_open', 'ea_main_content_id', 10, 2 );
