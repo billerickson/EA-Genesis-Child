@@ -93,6 +93,22 @@ function ea_clean_post_classes( $classes ) {
 add_filter( 'post_class', 'ea_clean_post_classes', 5 );
 
 /**
+ * Staff comment class
+ *
+ */
+function ea_staff_comment_class( $classes, $class, $comment_id, $comment, $post_id ) {
+	if( empty( $comment->user_id ) )
+		return $classes;
+	$staff_roles = array( 'comment_manager', 'author', 'editor', 'administrator' );
+	$staff_roles = apply_filters( 'ea_staff_roles', $staff_roles );
+	$user = get_userdata( $comment->user_id );
+	if( !empty( array_intersect( $user->roles, $staff_roles ) ) )
+		$classes[] = 'staff';
+	return $classes;
+}
+add_filter( 'comment_class', 'ea_staff_comment_class', 10, 5 );
+
+/**
  * Excerpt More
  *
  */

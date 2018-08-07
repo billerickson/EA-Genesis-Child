@@ -43,12 +43,58 @@
 .entry-comments {
 
 	.comment-list {
+		margin: 0 0 $margin_2x;
+		font-size: 16px;
 
 		li {
-			border-top: 1px solid $border-color;
 			list-style-type: none;
-			padding: 16px 0 0;
+
+			article {
+				background: $grey_1;
+				padding: $base-margin;
+			}
+
+			&.staff > article {
+				background: $grey_3;
+				border-left: 6px solid $grey_6;
+			}
 		}
+
+		& > li {
+			border-radius: 4px;
+			box-shadow: 0 2px 8px 0 rgba( $black, .25 );
+			overflow: hidden;
+			margin-bottom: $base-margin;
+		}
+
+		.comment-author {
+    		@include font-sizes( 20px, null, 24px );
+			margin: 0;
+
+			.says {
+				display: none;
+			}
+		}
+
+		.comment-meta {
+			@include font-sizes( 12px, null, 14px );
+		}
+
+		.comment-content {
+
+			p:last-child {
+				margin: 0;
+			}
+		}
+
+		ul.children {
+			margin: 0;
+
+			li {
+				border-top: 1px solid $border-color;
+			}
+		}
+
 	}
 
 	.comment-respond {
