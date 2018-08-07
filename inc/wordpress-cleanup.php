@@ -48,19 +48,22 @@ add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
  *
  */
 function ea_clean_nav_menu_classes( $classes ) {
-
 	if( ! is_array( $classes ) )
 		return $classes;
-
-	$allowed_classes = array(
-		'home',
-		'menu-item',
-		'current-menu-item',
-		'current-menu-ancestor',
-		'menu-item-has-children',
+	$remove_classes = array(
+		'menu-item-type-custom',
+		'menu-item-type-taxonomy',
+		'menu-item-object-custom',
+		'menu-item-object-category',
 	);
-
-	return array_intersect( $classes, $allowed_classes );
+	$classes = array_diff( $classes, $remove_classes );
+	foreach( $classes as $i => $class ) {
+		// Remove class with menu item id
+		$id = strtok( $class, 'menu-item-' );
+		if( 0 < intval( $id ) )
+			unset( $classes[ $i ] );
+	}
+	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes', 5 );
 
