@@ -36,6 +36,7 @@ function ea_child_theme_setup() {
 	// Includes
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
+	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
     include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
