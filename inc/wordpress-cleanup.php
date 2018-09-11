@@ -50,18 +50,27 @@ add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
 function ea_clean_nav_menu_classes( $classes ) {
 	if( ! is_array( $classes ) )
 		return $classes;
-	$remove_classes = array(
-		'menu-item-type-custom',
-		'menu-item-type-taxonomy',
-		'menu-item-object-custom',
-		'menu-item-object-category',
-	);
-	$classes = array_diff( $classes, $remove_classes );
+
 	foreach( $classes as $i => $class ) {
+
 		// Remove class with menu item id
 		$id = strtok( $class, 'menu-item-' );
 		if( 0 < intval( $id ) )
 			unset( $classes[ $i ] );
+
+		// Remove menu-item-type-*
+		if( false !== strpos( $class, 'menu-item-type-' ) )
+			unset( $classes[ $i ] );
+
+		// Remove menu-item-object-*
+		if( false !== strpos( $class, 'menu-item-object-' ) )
+			unset( $classes[ $i ] );
+
+		// Change page ancestor to menu ancestor
+		if( 'current-page-ancestor' == $class ) {
+			$classes[] = 'current-menu-ancestor';
+			unset( $classes[ $i ] );
+		}
 	}
 	return $classes;
 }
