@@ -129,6 +129,16 @@ function ea_column_class( $classes = array(), $current = false, $join = true ) {
 	}
 }
 
+/**
+ *  Background Image Style
+ *
+ * @param int $image_id
+ * @return string $output
+ */
+function ea_bg_image_style( $image_id = false, $image_size = 'full' ) {
+	if( !empty( $image_id ) )
+		return ' style="background-image: url(' . wp_get_attachment_image_url( $image_id, $image_size ) . ');"';
+}
 
 /**
  * Get Icon
