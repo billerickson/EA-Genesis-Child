@@ -810,9 +810,24 @@ input[type="search"]::-webkit-search-results-button {
 
 /* WPForms
 --------------------------------------------- */
-.site-container .wpforms-container .wpforms-field {
-  padding: 0;
-  margin-bottom: 16px; }
+.site-container .wpforms-container {
+  max-width: 600px;
+  margin: 32px auto; }
+  .site-container .wpforms-container .wpforms-field {
+    padding: 0;
+    margin-bottom: 16px; }
+  .site-container .wpforms-container .wpforms-submit-container {
+    padding: 0;
+    margin-top: 16px;
+    text-align: center; }
+  .site-container .wpforms-container label.wpforms-error,
+  .site-container .wpforms-container .wpforms-field-label {
+    font-size: 14px;
+    font-weight: 400; }
+  .site-container .wpforms-container label.wpforms-error {
+    margin-top: 8px; }
+  .site-container .wpforms-container .wpforms-field-label {
+    margin-bottom: 8px; }
 
 /* Post Elements
 ---------------------------------------------------------------------------------------------------- */

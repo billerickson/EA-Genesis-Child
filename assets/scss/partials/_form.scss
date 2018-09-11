@@ -47,9 +47,31 @@ input[type="search"]::-webkit-search-results-button {
 --------------------------------------------- */
 
 .site-container .wpforms-container {
+	max-width: 600px;
+	margin: $margin_2x auto;
 
 	.wpforms-field {
 		padding: 0;
 		margin-bottom: $base-margin;
+	}
+
+	.wpforms-submit-container {
+		padding: 0;
+		margin-top: $base-margin;
+		text-align: center;
+	}
+
+	label.wpforms-error,
+	.wpforms-field-label {
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	label.wpforms-error {
+		margin-top: 8px;
+	}
+
+	.wpforms-field-label {
+		margin-bottom: 8px;
 	}
 }
