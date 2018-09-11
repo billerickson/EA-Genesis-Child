@@ -19,10 +19,13 @@
  * Icon Position
  *
  */
-@mixin icon-position( $icon_size, $container_size ) {
-	margin-top: calc( ( #{$container_size} - #{$icon_size} ) / 2 );
+@mixin icon-position( $icon_size, $container_size: null ) {
 	width: $icon_size;
 	height: $icon_size;
+
+    @if ( $container_size ) {
+        margin-top: calc( ( #{$container_size} - #{$icon_size} ) / 2 );
+    }
 }
 
 /**

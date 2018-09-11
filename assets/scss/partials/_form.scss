@@ -43,6 +43,43 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
+
+/* Search Form
+--------------------------------------------- */
+
+.search-form {
+	border: 1px solid $border-color;
+	max-width: 400px;
+	position: relative;
+	overflow: hidden;
+
+	.search-field {
+		border: none;
+		padding-right: 32px;
+	}
+
+	.search-submit {
+		background: transparent;
+		border: none;
+		padding: 0;
+		margin: 0;
+		min-width: 0;
+		width: 24px;
+		height: 24px;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		margin-top: -12px;
+		right: 4px;
+
+		svg {
+			fill: $highlight;
+			@include icon-position( 24px );
+		}
+
+	}
+}
+
 /* WPForms
 --------------------------------------------- */
 
