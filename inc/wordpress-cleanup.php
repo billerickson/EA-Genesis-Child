@@ -72,6 +72,12 @@ function ea_clean_nav_menu_classes( $classes ) {
 			unset( $classes[ $i ] );
 		}
 	}
+
+	// Remove submenu class if depth is limited
+	if( isset( $args->depth ) && 1 === $args->depth ) {
+		$classes = array_diff( $classes, array( 'menu-item-has-children' ) );
+	}
+
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes', 5 );
