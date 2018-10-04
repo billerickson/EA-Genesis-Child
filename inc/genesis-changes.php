@@ -318,11 +318,40 @@ add_filter( 'genesis_attr_content-sidebar-wrap', 'ea_change_content_sidebar_wrap
  * @param array $args, markup args
  * @return string
  */
-function ea_change_content( $attributes) {
+function ea_change_content( $attributes ) {
 	$attributes['class'] = 'site-main';
 	return $attributes;
 }
 add_filter( 'genesis_attr_content', 'ea_change_content' );
+
+/**
+ * Add #main-content to .site-inner
+ *
+ */
+function ea_site_inner_id( $attributes ) {
+	$attributes['id'] = 'main-content';
+	return $attributes;
+}
+add_filter( 'genesis_attr_site-inner', 'ea_site_inner_id' );
+
+/**
+ * Change skip link to #main-content
+ *
+ */
+function ea_main_content_skip_link( $skip_links ) {
+
+	$old = $skip_links;
+	$skip_links = array();
+
+	foreach( $old as $id => $label ) {
+		if( 'genesis-content' == $id )
+			$id = 'main-content';
+		$skip_links[ $id ] = $label;
+	}
+	
+	return $skip_links;
+}
+add_filter( 'genesis_skip_links_output', 'ea_main_content_skip_link' );
 
 /**
  * Custom search form
