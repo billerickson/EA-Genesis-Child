@@ -82,26 +82,27 @@ function ea_child_theme_setup() {
 */
 	) );
 
+	// -- Disable Custom Colors
+	add_theme_support( 'disable-custom-colors' );
+
 	// -- Editor Color Palette
-	/*
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Light gray', 'ea_genesis_child' ),
+			'name'  => __( 'Light Grey', 'ea_genesis_child' ),
 			'slug'  => 'light-gray',
 			'color'	=> '#f5f5f5',
 		),
 		array(
-			'name'  => __( 'Medium gray', 'ea_genesis_child' ),
+			'name'  => __( 'Medium Grey', 'ea_genesis_child' ),
 			'slug'  => 'medium-gray',
-			'color' => '#999',
+			'color' => '#9E9E9E',
 		),
 		array(
-			'name'  => __( 'Dark gray', 'ea_genesis_child' ),
+			'name'  => __( 'Dark Grey', 'ea_genesis_child' ),
 			'slug'  => 'dark-gray',
-			'color' => '#333',
+			'color' => '#424242',
 	       ),
 	) );
-	*/
 
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
