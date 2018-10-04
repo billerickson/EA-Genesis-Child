@@ -70,20 +70,24 @@ button,
 button.wpforms-submit,
 input[type="button"],
 input[type="reset"],
+input[type="submit"], .button:not(.components-button), a, a svg {
+  transition: all 0.1s ease-in-out; }
+
+button,
+button.wpforms-submit,
+input[type="button"],
+input[type="reset"],
 input[type="submit"], .button:not(.components-button) {
   background: #59BACC;
   border: none;
   border-radius: 4px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
   width: auto;
   -webkit-appearance: none; }
   button:hover,
@@ -130,8 +134,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -298,8 +301,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -330,8 +332,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -978,8 +979,7 @@ input[type="search"]::-webkit-search-results-button {
   z-index: 100000;
   /* Above WP toolbar. */
   text-decoration: none;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
 
 /*
  * Column Classes

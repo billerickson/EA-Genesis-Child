@@ -17,6 +17,10 @@
 	}
 }
 
+%transition {
+	transition: all 0.1s ease-in-out;	
+}
+
 %button {
 	background: $highlight;
 	border: none;
@@ -28,7 +32,7 @@
 	padding: 10px;
 	text-align: center;
 	text-decoration: none;
-	transition: all 0.1s ease-in-out;
+	@extend %transition;
 	width: auto;
 	-webkit-appearance: none;
 

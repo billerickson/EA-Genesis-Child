@@ -11,9 +11,14 @@ body {
 a {
 	color: $highlight;
 	text-decoration: none;
+	@extend %transition;
 
 	&:hover {
 		text-decoration: underline;
+	}
+
+	svg {
+		@extend %transition;
 	}
 }
 
