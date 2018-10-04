@@ -17,6 +17,19 @@ add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu
 add_theme_support( 'genesis-inpost-layouts' );
 add_theme_support( 'genesis-archive-layouts' );
 
+// Adds support for accessibility.
+add_theme_support(
+	'genesis-accessibility', array(
+		'404-page',
+		'drop-down-menu',
+		'headings',
+		'rems',
+		'search-form',
+		'skip-links',
+		'screen-reader-text',
+	)
+);
+
 // Remove admin bar styling
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
@@ -292,10 +305,11 @@ add_filter( 'genesis_markup_nav-secondary_open', 'ea_nav_menu_class', 10, 2 );
  * @param array $args, markup args
  * @return string
  */
-function ea_change_content_sidebar_wrap( $open, $args ) {
-	return str_replace( 'content-sidebar-wrap', 'content-area', $open );
+function ea_change_content_sidebar_wrap( $attributes ) {
+	$attributes['class'] = 'content-area';
+	return $attributes;
 }
-add_filter( 'genesis_markup_content-sidebar-wrap_open', 'ea_change_content_sidebar_wrap', 10, 2 );
+add_filter( 'genesis_attr_content-sidebar-wrap', 'ea_change_content_sidebar_wrap' );
 
 /**
  * Change '.content' to '.site-main'
@@ -304,19 +318,11 @@ add_filter( 'genesis_markup_content-sidebar-wrap_open', 'ea_change_content_sideb
  * @param array $args, markup args
  * @return string
  */
-function ea_change_content( $open, $args ) {
-	return str_replace( 'content', 'site-main', $open );
+function ea_change_content( $attributes) {
+	$attributes['class'] = 'site-main';
+	return $attributes;
 }
-add_filter( 'genesis_markup_content_open', 'ea_change_content', 10, 2 );
-
-/**
- * Add #main-content to .site-inner
- *
- */
-function ea_main_content_id( $open, $args ) {
-	return str_replace ('>', ' id="main-content">', $open );
-}
-add_filter( 'genesis_markup_site-inner_open', 'ea_main_content_id', 10, 2 );
+add_filter( 'genesis_attr_content', 'ea_change_content' );
 
 /**
  * Custom search form
