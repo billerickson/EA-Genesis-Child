@@ -79,13 +79,15 @@ p {
 	padding: 0;
 
 	&.large,
+	&.has-large-font-size,
 	&.wp-block-subhead {
     	@include font-sizes( 18px, null, 20px );
 		font-style: normal;
 		opacity: 1;
 	}
 
-	&.small {
+	&.small,
+	&.has-small-font-size {
 	    font-size: 12px;
 	}
 

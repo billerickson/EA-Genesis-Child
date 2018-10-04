@@ -45,9 +45,63 @@ function ea_child_theme_setup() {
 	add_editor_style( 'assets/css/editor-style.css' );
 
 	// Image Sizes
-	add_theme_support( 'align-wide' );
 	// add_image_size( 'ea_featured', 400, 100, true );
 
+	// Gutenberg
+
+	// -- Wide Images
+	//add_theme_support( 'align-wide' );
+
+	// -- Editor Font Styles
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'small', 'ea_genesis_child' ),
+			'shortName' => __( 'S', 'ea_genesis_child' ),
+			'size'      => 12,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'regular', 'ea_genesis_child' ),
+			'shortName' => __( 'M', 'ea_genesis_child' ),
+			'size'      => 16,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'large', 'ea_genesis_child' ),
+			'shortName' => __( 'L', 'ea_genesis_child' ),
+			'size'      => 20,
+			'slug'      => 'large'
+		),
+/*
+		array(
+			'name'      => __( 'larger', 'ea_genesis_child' ),
+			'shortName' => __( 'XL', 'ea_genesis_child' ),
+			'size'      => 24,
+			'slug'      => 'larger'
+		)
+*/
+	) );
+
+	// -- Editor Color Palette
+	/*
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Light gray', 'ea_genesis_child' ),
+			'slug'  => 'light-gray',
+			'color'	=> '#f5f5f5',
+		),
+		array(
+			'name'  => __( 'Medium gray', 'ea_genesis_child' ),
+			'slug'  => 'medium-gray',
+			'color' => '#999',
+		),
+		array(
+			'name'  => __( 'Dark gray', 'ea_genesis_child' ),
+			'slug'  => 'dark-gray',
+			'color' => '#333',
+	       ),
+	) );
+	*/
 
 }
 add_action( 'genesis_setup', 'ea_child_theme_setup', 15 );
