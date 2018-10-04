@@ -132,25 +132,9 @@ blockquote.wp-block-quote {
 	color: $base-color;
 	@include font-sizes( 20px, null, 24px );
 	font-style: italic;
-	margin: 0;
-	@extend %large-margin;
+	margin: $margin_2x 0;
 	padding: 0;
 	text-align: center;
-
-	&::before,
-	&::after {
-		background: $highlight;
-		content: '';
-		display: block;
-		width: 100%;
-		max-width: 286px;
-		height: 8px;
-		margin: 0 auto 25px;
-	}
-
-	&::after {
-		margin: 25px auto 0;
-	}
 
 	cite {
 		color: $base-color;
@@ -164,44 +148,6 @@ blockquote.wp-block-quote {
         margin-bottom: 0;
     }
 
-	&.is-large {
-		@include font-sizes( 22px, 26px, 32px );
-		margin: 0 0 $base-margin;
-		padding: 0;
-
-		cite {
-			text-align: center;
-		}
-	}
-
-	&.wp-block-pullquote {
-		border: none;
-		color: $base-color;
-		padding: 0;
-
-		&,
-		&.alignleft,
-		&.alignright {
-
-			max-width: 286px;
-			margin-top: 10px;
-			margin-bottom: 0;
-
-			&,
-			& > p {
-				@include font-sizes( 20px, null, 24px );
-				font-style: normal;
-				font-weight: 700;
-			}
-		}
-
-		cite {
-			color: $base-color;
-			@include font-sizes( 16px, 18px );
-			font-weight: 400;
-			text-transform: none;
-		}
-	}
 }
 
 /* Horizontal Rule
