@@ -37,7 +37,7 @@ function ea_archive_loop() {
 			do_action( 'genesis_before_entry' );
 
 			// Template part
-			$partial = apply_filters( 'ea_loop_partial', is_singular() ? 'content' : 'archive' );
+			$partial = apply_filters( 'ea_loop_partial', 'archive' );
 			$context = apply_filters( 'ea_loop_partial_context', is_search() ? 'search' : get_post_type() );
 			get_template_part( 'partials/' . $partial, $context );
 
