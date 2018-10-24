@@ -9,16 +9,23 @@
 **/
 
 /**
+ * Use Archive Loop
+ *
+ */
+function ea_use_archive_loop() {
+
+	if( ! is_singular() ) {
+		add_action( 'genesis_loop', 'ea_archive_loop' );
+		remove_action( 'genesis_loop', 'genesis_do_loop' );
+	}
+}
+add_action( 'genesis_setup', 'ea_use_archive_loop', 20 );
+
+/**
  * Archive Loop
  * Uses template partials
  */
 function ea_archive_loop() {
-
-	// Use standard genesis loop on singular content
-	if( is_singular() ) {
-		genesis_do_loop();
-		return;
-	}
 
 	if ( have_posts() ) {
 
@@ -46,5 +53,3 @@ function ea_archive_loop() {
 
 	}
 }
-add_action( 'genesis_loop', 'ea_archive_loop' );
-remove_action( 'genesis_loop', 'genesis_do_loop' );
