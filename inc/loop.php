@@ -19,7 +19,7 @@ function ea_use_archive_loop() {
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
 	}
 }
-add_action( 'genesis_setup', 'ea_use_archive_loop', 20 );
+add_action( 'template_redirect', 'ea_use_archive_loop', 20 );
 
 /**
  * Archive Loop
