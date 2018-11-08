@@ -58,14 +58,14 @@ button,
 button.wpforms-submit,
 input[type="button"],
 input[type="reset"],
-input[type="submit"], .button:not(.components-button), a, a svg {
+input[type="submit"], .button:not(.components-button), .wp-block-button .wp-block-button__link, a, a svg {
   transition: all 0.1s ease-in-out; }
 
 button,
 button.wpforms-submit,
 input[type="button"],
 input[type="reset"],
-input[type="submit"], .button:not(.components-button) {
+input[type="submit"], .button:not(.components-button), .wp-block-button .wp-block-button__link {
   background: #59BACC;
   border: none;
   border-radius: 4px;
@@ -81,7 +81,7 @@ input[type="submit"], .button:not(.components-button) {
   button:hover,
   input:hover[type="button"],
   input:hover[type="reset"],
-  input:hover[type="submit"], .button:hover:not(.components-button) {
+  input:hover[type="submit"], .button:hover:not(.components-button), .wp-block-button .wp-block-button__link:hover {
     background-color: #39a5b9;
     color: #fff;
     text-decoration: none; }
@@ -601,128 +601,261 @@ input[type="search"]::-webkit-search-results-button {
   .site-container .wpforms-container .wpforms-field-label {
     margin-bottom: 8px; }
 
-/* Post Elements
+/* Blocks
 ---------------------------------------------------------------------------------------------------- */
+/* General
+--------------------------------------------- */
+.entry > .entry-header,
+.archive .site-main {
+  margin: 0 16px;
+  max-width: calc(100vw - (2 * 16px)); }
+  .entry > .entry-header > *:first-child,
+  .archive .site-main > *:first-child {
+    margin-top: 0; }
+  @media (min-width: 768px) {
+    .entry > .entry-header,
+    .archive .site-main {
+      margin: 0 calc(2 * (100vw / 12));
+      max-width: calc(8 * (100vw / 12)); } }
+  @media (min-width: 1232px) {
+    .entry > .entry-header,
+    .archive .site-main {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
+
+.entry-content > * {
+  margin: 32px 16px;
+  max-width: calc(100vw - (2 * 16px)); }
+  @media (min-width: 768px) {
+    .entry-content > * {
+      margin: 32px calc(2 * (100vw / 12));
+      max-width: calc(8 * (100vw / 12)); } }
+  @media (min-width: 1232px) {
+    .entry-content > * {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
+  .entry-content > * > *:first-child {
+    margin-top: 0; }
+  .entry-content > * > *:last-child {
+    margin-bottom: 0; }
+  .entry-content > *.alignwide {
+    margin-left: auto;
+    margin-right: auto; }
+    @media (min-width: 768px) {
+      .entry-content > *.alignwide {
+        margin-left: calc(1 * (100vw / 12));
+        margin-right: calc(1 * (100vw / 12));
+        max-width: calc(10 * (100vw / 12)); } }
+  .entry-content > *.alignfull {
+    margin-top: calc(2 * 16px);
+    margin-right: 0;
+    margin-bottom: calc(2 * 16px);
+    margin-left: 0;
+    max-width: 100%; }
+  .entry-content > *.alignleft {
+    float: left;
+    max-width: calc(5 * (100vw / 12));
+    margin-top: 0; }
+    @media (min-width: 768px) {
+      .entry-content > *.alignleft {
+        max-width: calc(4 * (100vw / 12));
+        margin-right: calc(2 * 16px); } }
+    @media (min-width: 1232px) {
+      .entry-content > *.alignleft {
+        max-width: calc(3 * (100vw / 12)); } }
+  .entry-content > *.alignright {
+    float: right;
+    max-width: calc(5 * (100vw / 12));
+    margin-top: 0;
+    margin-left: 16px;
+    margin-right: 16px; }
+    @media (min-width: 768px) {
+      .entry-content > *.alignright {
+        max-width: calc(4 * (100vw / 12));
+        margin-left: calc(2 * 16px);
+        margin-right: calc(2 * (100vw / 12)); } }
+
+.entry-content ul, .entry-content ol {
+  padding-left: 1rem; }
+  .entry-content ul li, .entry-content ol li {
+    padding-bottom: .5rem; }
+    .entry-content ul li:last-child, .entry-content ol li:last-child {
+      padding-bottom: 0; }
+    .entry-content ul li ul, .entry-content ul li ol, .entry-content ol li ul, .entry-content ol li ol {
+      padding-top: .5rem; }
+
+/* Image
+--------------------------------------------- */
+.wp-block-image figcaption {
+  color: #000;
+  text-align: left;
+  font-size: 12px; }
+
+.wp-block-image.page-header {
+  margin-bottom: 0; }
+
+/* Button
+--------------------------------------------- */
+.wp-block-button {
+  margin-bottom: 16px;
+  text-align: center; }
+
+/* Blockquote
+--------------------------------------------- */
+blockquote,
+blockquote.wp-block-quote {
+  background: transparent;
+  padding: 0;
+  text-align: left; }
+  blockquote p,
+  blockquote.wp-block-quote p {
+    color: #59BACC;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400; }
+  blockquote::before,
+  blockquote.wp-block-quote::before {
+    background: #59BACC;
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin-bottom: 16px; }
+  blockquote cite,
+  blockquote .wp-block-quote__citation,
+  blockquote.wp-block-quote cite,
+  blockquote.wp-block-quote .wp-block-quote__citation {
+    color: #59BACC;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 16px; }
+  blockquote p:last-of-type,
+  blockquote.wp-block-quote p:last-of-type {
+    margin-bottom: 0; }
+
+/* Separator
+--------------------------------------------- */
+.wp-block-separator,
+hr {
+  margin-bottom: -16px;
+  margin-top: 16px; }
+  .wp-block-separator:not(.is-style-dots),
+  hr:not(.is-style-dots) {
+    background-color: #E0E0E0;
+    border: 0;
+    height: 1px; }
+  .wp-block-separator:not(.is-style-wide):not(.is-style-dots),
+  hr:not(.is-style-wide):not(.is-style-dots) {
+    width: 100%;
+    height: 4px;
+    background: transparent; }
+    .wp-block-separator:not(.is-style-wide):not(.is-style-dots)::before,
+    hr:not(.is-style-wide):not(.is-style-dots)::before {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 40px;
+      background: #59BACC; }
+  .wp-block-separator.is-style-dots:before,
+  hr.is-style-dots:before {
+    color: #424242;
+    font-size: 18px;
+    letter-spacing: 12px;
+    padding-left: 12px; }
+
+/* Headings
+--------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #59BACC;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 16px; }
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    color: #59BACC; }
+    h1 a:hover,
+    h2 a:hover,
+    h3 a:hover,
+    h4 a:hover,
+    h5 a:hover,
+    h6 a:hover {
+      color: #59BACC;
+      text-decoration: underline; }
+  h1:focus,
+  h2:focus,
+  h3:focus,
+  h4:focus,
+  h5:focus,
+  h6:focus {
+    color: #59BACC;
+    outline: none; }
+
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 21px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 15px; }
+
 /* Tables
 --------------------------------------------- */
-.table {
+.table,
+.wp-block-table {
   border-spacing: 0;
   border-collapse: collapse;
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
   margin-bottom: 16px; }
   .table th,
-  .table td {
-    padding: 4px;
-    vertical-align: top;
+  .table td,
+  .wp-block-table th,
+  .wp-block-table td {
+    padding: 16px;
+    vertical-align: center;
     border-top: 1px solid #E0E0E0; }
-  .table thead th {
+  .table thead th,
+  .wp-block-table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #E0E0E0; }
-  .table tbody + tbody {
+  .table tbody + tbody,
+  .wp-block-table tbody + tbody {
     border-top: 2px solid #E0E0E0; }
 
-.table-bordered {
-  border: 1px solid #E0E0E0; }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #E0E0E0; }
-  .table-bordered thead th,
-  .table-bordered thead td {
-    border-bottom-width: 2px; }
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #FAFAFA; }
-
-@media (max-width: 767px) {
-  .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar; }
-    .table-responsive.table-bordered {
-      border: 0; } }
-
-/* Gallery
+/* Columns
 --------------------------------------------- */
-.gallery {
-  margin: 0 auto 40px;
-  overflow: hidden;
-  width: 100%; }
+.wp-block-columns .wp-block-column > *:first-child {
+  margin-top: 0; }
 
-.gallery-item {
-  float: left;
-  margin: 10px 0 0;
-  text-align: center; }
+.wp-block-columns .wp-block-column > *:last-child {
+  margin-bottom: 0; }
 
-.gallery-columns-2 .gallery-item {
-  width: 50%; }
-
-.gallery-columns-3 .gallery-item {
-  width: 33%; }
-
-.gallery-columns-4 .gallery-item {
-  width: 25%; }
-
-.gallery-columns-5 .gallery-item {
-  width: 20%; }
-
-.gallery-columns-6 .gallery-item {
-  width: 16.6666%; }
-
-.gallery-columns-7 .gallery-item {
-  width: 14.2857%; }
-
-.gallery-columns-8 .gallery-item {
-  width: 12.5%; }
-
-.gallery-columns-9 .gallery-item {
-  width: 11.1111%; }
-
-.gallery-columns-2 .gallery-item:nth-child(2n+1),
-.gallery-columns-3 .gallery-item:nth-child(3n+1),
-.gallery-columns-4 .gallery-item:nth-child(4n+1),
-.gallery-columns-5 .gallery-item:nth-child(5n+1),
-.gallery-columns-6 .gallery-item:nth-child(6n+1),
-.gallery-columns-7 .gallery-item:nth-child(7n+1),
-.gallery-columns-8 .gallery-item:nth-child(8n+1),
-.gallery-columns-9 .gallery-item:nth-child(9n+1) {
-  clear: both; }
-
-.gallery img {
-  border: 2px solid #E0E0E0; }
-
-.gallery-caption {
-  margin-left: 0; }
-
-/* Screen Reader Text
---------------------------------------------- */
-.screen-reader-text,
-.screen-reader-text span,
-.screen-reader-shortcut {
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  width: 1px;
-  border: 0;
-  overflow: hidden; }
-
-.screen-reader-text:focus,
-.screen-reader-shortcut:focus {
-  clip: auto !important;
-  height: auto;
-  width: auto;
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 15px 23px 14px;
-  color: #333;
-  background: #fff;
-  z-index: 100000;
-  /* Above WP toolbar. */
-  text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+.wp-block-columns[class*='has-'] > * {
+  margin-right: 16px; }
+  .wp-block-columns[class*='has-'] > *:last-child {
+    margin-right: 0; }
 
 /*
  * Column Classes
