@@ -28,14 +28,12 @@ input[type="search"] {
 @include media("<medium") {
 
 	.sidebar-primary {
-		max-width: 450px;
-		margin: 0 auto;
+		display: none;
 	}
 }
 
 @include media(">=medium") {
 
-	// IE Fallback
 	.sidebar-content,
 	.content-sidebar {
 
@@ -56,39 +54,5 @@ input[type="search"] {
 
 	.sidebar-content .sidebar-primary {
 		float: left;
-	}
-
-	// Modern Browsers
-	@supports( display:grid ) {
-
-		.sidebar-content,
-		.content-sidebar {
-
-			.content-area {
-				display: grid;
-				grid-column-gap: $grid-gutter;
-				grid-template-columns: 1fr 335px;
-				grid-template-areas: "content sidebar";
-			}
-
-			.site-main,
-			.sidebar-primary {
-				float: none;
-				width: 100%;
-			}
-		}
-
-		.sidebar-content .content-area {
-			grid-template-areas: "sidebar content";
-			grid-template-columns: 335px 1fr;
-		}
-
-		.site-main {
-			grid-area: content;
-		}
-
-		.sidebar-primary {
-			grid-area: sidebar;
-		}
 	}
 }
