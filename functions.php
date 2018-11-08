@@ -53,7 +53,7 @@ function ea_child_theme_setup() {
 	// Gutenberg
 
 	// -- Wide Images
-	//add_theme_support( 'align-wide' );
+	add_theme_support( 'align-wide' );
 
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(

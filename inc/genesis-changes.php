@@ -12,7 +12,7 @@
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support( 'genesis-footer-widgets', 3 );
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-secondary', 'footer-widgets', 'footer' ) );
 add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu', 'secondary' => 'Secondary Navigation Menu', 'mobile' => 'Mobile Menu' ) );
 add_theme_support( 'genesis-inpost-layouts' );
 add_theme_support( 'genesis-archive-layouts' );
@@ -42,17 +42,13 @@ remove_action( 'wp_head', 'genesis_load_favicon' );
 // Remove Header Description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-// Remove unused page layouts
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-
-// Remove unused sidebars
+// Remove sidebar layouts
+unregister_sidebar( 'header-right' );
+unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
-
-// Remove header-right widget area if genesis-header-nav plugin is active
-if( class_exists( '\\Gamajo\\GenesisHeaderNav\\Plugin' ) )
-	unregister_sidebar( 'header-right' );
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+remove_theme_support( 'genesis-inpost-layouts' );
+remove_theme_support( 'genesis-archive-layouts' );
 
 // Add New Sidebars
 // genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
@@ -348,7 +344,7 @@ function ea_main_content_skip_link( $skip_links ) {
 			$id = 'main-content';
 		$skip_links[ $id ] = $label;
 	}
-	
+
 	return $skip_links;
 }
 add_filter( 'genesis_skip_links_output', 'ea_main_content_skip_link' );
