@@ -677,6 +677,32 @@ figure {
     font-style: italic;
     font-size: 14px; }
 
+/* Color Options
+--------------------------------------------- */
+.has-blue-color {
+  color: #59BACC; }
+
+.has-blue-background-color {
+  background-color: #59BACC; }
+
+.has-green-color {
+  color: #58AD69; }
+
+.has-green-background-color {
+  background-color: #58AD69; }
+
+.has-orange-color {
+  color: #FFBC49; }
+
+.has-orange-background-color {
+  background-color: #FFBC49; }
+
+.has-red-color {
+  color: #E2574C; }
+
+.has-red-background-color {
+  background-color: #E2574C; }
+
 /* Forms
 --------------------------------------------- */
 input,

@@ -91,20 +91,25 @@ function ea_child_theme_setup() {
 	// -- Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Light Grey', 'ea_genesis_child' ),
-			'slug'  => 'light-gray',
-			'color'	=> '#f5f5f5',
+			'name'  => __( 'Blue', 'ea_genesis_child' ),
+			'slug'  => 'blue',
+			'color'	=> '#59BACC',
 		),
 		array(
-			'name'  => __( 'Medium Grey', 'ea_genesis_child' ),
-			'slug'  => 'medium-gray',
-			'color' => '#9E9E9E',
+			'name'  => __( 'Green', 'ea_genesis_child' ),
+			'slug'  => 'green',
+			'color' => '#58AD69',
 		),
 		array(
-			'name'  => __( 'Dark Grey', 'ea_genesis_child' ),
-			'slug'  => 'dark-gray',
-			'color' => '#424242',
-	       ),
+			'name'  => __( 'Orange', 'ea_genesis_child' ),
+			'slug'  => 'orange',
+			'color' => '#FFBC49',
+		),
+		array(
+			'name'	=> __( 'Red', 'ea_genesis_child' ),
+			'slug'	=> 'red',
+			'color'	=> '#E2574C',
+		),
 	) );
 
 }
