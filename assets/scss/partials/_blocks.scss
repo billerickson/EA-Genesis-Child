@@ -1,6 +1,140 @@
 /* Blocks
 ---------------------------------------------------------------------------------------------------- */
 
+/* General
+--------------------------------------------- */
+
+.entry > .entry-header,
+.archive .site-main {
+	margin: 0 $base-margin;
+	max-width: calc(100vw - (2 * #{ $base-margin }));
+
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	@include media(">=tablet") {
+		margin: 0 calc(2 * (100vw / 12));
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(">=desktop") {
+		max-width: $grid-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+.entry-content > * {
+
+	margin: 32px $base-margin;
+	max-width: calc(100vw - (2 * #{ $base-margin }));
+
+	@include media(">=tablet") {
+		margin: 32px calc(2 * (100vw / 12));
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(">=desktop") {
+		max-width: $grid-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	&.alignwide {
+
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media(">=tablet") {
+			margin-left: calc(1 * (100vw / 12));
+			margin-right: calc(1 * (100vw / 12));
+			max-width: calc(10 * (100vw / 12));
+		}
+	}
+
+	&.alignfull {
+		margin-top: calc(2 * #{$base-margin});
+		margin-right: 0;
+		margin-bottom: calc(2 * #{$base-margin});
+		margin-left: 0;
+		max-width: 100%;
+	}
+
+	&.alignleft {
+		float: left;
+		max-width: calc(5 * (100vw / 12));
+		margin-top: 0;
+
+		@include media(">=tablet") {
+			max-width: calc(4 * (100vw / 12));
+			margin-right: calc(2 * #{$base-margin});
+		}
+
+		@include media(">=desktop") {
+			max-width: calc(3 * (100vw / 12));
+		}
+	}
+
+	&.alignright {
+		float: right;
+		max-width: calc(5 * (100vw / 12));
+		margin-top: 0;
+		margin-left: $base-margin;
+		margin-right: $base-margin;
+
+		@include media(">=tablet") {
+			max-width: calc(4 * (100vw / 12));
+			margin-left: calc(2 * #{$base-margin});
+			margin-right: calc(2 * (100vw / 12));
+		}
+	}
+}
+
+.entry-content {
+
+	ul, ol {
+		padding-left: 1rem;
+
+		li {
+			padding-bottom: .5rem;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			ul, ol {
+				padding-top: .5rem;
+			}
+		}
+	}
+}
+
+/* Image
+--------------------------------------------- */
+
+.wp-block-image {
+
+	figcaption {
+		color: $base-color;
+		text-align: left;
+		font-size: 12px;
+	}
+
+	&.page-header {
+		margin-bottom: 0;
+	}
+}
+
 /* Button
 --------------------------------------------- */
 
@@ -10,5 +144,191 @@
 
 	.wp-block-button__link {
 		@extend %button;
+	}
+}
+
+
+/* Blockquote
+--------------------------------------------- */
+
+blockquote,
+blockquote.wp-block-quote {
+	background: transparent;
+	padding: 0;
+	text-align: left;
+
+	p {
+		color: $highlight;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	&::before {
+		background: $highlight;
+		content: '';
+		display: block;
+		width: 40px;
+		height: 4px;
+		margin-bottom: 16px;
+	}
+
+	cite,
+	.wp-block-quote__citation {
+		color: $highlight;
+		display: block;
+		font-size: 12px;
+		font-weight: 400;
+		margin-top: 16px;
+	}
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+}
+
+/* Separator
+--------------------------------------------- */
+
+.wp-block-separator,
+hr {
+	margin-bottom: -16px;
+	margin-top: $base-margin;
+
+	&:not(.is-style-dots) {
+		background-color: $border-color;
+		border: 0;
+		height: 1px;
+	}
+
+	&:not(.is-style-wide):not(.is-style-dots) {
+		width: 100%;
+		height: 4px;
+		background: transparent;
+
+		&::before {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 40px;
+			background: $highlight;
+		}
+	}
+
+	&.is-style-dots:before {
+		color: $grey_9;
+		font-size: 18px;
+		letter-spacing: 12px;
+		padding-left: 12px;
+	}
+}
+
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $highlight;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 16px;
+
+	a {
+		color: $highlight;
+
+		&:hover {
+			color: $highlight;
+			text-decoration: underline;
+		}
+	}
+
+	&:focus {
+		color: $highlight;
+		outline: none;
+	}
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 15px;
+}
+
+/* Tables
+--------------------------------------------- */
+
+.table,
+.wp-block-table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: $grid-max-width;
+	margin-bottom: $base-margin;
+
+	th,
+	td {
+		padding: 16px;
+		vertical-align: center;
+		border-top: 1px solid $border-color;
+	}
+
+	thead th {
+		vertical-align: bottom;
+		border-bottom: 2px solid $border-color;
+	}
+
+	tbody + tbody {
+		border-top: 2px solid $border-color;
+	}
+
+}
+
+
+/* Columns
+--------------------------------------------- */
+
+.wp-block-columns {
+
+	.wp-block-column > * {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&[class*='has-'] > * {
+		margin-right: $base-margin;
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }
