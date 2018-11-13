@@ -127,8 +127,8 @@
 
 	& > #{$grid_item_element} {
 		float: left;
-		margin-left: $gap / $grid-max-width * 100%;
-		width: ( ( $grid-max-width - $gap * ( $columns - 1 ) ) / $columns ) / $grid-max-width * 100%;
+		margin-left: $gap / $grid-width * 100%;
+		width: ( ( $grid-width - $gap * ( $columns - 1 ) ) / $columns ) / $grid-width * 100%;
 
 		&:nth-of-type(#{$columns}n+1) {
 			clear: both;

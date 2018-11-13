@@ -6,7 +6,8 @@ body.gutenberg-editor-page.wp-admin {
 	.editor-post-title__block,
 	.editor-default-block-appender,
 	.editor-block-list__block {
-	    max-width: $grid-max-width;
+	    max-width: $content-width;
+		margin: 0 auto;
 	}
 
 	/* Width of "wide" blocks */

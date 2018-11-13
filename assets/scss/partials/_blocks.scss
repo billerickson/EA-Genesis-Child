@@ -22,7 +22,7 @@
 	}
 
 	@include media(">=desktop") {
-		max-width: $grid-max-width;
+		max-width: $grid-width;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -31,7 +31,7 @@
 
 .entry-content > * {
 
-	margin: 32px $base-margin;
+	margin: $block-margin $base-margin;
 	max-width: calc(100vw - (2 * #{ $base-margin }));
 
 	@include media(">=tablet") {
@@ -40,7 +40,7 @@
 	}
 
 	@include media(">=desktop") {
-		max-width: $grid-max-width;
+		max-width: $content-width;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -66,9 +66,9 @@
 	}
 
 	&.alignfull {
-		margin-top: calc(2 * #{$base-margin});
+		margin-top: calc(2 * #{$block-margin});
 		margin-right: 0;
-		margin-bottom: calc(2 * #{$base-margin});
+		margin-bottom: calc(2 * #{$block-margin});
 		margin-left: 0;
 		max-width: 100%;
 	}
@@ -142,7 +142,7 @@
 --------------------------------------------- */
 
 .wp-block-button {
-	margin-bottom: $base-margin;
+	margin-bottom: $block-margin;
 	text-align: center;
 
 	.wp-block-button__link {
@@ -196,8 +196,6 @@ blockquote.wp-block-quote {
 
 .wp-block-separator,
 hr {
-	margin-bottom: -16px;
-	margin-top: $base-margin;
 
 	&:not(.is-style-dots) {
 		background-color: $border-color;
@@ -289,8 +287,8 @@ h6 {
 	border-spacing: 0;
 	border-collapse: collapse;
 	width: 100%;
-	max-width: $grid-max-width;
-	margin-bottom: $base-margin;
+	max-width: $grid-width;
+	margin-bottom: $block-margin;
 
 	th,
 	td {
