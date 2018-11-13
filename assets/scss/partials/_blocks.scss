@@ -5,6 +5,9 @@
 --------------------------------------------- */
 
 .entry > .entry-header,
+.entry > .entry-footer,
+.entry-comments,
+.comment-respond,
 .archive .site-main {
 	margin: 0 $base-margin;
 	max-width: calc(100vw - (2 * #{ $base-margin }));
