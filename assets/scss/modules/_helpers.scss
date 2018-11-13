@@ -29,25 +29,6 @@
 }
 
 /**
- * Center Image
- *
- */
-@mixin center-image() {
-	display: grid;
-	align-items: center;
-	grid-template-columns: 1;
-	grid-template-rows: 1;
-
-	img {
-		grid-column: 1 / -1;
-		grid-row: 1 / -1;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-}
-
-/**
  * Block Cover
  * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
  */
@@ -138,16 +119,16 @@
  * Columns
  *
  */
-@mixin columns( $columns, $wrapper_width: null, $grid_item_element: article ) {
+@mixin columns( $columns, $grid_item_element: article, $gap: null ) {
 
-	@if( $wrapper_width == null ) {
-		$wrapper_width: $grid-max-width;
+	@if( $gap == null ) {
+		$gap: $grid-gutter;
 	}
 
-	#{$grid_item_element} {
+	& > #{$grid_item_element} {
 		float: left;
-		margin-left: $grid-gutter / $wrapper_width * 100%;
-		width: ( ( $wrapper_width - $grid-gutter * ( $columns - 1 ) ) / $columns ) / $wrapper_width * 100%;
+		margin-left: $gap / $grid-max-width * 100%;
+		width: ( ( $grid-max-width - $gap * ( $columns - 1 ) ) / $columns ) / $grid-max-width * 100%;
 
 		&:nth-of-type(#{$columns}n+1) {
 			clear: both;
@@ -157,10 +138,10 @@
 
 	@supports( display: grid ) {
 		display: grid;
-		grid-column-gap: $grid-gutter;
+		grid-column-gap: $gap;
 		grid-template-columns: repeat( $columns, 1fr );
 
-		#{$grid_item_element} {
+		& > #{$grid_item_element} {
 			margin-left: 0;
 			width: 100%;
 		}
@@ -175,10 +156,10 @@
  * Columns, Mobile
  *
  */
-@mixin columns-mobile( $columns, $wrapper_width: null, $grid_item_element: article ) {
+@mixin columns-mobile( $columns, $grid_item_element: article, $gap: null ) {
 
 	@include media("<tablet") {
-		@include columns( $columns, $wrapper_width, $grid_item_element );
+		@include columns( $columns,$grid_item_element, $gap );
 	}
 }
 
@@ -186,10 +167,10 @@
  * Columns, Tablet
  *
  */
-@mixin columns-tablet( $columns, $wrapper_width: null, $grid_item_element: article ) {
+@mixin columns-tablet( $columns, $grid_item_element: article, $gap: null ) {
 
 	@include media(">=tablet", "<medium") {
-		@include columns( $columns, $wrapper_width, $grid_item_element );
+		@include columns( $columns, $grid_item_element, $gap );
 	}
 
 }
@@ -198,10 +179,10 @@
  * Columns, Tablet Up
  *
  */
-@mixin columns-tablet-up( $columns, $wrapper_width: null, $grid_item_element: article ) {
+@mixin columns-tablet-up( $columns, $grid_item_element: article, $gap: null ) {
 
 	@include media(">=tablet") {
-		@include columns( $columns, $wrapper_width, $grid_item_element );
+		@include columns( $columns, $grid_item_element, $gap );
 	}
 
 }
@@ -210,8 +191,8 @@
  * Columns, Desktop
  *
  */
-@mixin columns-desktop( $columns, $wrapper_width: null, $grid_item_element: article ) {
+@mixin columns-desktop( $columns, $grid_item_element: article, $gap: null ) {
 	@include media(">=medium") {
-		@include columns( $columns, $wrapper_width, $grid_item_element );
+		@include columns( $columns, $grid_item_element, $gap );
 	}
 }

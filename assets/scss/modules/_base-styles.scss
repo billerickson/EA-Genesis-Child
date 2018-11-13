@@ -7,18 +7,8 @@
 	margin: 0;
 }
 
-%large-margin {
-	margin-top: $margin_2x;
-	margin-bottom: $margin_2x;
-
-	@include media(">=large") {
-		margin-top: $margin_4x;
-		margin-bottom: $margin_4x;
-	}
-}
-
 %transition {
-	transition: all 0.1s ease-in-out;	
+	transition: all 0.1s ease-in-out;
 }
 
 %button {
