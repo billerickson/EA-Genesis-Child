@@ -4,8 +4,8 @@
 /* General
 --------------------------------------------- */
 
-.entry > .entry-header,
-.entry > .entry-footer,
+
+.entry > *,
 .entry-comments,
 .comment-respond,
 .archive .site-main {
@@ -17,12 +17,7 @@
 	}
 
 	@include media(">=tablet") {
-		margin: 0 calc(2 * (100vw / 12));
-		max-width: calc(8 * (100vw / 12));
-	}
-
-	@include media(">=desktop") {
-		max-width: $grid-width;
+		max-width: $content-width;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -31,19 +26,8 @@
 
 .entry-content > * {
 
-	margin: $block-margin $base-margin;
-	max-width: calc(100vw - (2 * #{ $base-margin }));
-
-	@include media(">=tablet") {
-		margin: 32px calc(2 * (100vw / 12));
-		max-width: calc(8 * (100vw / 12));
-	}
-
-	@include media(">=desktop") {
-		max-width: $content-width;
-		margin-left: auto;
-		margin-right: auto;
-	}
+	margin: $block-margin 0;
+	max-width: 100%;
 
 	> *:first-child {
 		margin-top: 0;
@@ -53,54 +37,74 @@
 		margin-bottom: 0;
 	}
 
-	&.alignwide {
+	@include media(">=tablet") {
 
+		&.alignwide,
+		&.alignfull {
+			margin-top: calc( 2 * #{$block-margin});
+			margin-bottom: calc( 2 * #{$block-margin});
+			max-width: 1000%;
+
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		&.alignfull {
+			margin-left: calc(50% - 50vw);
+			margin-right: calc(50% - 50vw);
+			width: auto;
+		}
+
+		&.alignwide {
+			margin-left: calc( -4 * #{$block-margin});
+			margin-right: calc( -4 * #{$block-margin});
+			width: calc( 100% + 8 * #{$block-margin});
+		}
+	}
+
+	&.alignleft {
+		/*rtl:ignore*/
+		float: left;
+		max-width: calc(5 * (100vw / 12));
+		margin-top: 0;
+		margin-left: 0;
+		/*rtl:ignore*/
+		margin-right: $base-margin;
+
+		@include media(">=tablet") {
+			max-width: calc(4 * (#{$content-width} / 12));
+			/*rtl:ignore*/
+			margin-right: calc(2 * #{$base-margin});
+		}
+
+	}
+
+	&.alignright {
+		/*rtl:ignore*/
+		float: right;
+		max-width: calc(5 * (100vw / 12));
+		margin-top: 0;
+		margin-right: 0;
+		/*rtl:ignore*/
+		margin-left: $base-margin;
+
+		@include media(">=tablet") {
+			max-width: calc(4 * (#{$content-width} / 12));
+			margin-right: 0;
+		}
+	}
+	&.aligncenter {
 		margin-left: auto;
 		margin-right: auto;
 
 		@include media(">=tablet") {
-			margin-left: calc(1 * (100vw / 12));
-			margin-right: calc(1 * (100vw / 12));
-			max-width: calc(10 * (100vw / 12));
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 
-	&.alignfull {
-		margin-top: calc(2 * #{$block-margin});
-		margin-right: 0;
-		margin-bottom: calc(2 * #{$block-margin});
-		margin-left: 0;
-		max-width: 100%;
-	}
-
-	&.alignleft {
-		float: left;
-		max-width: calc(5 * (100vw / 12));
-		margin-top: 0;
-
-		@include media(">=tablet") {
-			max-width: calc(4 * (100vw / 12));
-			margin-right: calc(2 * #{$base-margin});
-		}
-
-		@include media(">=desktop") {
-			max-width: calc(3 * (100vw / 12));
-		}
-	}
-
-	&.alignright {
-		float: right;
-		max-width: calc(5 * (100vw / 12));
-		margin-top: 0;
-		margin-left: $base-margin;
-		margin-right: $base-margin;
-
-		@include media(">=tablet") {
-			max-width: calc(4 * (100vw / 12));
-			margin-left: calc(2 * #{$base-margin});
-			margin-right: calc(2 * (100vw / 12));
-		}
-	}
 }
 
 .entry-content {

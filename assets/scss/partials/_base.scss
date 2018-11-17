@@ -49,7 +49,7 @@ $block-margin: 20px;
 
 // Grid
 $grid-width: 1200px;
-$grid-gutter: 32px;
+$grid-gap: 32px;
 $base-margin: 16px;
 $wrap_edge: $base-margin;
 $margin_2x: $base-margin * 2;
@@ -62,7 +62,7 @@ $breakpoints: (
   'tablet' : 768px, // required for include-media
   'medium' : 992px,
   'large'  : 1200px,
-  'desktop': $grid-width + $grid-gutter, // required for include-media
+  'desktop': $grid-width + $grid-gap, // required for include-media
 );
 
 @import "../vendor/_include-media";
