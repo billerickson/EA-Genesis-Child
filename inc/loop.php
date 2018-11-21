@@ -14,7 +14,7 @@
  */
 function ea_use_archive_loop() {
 
-	if( ! is_singular() ) {
+	if( ! is_singular() && ! is_404() ) {
 		add_action( 'genesis_loop', 'ea_archive_loop' );
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
 	}
