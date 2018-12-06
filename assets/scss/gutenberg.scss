@@ -28,7 +28,7 @@ body.gutenberg-editor-page.wp-admin {
 .editor-block-list__block  {
 
 	.wp-admin & {
-		@extend %base-style;
+		@include base-style();
 	}
 
 	@import "partials/style-guide";

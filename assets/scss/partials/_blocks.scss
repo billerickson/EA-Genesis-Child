@@ -9,8 +9,6 @@
 .entry-comments,
 .comment-respond,
 .archive .site-main {
-	margin: 0 $base-margin;
-	max-width: calc(100vw - (2 * #{ $base-margin }));
 
 	& > *:first-child {
 		margin-top: 0;
@@ -37,64 +35,39 @@
 		margin-bottom: 0;
 	}
 
-	@include media(">=tablet") {
+	&.alignwide {
+		margin: calc( 2 * #{$block-margin}) -#{$base-margin};
+		max-width: calc( 100% + #{$margin_2x});
 
-		&.alignwide,
-		&.alignfull {
-			margin-top: calc( 2 * #{$block-margin});
-			margin-bottom: calc( 2 * #{$block-margin});
-			max-width: 1000%;
+		@include media(">=medium") {
+			margin: calc( 2 * #{block-margin}) calc(25% - 25vw);
+			max-width: 100vw;
+		}
+	}
 
-			img {
-				display: block;
-				margin: 0 auto;
-			}
+	&.alignfull {
+		margin: calc( 2 * #{$block-margin}) -#{$base-margin};
+		max-width: calc( 100% + #{$margin_2x});
+
+		@include media(">=medium") {
+			margin: calc( 2 * #{$block-margin} ) calc(50% - 50vw);
+			max-width: 100vw;
 		}
 
-		&.alignfull {
-			margin-left: calc(50% - 50vw);
-			margin-right: calc(50% - 50vw);
-			width: auto;
-		}
-
-		&.alignwide {
-			margin-left: calc( -4 * #{$block-margin});
-			margin-right: calc( -4 * #{$block-margin});
-			width: calc( 100% + 8 * #{$block-margin});
-		}
 	}
 
 	&.alignleft {
 		/*rtl:ignore*/
 		float: left;
-		max-width: calc(5 * (100vw / 12));
-		margin-top: 0;
-		margin-left: 0;
-		/*rtl:ignore*/
-		margin-right: $base-margin;
-
-		@include media(">=tablet") {
-			max-width: calc(4 * (#{$content-width} / 12));
-			/*rtl:ignore*/
-			margin-right: calc(2 * #{$base-margin});
-		}
-
+		margin: 0 $block-margin $block-margin 0;
 	}
 
 	&.alignright {
 		/*rtl:ignore*/
 		float: right;
-		max-width: calc(5 * (100vw / 12));
-		margin-top: 0;
-		margin-right: 0;
-		/*rtl:ignore*/
-		margin-left: $base-margin;
-
-		@include media(">=tablet") {
-			max-width: calc(4 * (#{$content-width} / 12));
-			margin-right: 0;
-		}
+		margin: 0 0 $block-margin $block-margin;
 	}
+
 	&.aligncenter {
 		margin-left: auto;
 		margin-right: auto;
@@ -126,38 +99,58 @@
 	}
 }
 
-/* Image
+/* Headings
 --------------------------------------------- */
 
-.wp-block-image {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $highlight;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 16px;
 
-	img {
-		display: block;
-		max-width: 100%;
-		height: auto;
+	a {
+		color: $highlight;
+
+		&:hover {
+			color: $highlight;
+			text-decoration: underline;
+		}
 	}
 
-	figcaption {
-		color: $grey_7;
-		text-align: left;
-		font-size: 14px;
-		font-style: italic;
-	}
-
-}
-
-/* Button
---------------------------------------------- */
-
-.wp-block-button {
-	margin-bottom: $block-margin;
-	text-align: center;
-
-	.wp-block-button__link {
-		@extend %button;
+	&:focus {
+		color: $highlight;
+		outline: none;
 	}
 }
 
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 15px;
+}
 
 /* Blockquote
 --------------------------------------------- */
@@ -190,7 +183,7 @@ blockquote.wp-block-quote {
 
 	&.is-large,
 	&.is-style-large {
-		margin: $block-margin auto;
+		margin: calc( 2 * $block-margin ) auto;
 
 		p {
 			@include font-sizes( 24px, 36px );
@@ -198,6 +191,7 @@ blockquote.wp-block-quote {
 	}
 
 }
+
 
 /* Pull Quote
 --------------------------------------------- */
@@ -259,58 +253,29 @@ hr {
 	}
 }
 
-
-/* Headings
+/* Image
 --------------------------------------------- */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: $highlight;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 16px;
-
-	a {
-		color: $highlight;
-
-		&:hover {
-			color: $highlight;
-			text-decoration: underline;
-		}
-	}
-
-	&:focus {
-		color: $highlight;
-		outline: none;
-	}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
-h1 {
-    font-size: 36px;
+figcaption {
+	color: $grey_7;
+	text-align: left;
+	font-size: 14px;
+	font-style: italic;
 }
 
-h2 {
-    font-size: 30px;
-}
 
-h3 {
-    font-size: 24px;
-}
+/* Button
+--------------------------------------------- */
 
-h4 {
-    font-size: 21px;
-}
-
-h5 {
-    font-size: 18px;
-}
-
-h6 {
-    font-size: 15px;
+.wp-block-button {
+	margin-bottom: $block-margin;
+	text-align: center;
 }
 
 /* Tables

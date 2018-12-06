@@ -2,28 +2,16 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-inner {
+	overflow: hidden;
 	padding: 20px 0;
 	@include media(">=tablet") {
 		padding: 40px 0;
 	}
-}
 
-/* Entry Navigation
---------------------------------------------- */
-
-.posts-navigation {
-	overflow: hidden;
-	width: 100%;
-
-	.nav-previous {
-		float: right;
-	}
-
-	.nav-next {
-		float: left;
+	&.full {
+		padding: 0;
 	}
 }
-
 
 /* Comments
 --------------------------------------------- */
@@ -32,32 +20,50 @@
 
 	.comment-list {
 		margin: 0 0 $margin_2x;
-		font-size: 16px;
 
 		li {
 			list-style-type: none;
 
 			article {
-				background: $grey_1;
+				border: 2px solid $grey_2;
+				border-bottom-width: 0;
 				padding: $base-margin;
+				position: relative;
+
+				&:last-child {
+					border-bottom-width: 2px;
+				}
+
+				&::before {
+					background: $grey_2;
+					content: '';
+					display: block;
+					width: 5px;
+					height: calc( 100% + 4px );
+					position: absolute;
+					top: -2px;
+					left: -2px;
+				}
 			}
 
 			&.staff > article {
-				background: $grey_3;
-				border-left: 6px solid $grey_6;
+				background: rgba( $highlight, .05 );
+
+				&::before {
+					background: $highlight;
+				}
 			}
 		}
 
 		& > li {
-			border-radius: 4px;
-			box-shadow: 0 2px 8px 0 rgba( $black, .25 );
 			overflow: hidden;
 			margin-bottom: $base-margin;
 		}
 
 		.comment-author {
-    		@include font-sizes( 20px, null, 24px );
-			margin: 0;
+			font-weight: 700;
+		    @include font-sizes( 18px, 22px );
+			margin: 0 0 3px;
 
 			.says {
 				display: none;
@@ -65,13 +71,25 @@
 		}
 
 		.comment-meta {
-			@include font-sizes( 12px, null, 14px );
+			font-size: 14px;
+
+			a {
+				@extend %alt_link;
+			}
 		}
 
 		.comment-content {
 
 			p:last-child {
 				margin: 0;
+			}
+		}
+
+		.comment-reply {
+			margin-top: 16px;
+
+			a {
+				font-weight: 400;
 			}
 		}
 
@@ -84,25 +102,30 @@
 		}
 
 	}
+}
 
-	.comment-respond {
+.comment-respond {
 
-		input[type="email"],
-		input[type="text"],
-		input[type="url"] {
-			width: 50%
+	label {
+		display: block;
+		margin-right: 12px;
+
+		&[for="subscribe"],
+		&[for="wp-comment-cookies-consent"] {
+			display: inline-block;
 		}
+	}
 
-		label {
-			display: block;
-			margin-right: 12px;
+	.form-submit {
+		text-align: center;
+	}
 
-			&[for="subscribe"],
-			&[for="wp-comment-cookies-consent"] {
-				display: inline-block;
-			}
-		}
-
+	#cancel-comment-reply-link {
+		font-size: 18px;
+		color: $highlight;
+		float: right;
+		vertical-align: middle;
+		margin-top: 10px;
 	}
 }
 
@@ -158,4 +181,38 @@
 	z-index: 100000; /* Above WP toolbar. */
 	text-decoration: none;
 	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+}
+
+/* Archive Navigation
+--------------------------------------------- */
+
+.pagination {
+	border-top: 1px solid $border-color;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 22px;
+
+	ul {
+		margin: 0;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+
+			a {
+				color: $base-color;
+				border-radius: 3px;
+				display: block;
+				padding: 2px 11px;
+				font-weight: 400;
+			}
+
+			&.active > a,
+			&:hover > a {
+				background: $highlight;
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
 }

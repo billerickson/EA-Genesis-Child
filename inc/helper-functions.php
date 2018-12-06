@@ -94,42 +94,6 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 }
 
 /**
- * Column Classes
- *
- * Adds "-first" classes when appropriate for clearing float
- * @see /assets/scss/partials/layout.scss
- *
- * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
- * @param int $current, current post in loop
- * @param bool $join, whether to join classes (return string) or not (return array)
- * @return string/array $classes
- */
-function ea_column_class( $classes = array(), $current = false, $join = true ) {
-
-	if( false === $current )
-		return $classes;
-
-	$columns = array( 2, 3, 4, 6 );
-	foreach( $columns as $column ) {
-		if( 0 == $current % $column ) {
-
-			$col = 12 / $column;
-			foreach( $classes as $class ) {
-				if( false != strstr( $class, (string) $col ) && false == strstr( $class, '12' ) ) {
-					$classes[] = str_replace( $col, 'first', $class );
-				}
-			}
-		}
-	}
-
-	if( $join ) {
-		return join( ' ', $classes );
-	} else {
-		return $classes;
-	}
-}
-
-/**
  *  Background Image Style
  *
  * @param int $image_id
@@ -144,8 +108,37 @@ function ea_bg_image_style( $image_id = false, $image_size = 'full' ) {
  * Get Icon
  *
  */
-function ea_icon( $slug = '' ) {
-	$icon_path = get_stylesheet_directory() . '/assets/icons/' . $slug . '.svg';
+function ea_icon( $slug = '', $directory = '' ) {
+	$directory = !empty( $directory ) ? esc_attr( $directory ) : 'utility';
+	$path = get_stylesheet_directory() . '/assets/icons/' . $directory . '/';
+	if( 'images' == $directory )
+		$path = get_stylesheet_directory() . '/assets/images/';
+
+	$icon_path =  $path . $slug . '.svg';
 	if( file_exists( $icon_path ) )
 		return file_get_contents( $icon_path );
+}
+
+/**
+ * Theme Icons
+ *
+ */
+function ea_get_theme_icons( $directory = 'category' ) {
+	$icons = get_option( 'ea_theme_icons_' . $directory );
+	$version = get_option( 'ea_theme_icons_' . $directory . '_version' );
+	if( empty( $icons ) || ( defined( 'WP_LOCAL_DEV' ) && WP_LOCAL_DEV ) || ( defined( 'CHILD_THEME_VERSION' ) && version_compare( CHILD_THEME_VERSION, $version ) ) ) {
+		$icons = scandir( get_stylesheet_directory() . '/assets/icons/' . $directory );
+		$icons = array_diff( $icons, array( '..', '.' ) );
+		$icons = array_values( $icons );
+		if( empty( $icons ) )
+			return $icons;
+		// remove the .svg
+		foreach( $icons as $i => $icon ) {
+			$icons[ $i ] = substr( $icon, 0, -4 );
+		}
+		update_option( 'ea_theme_icons_' . $directory, $icons );
+		if( defined( 'CHILD_THEME_VERSION' ) )
+			update_option( 'ea_theme_icons_' . $directory . '_version', CHILD_THEME_VERSION );
+	}
+	return $icons;
 }

@@ -58,21 +58,6 @@
 	}
 }
 
-.mobile-menu-toggle {
-	display: block;
-	width: $sidr_close;
-	height: $sidr_close;
-	text-align: center;
-	@extend %button;
-	border-radius: 0;
-	padding: 0;
-
-	svg {
-		@include icon-position( 16px, $sidr_close );
-		fill: $white;
-	}
-}
-
 .nav-primary {
 	float: right;
 	width: auto;

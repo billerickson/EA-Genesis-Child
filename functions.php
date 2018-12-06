@@ -36,6 +36,7 @@ function ea_child_theme_setup() {
 	// Includes
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
+	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
     include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
@@ -75,14 +76,6 @@ function ea_child_theme_setup() {
 			'size'      => 20,
 			'slug'      => 'large'
 		),
-/*
-		array(
-			'name'      => __( 'larger', 'ea_genesis_child' ),
-			'shortName' => __( 'XL', 'ea_genesis_child' ),
-			'size'      => 24,
-			'slug'      => 'larger'
-		)
-*/
 	) );
 
 	// -- Disable Custom Colors
@@ -182,12 +175,12 @@ function ea_theme_fonts_url() {
 }
 
 /**
- * Blog Template
+ * Template Hierarchy
  *
  */
-function ea_blog_template( $template ) {
+function ea_template_hierarchy( $template ) {
 	if( is_home() || is_search() )
 		$template = get_query_template( 'archive' );
 	return $template;
 }
-add_filter( 'template_include', 'ea_blog_template' );
+add_filter( 'template_include', 'ea_template_hierarchy' );

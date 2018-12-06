@@ -1,4 +1,4 @@
-%base-style {
+@mixin base-style {
 	color: $base-color;
 	font-family: sans-serif;
 	font-size: 16px;
@@ -11,42 +11,12 @@
 	transition: all 0.1s ease-in-out;
 }
 
-%button {
-	background: $highlight;
-	border: none;
-	border-radius: 4px;
-	box-shadow: none;
-	color: $white;
-	cursor: pointer;
-	display: inline-block;
-	padding: 10px;
-	text-align: center;
-	text-decoration: none;
-	@extend %transition;
-	width: auto;
-	-webkit-appearance: none;
+%alt_link {
+	color: $base-color;
+	font-weight: 400;
 
 	&:hover {
-		background-color: darken( $highlight, 10%);
-		color: $white;
+		color: $highlight;
 		text-decoration: none;
-	}
-}
-
-@mixin button-styles() {
-
-	.button:not(.components-button) {
-		@extend %button;
-
-		&.button-block {
-			display: block;
-			width: 100%;
-		}
-
-		.wp-core-ui & {
-			line-height: 26px;
-			height: 46px;
-			font-size: 16px;
-		}
 	}
 }
