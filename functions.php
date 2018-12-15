@@ -56,6 +56,9 @@ function ea_child_theme_setup() {
 	// -- Wide Images
 	add_theme_support( 'align-wide' );
 
+	// -- Disable custom font sizes
+	add_theme_support( 'disable-custom-font-sizes' );
+
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
