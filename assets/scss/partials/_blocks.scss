@@ -40,8 +40,9 @@
 		max-width: calc( 100% + #{$margin_2x});
 
 		@include media(">=medium") {
-			margin: calc( 2 * #{block-margin}) calc(25% - 25vw);
+			margin: calc( 2 * #{$block-margin}) calc(25% - 25vw);
 			max-width: 100vw;
+			width: auto;
 		}
 	}
 
@@ -52,6 +53,7 @@
 		@include media(">=medium") {
 			margin: calc( 2 * #{$block-margin} ) calc(50% - 50vw);
 			max-width: 100vw;
+			width: 100vw;
 		}
 
 	}
@@ -108,22 +110,21 @@ h3,
 h4,
 h5,
 h6 {
-	color: $highlight;
+	color: $base-color;
 	line-height: 1.2;
 	font-weight: 600;
 	margin-bottom: 16px;
 
 	a {
-		color: $highlight;
+		color: $base-color;
 
 		&:hover {
 			color: $highlight;
-			text-decoration: underline;
+			text-decoration: none;
 		}
 	}
 
 	&:focus {
-		color: $highlight;
 		outline: none;
 	}
 }
@@ -187,6 +188,10 @@ blockquote.wp-block-quote {
 
 		p {
 			@include font-sizes( 24px, 36px );
+		}
+
+		cite {
+			text-align: left;
 		}
 	}
 

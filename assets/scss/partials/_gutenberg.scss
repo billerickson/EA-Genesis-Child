@@ -1,9 +1,33 @@
-blockquote,
-.wp-block-quote:not(.is-large) {
-	border-left: 0;
-	padding-left: 0;
+body {
+	@include base-style();
 }
 
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-	max-width: 100%;
+/* Post title width */
+.editor-post-title__block.wp-block {
+	max-width: $content-width;
+
+	/* Post title styling */
+	.editor-post-title__input {
+	}
+}
+
+/* Main column width */
+.wp-block {
+    max-width: $content-width;
+
+	/* Wide column width */
+	&[data-align="wide"] {
+		max-width: none;
+
+		@include media(">=medium") {
+			max-width: none;
+			margin-left: calc(25vw - 25%);
+			margin-right: calc(25vw - 25%);
+		}
+	}
+
+	/* Full column width */
+	&[data-align="full"] {
+		max-width: none;
+	}
 }
