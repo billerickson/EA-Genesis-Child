@@ -60,6 +60,7 @@ $breakpoints: (
   'phone'  : 360px,
   'small'  : 768px,
   'tablet' : 768px, // required for include-media
+  'mobile_menu' : 768px,
   'medium' : 992px,
   'large'  : 1200px,
   'desktop': $grid-width + $grid-gap, // required for include-media
