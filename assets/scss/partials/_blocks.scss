@@ -274,15 +274,6 @@ figcaption {
 	font-style: italic;
 }
 
-
-/* Button
---------------------------------------------- */
-
-.wp-block-button {
-	margin-bottom: $block-margin;
-	text-align: center;
-}
-
 /* Tables
 --------------------------------------------- */
 
@@ -310,30 +301,4 @@ figcaption {
 		border-top: 2px solid $border-color;
 	}
 
-}
-
-
-/* Columns
---------------------------------------------- */
-
-.wp-block-columns {
-
-	.wp-block-column > * {
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	&[class*='has-'] > * {
-		margin-right: $base-margin;
-
-		&:last-child {
-			margin-right: 0;
-		}
-	}
 }
