@@ -1,4 +1,4 @@
-body {
+body, p {
 	@include base-style();
 }
 
@@ -30,4 +30,15 @@ body {
 	&[data-align="full"] {
 		max-width: none;
 	}
+}
+
+// Undo blockquote styles
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	border-left: 0;
+	padding-left: 0;
+}
+
+// Fix space between image and caption
+.wp-block-image {
+	line-height: 0;
 }
