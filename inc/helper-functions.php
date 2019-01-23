@@ -106,6 +106,14 @@ function ea_bg_image_style( $image_id = false, $image_size = 'full' ) {
 
 /**
  * Get Icon
+ * This function is in charge of displaying SVG icons across the site.
+ *
+ * Place each <svg> source in the /assets/icons/{group}/ directory, without adding
+ * both `width` and `height` attributes, since these are added dynamically,
+ * before rendering the SVG code.
+ *
+ * All icons are assumed to have equal width and height, hence the option
+ * to only specify a `$size` parameter in the svg methods.
  *
  */
 function ea_icon( $atts = array() ) {
