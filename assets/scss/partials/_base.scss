@@ -29,10 +29,12 @@ $red_3: #E98078;
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
-$colors: ( blue, $blue_1 ),
-	( green, $green_1 ),
-	( orange, $orange_1 ),
-	( red, $red_1 );
+$colors: (
+	'blue' : $blue_1,
+	'green' : $green_1,
+	'orange' : $orange_1,
+	'red' : $red_1,
+);
 
 $base-color: $black;
 $highlight: $blue_1;

@@ -192,6 +192,46 @@ blockquote.wp-block-quote {
 
 }
 
+/* Button
+--------------------------------------------- */
+
+.wp-block-button__link {
+	border-radius: 0;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:not(.has-text-color) {
+		color: white;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	&:not(.has-background) {
+		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
+		background-color: $default;
+
+		&:hover {
+			background-color: darken( $default, 20% );
+		}
+	}
+
+	@each $name, $color in $colors {
+
+		&.has-#{$name}-color:hover {
+			color: $color;
+		}
+
+		&.has-#{$name}-background-color:hover {
+			background-color: darken( $color, 20% );
+		}
+	}
+
+}
+
 
 /* Pull Quote
 --------------------------------------------- */
