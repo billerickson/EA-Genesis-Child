@@ -338,6 +338,28 @@ figcaption {
 
 }
 
+
+/* Media And Text
+--------------------------------------------- */
+
+.wp-block-media-text.is-stacked-on-mobile {
+
+	@include media('<small') {
+		// stack into single column sooner than block editor default
+		grid-template-columns: 1fr;
+		// !important needed to force media to show above content on smaller
+		// screens when block is set to Media on the right, Text on the left
+		grid-template-areas:
+			"media-text-media"
+			"media-text-content" !important;
+
+		// add margin between media and text when in one column
+		.wp-block-media-text__media {
+			margin-bottom: $margin_2x;
+		}
+	}
+}
+
 /* Color Options
 --------------------------------------------- */
 
