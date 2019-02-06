@@ -171,18 +171,21 @@ h6 {
 		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 		background-color: $default;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: darken( $default, 20% );
 		}
 	}
 
 	@each $name, $color in $colors {
 
-		&.has-#{$name}-color:hover {
+		&.has-#{$name}-color:hover,
+		&.has-#{$name}-color:focus {
 			color: $color;
 		}
 
-		&.has-#{$name}-background-color:hover {
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
 			background-color: darken( $color, 20% );
 		}
 	}
