@@ -1,10 +1,12 @@
-jQuery(function(e){
+jQuery(function(a){
 // Smooth Scroll
-function t(t){var a=null;try{a=e(t)}catch(t){
+function e(e){var n=null;try{n=a(e)}catch(e){
 // Perhaps worth adding some error logging here in the future.
-return!1}if((a=a.length?a:e("[name="+this.hash.slice(1)+"]")).length){var n=0;return"fixed"==e(".site-header").css("position")&&(n=e(".site-header").height()),e("body").hasClass("admin-bar")&&(n+=e("#wpadminbar").height()),e("html,body").animate({scrollTop:a.offset().top-n},1e3),!1}}
+return!1}if((n=n.length?n:a("[name="+this.hash.slice(1)+"]")).length){var t=0;return"fixed"==a(".site-header").css("position")&&(t=a(".site-header").height()),a("body").hasClass("admin-bar")&&(t+=a("#wpadminbar").height()),a("html,body").animate({scrollTop:n.offset().top-t},1e3),!1}}
 // -- Smooth scroll on pageload
-window.location.hash&&t(window.location.hash),
+window.location.hash&&e(window.location.hash),
 // -- Smooth scroll on click
-e('a[href*="#"]:not([href="#"]):not(.no-scroll)').click(function(){location.pathname.replace(/^\//,"")!=this.pathname.replace(/^\//,"")&&location.hostname!=this.hostname||t(this.hash)})}),// @codekit-prepend "smoothscroll.js"
-jQuery(function(t){});
+a('a[href*="#"]:not([href="#"]):not(.no-scroll)').click(function(){location.pathname.replace(/^\//,"")!=this.pathname.replace(/^\//,"")&&location.hostname!=this.hostname||e(this.hash)})}),// @codekit-prepend "smoothscroll.js"
+jQuery(function(e){
+// Mobile menu
+e(".mobile-menu-toggle").click(function(){e("body").toggleClass("mobile-menu-expanded")}),e(".submenu-expand").click(function(){e(this).parent().toggleClass("submenu-active")})});

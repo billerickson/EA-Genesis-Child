@@ -128,7 +128,7 @@ function ea_icon( $atts = array() ) {
 	if( empty( $atts['icon'] ) )
 		return;
 
-	$icon_path = get_template_directory() . '/assets/icons/' . $atts['group'] . '/' . $atts['icon'] . '.svg';
+	$icon_path = get_stylesheet_directory() . '/assets/icons/' . $atts['group'] . '/' . $atts['icon'] . '.svg';
 	if( ! file_exists( $icon_path ) )
 		return;
 
