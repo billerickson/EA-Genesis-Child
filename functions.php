@@ -54,6 +54,9 @@ function ea_child_theme_setup() {
 
 	// Gutenberg
 
+	// -- Responsive embeds
+	add_theme_support( 'responsive-embeds' );
+
 	// -- Wide Images
 	add_theme_support( 'align-wide' );
 
