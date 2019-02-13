@@ -52,6 +52,7 @@ add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
  */
 function ea_gutenberg_scripts() {
 	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
+	wp_enqueue_script( 'ea-editor', get_stylesheet_directory_uri() . '/assets/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ), true );
 }
 add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_scripts' );
 
