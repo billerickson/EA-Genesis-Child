@@ -30,10 +30,10 @@ $red_3: #E98078;
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
 $colors: (
-	'blue' 		: #59BACC,
-	'green' 	: #58AD69,
-	'orange' 	: #FFBC49,
-	'red' 		: #E2574C,
+	'blue' 		: $blue_1,
+	'green' 	: $green_1,
+	'orange' 	: $orange_1,
+	'red' 		: $red_1,
 );
 
 $base-color: $black;

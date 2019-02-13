@@ -1,0 +1,36 @@
+/* Archive
+---------------------------------------------------------------------------------------------------- */
+
+/* Entry Navigation
+--------------------------------------------- */
+
+.pagination {
+	border-top: 1px solid $border-color;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 22px;
+
+	ul {
+		margin: 0;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+
+			a {
+				color: $base-color;
+				border-radius: 3px;
+				display: block;
+				padding: 2px 11px;
+				font-weight: 400;
+			}
+
+			&.active > a,
+			&:hover > a {
+				background: $highlight;
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+}

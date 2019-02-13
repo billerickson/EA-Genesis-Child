@@ -19,3 +19,51 @@
 		text-decoration: none;
 	}
 }
+
+@mixin input-styling {
+
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=email],
+	input[type=month],
+	input[type=number],
+	input[type=password],
+	input[type=range],
+	input[type=search],
+	input[type=tel],
+	input[type=text],
+	input[type=time],
+	input[type=url],
+	input[type=week],
+	select,
+	textarea {
+		background-color: #fff;
+		border: 1px solid $border_color;
+		border-radius: 3px;
+		color: $base-color;
+		font-size: 16px;
+		line-height: 21px;
+		padding: 16px;
+		width: 100%;
+	}
+
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=email],
+	input[type=month],
+	input[type=number],
+	input[type=password],
+	input[type=range],
+	input[type=search],
+	input[type=tel],
+	input[type=text],
+	input[type=time],
+	input[type=url],
+	input[type=week],
+	select {
+		height: 50px;
+	}
+
+}

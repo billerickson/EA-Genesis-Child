@@ -79,20 +79,17 @@ p {
 	padding: 0;
 
 	&.large,
-	&.has-large-font-size,
-	&.wp-block-subhead {
+	&.has-large-font-size {
     	@include font-sizes( 18px, null, 20px );
-		font-style: normal;
-		opacity: 1;
+	}
+
+	&.has-regular-font-size {
+		font-size: 16px;
 	}
 
 	&.small,
 	&.has-small-font-size {
 	    font-size: 12px;
-	}
-
-	&.extra-margin {
-		margin-bottom: $margin_2x;
 	}
 }
 
@@ -152,6 +149,8 @@ h6 {
 /* Button
 --------------------------------------------- */
 
+$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
+
 .wp-block-button__link {
 	border-radius: 0;
 
@@ -168,7 +167,6 @@ h6 {
 	}
 
 	&:not(.has-background) {
-		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 		background-color: $default;
 
 		&:hover,
@@ -189,6 +187,35 @@ h6 {
 			background-color: darken( $color, 20% );
 		}
 	}
+
+}
+
+// Other Buttons
+.be-button, // rename to a theme-prefixed button class
+.site-container div.wpforms-container-full .wpforms-form input[type=submit],
+.site-container div.wpforms-container-full .wpforms-form button[type=submit],
+.site-container div.wpforms-container-full .wpforms-form .wpforms-page-button {
+		background-color: $default;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		color: $white;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 18px;
+		line-height: 28px;
+		margin: 0;
+		padding: 12px 24px;
+		text-align: center;
+		text-decoration: none;
+		white-space: normal;
+		overflow-wrap: break-word;
+
+		&:hover,
+		&:focus {
+			background-color: darken( $default, 20% );
+			border: none;
+		}
 
 }
 
@@ -374,5 +401,37 @@ figcaption {
 
 	.has-#{$name}-background-color {
 		background-color: $color;
+	}
+}
+
+/* WPForms
+--------------------------------------------- */
+
+div.wpforms-container.wpforms-container-full {
+	@include input-styling;
+
+	.wpforms-field {
+		padding: 0;
+		margin-bottom: $base-margin;
+	}
+
+	.wpforms-submit-container {
+		padding: 0;
+		margin-top: $base-margin;
+		text-align: center;
+	}
+
+	label.wpforms-error,
+	.wpforms-field-label {
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	label.wpforms-error {
+		margin-top: 8px;
+	}
+
+	.wpforms-field-label {
+		margin-bottom: 8px;
 	}
 }
