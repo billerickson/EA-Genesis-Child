@@ -33,9 +33,9 @@ function ea_global_enqueues() {
 	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/global-min.js' ), true );
 
 	// css
-    wp_dequeue_style( 'child-theme' );
+	wp_dequeue_style( 'child-theme' );
 	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
-    wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), CHILD_THEME_VERSION );
 
 	// Move jQuery to footer
 	if( ! is_admin() ) {
@@ -87,7 +87,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
 	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
-    include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
+	include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
