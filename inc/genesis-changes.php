@@ -42,13 +42,22 @@ remove_action( 'wp_head', 'genesis_load_favicon' );
 // Remove Header Description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-// Remove sidebar layouts
+// Remove unused sidebars
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+// Remove layout metabox
 remove_theme_support( 'genesis-inpost-layouts' );
 remove_theme_support( 'genesis-archive-layouts' );
+
+// Remove layouts
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar' );
+
 
 // Add New Sidebars
 // genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
