@@ -106,8 +106,8 @@ add_filter( 'genesis_markup_cpt-archive-description_open', 'ea_archive_descripti
 add_filter( 'genesis_markup_cpt-archive-description_close', 'ea_archive_description_markup' );
 add_filter( 'genesis_markup_date-archive-description_open', 'ea_archive_description_markup' );
 add_filter( 'genesis_markup_date-archive-description_close', 'ea_archive_description_markup' );
-add_filter( 'genesis_markup_search-archive-description_open', 'ea_archive_description_markup' );
-add_filter( 'genesis_markup_search-archive-description_close', 'ea_archive_description_markup' );
+add_filter( 'genesis_markup_search-description_open', 'ea_archive_description_markup' );
+add_filter( 'genesis_markup_search-description_close', 'ea_archive_description_markup' );
 
 /**
  * Archive Pagination markup
@@ -126,7 +126,7 @@ add_filter( 'genesis_attr_cpt-archive-description', 'genesis_attributes_cpt_arch
  *
  */
 function ea_search_header_classes( $attributes ) {
-	$attributes['class'] = 'archive-description search-archive-description';
+	$attributes['class'] = 'archive-description search-description';
 	return $attributes;
 }
-add_filter( 'genesis_attr_search-archive-description', 'ea_search_header_classes' );
+add_filter( 'genesis_attr_search-description', 'ea_search_header_classes' );

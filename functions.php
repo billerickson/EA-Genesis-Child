@@ -179,14 +179,3 @@ function ea_comment_text( $args ) {
 	return $args;
 }
 add_filter( 'comment_form_defaults', 'ea_comment_text' );
-
-/**
- * Template Hierarchy
- *
- */
-function ea_template_hierarchy( $template ) {
-	if( is_home() || is_search() )
-		$template = get_query_template( 'archive' );
-	return $template;
-}
-add_filter( 'template_include', 'ea_template_hierarchy' );
