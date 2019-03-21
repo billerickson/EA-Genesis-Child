@@ -1,4 +1,26 @@
 /**
+ * Grid, Center Last
+ *
+ */
+@mixin grid-center-last( $columns ) {
+	$total_columns: $columns * 2;
+	$span: $total_columns / $columns;
+	$offset: $columns - 1;
+	$nth-child: if( $columns % 2 == 0, 'odd', 'even' );
+
+	display: grid;
+	grid-template-columns: repeat( $total_columns, 1fr );
+
+	& > * {
+		grid-column: span $span;
+
+		&:nth-last-child(#{$offset}):nth-child(#{$nth-child}) {
+			grid-column: $span / span $span;
+		}
+	}
+}
+
+/**
  * Margin, No Edge
  * Removes left margin from first item, right margin from last item
  */
