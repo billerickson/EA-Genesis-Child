@@ -8,32 +8,16 @@
 	@import "entry-content";
 }
 
-.entry > *,
-.entry-comments,
-.comment-respond {
-
-	& > *:first-child {
-		margin-top: 0;
-	}
-
-	@include media(">=tablet") {
-		max-width: $content-width;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-}
-
 .entry-content > * {
 
 	margin: $block-margin 0;
 	max-width: 100%;
 
-	> *:first-child {
+	&:first-child {
 		margin-top: 0;
 	}
 
-	> *:last-child {
+	&:last-child {
 		margin-bottom: 0;
 	}
 

@@ -26,6 +26,10 @@ input[type="search"] {
 	@include media(">=tablet") {
 		padding: 40px 0;
 	}
+
+	& > .wrap {
+		max-width: map-get( $breakpoints, 'content-width' );
+	}
 }
 
 /* Screen Reader Text
