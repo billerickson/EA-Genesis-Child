@@ -123,6 +123,7 @@ function ea_icon( $atts = array() ) {
 		'group'	=> 'utility',
 		'size'	=> 16,
 		'class'	=> false,
+		'title'	=> false,
 	), $atts );
 
 	if( empty( $atts['icon'] ) )
@@ -142,6 +143,9 @@ function ea_icon( $atts = array() ) {
 	$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
 	$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
 	$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
+
+	if( !empty( $atts['title'] ) )
+		$svg .= '<span class="screen-reader-text">' . esc_html( $atts['title'] ) . '</span>';
 
 	return $svg;
 }

@@ -14,5 +14,5 @@
 		<span class="screen-reader-text">Search for</span>
 		<input type="search" class="search-field" placeholder="Search&hellip;" value="<?php echo get_search_query(); ?>" name="s" title="Search for" />
 	</label>
-	<button type="submit" class="search-submit"><?php echo ea_icon( 'search' );?><span class="screen-reader-text">Submit</span></button>
+	<button type="submit" class="search-submit"><?php echo ea_icon( array( 'icon' => 'search', 'title' => 'Submit' ) );?></button>
 </form>
