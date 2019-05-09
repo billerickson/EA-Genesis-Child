@@ -16,7 +16,7 @@ function ea_login_header_url( $url ) {
     return esc_url( home_url() );
 }
 add_filter( 'login_headerurl', 'ea_login_header_url' );
-add_filter( 'login_headertitle', '__return_empty_string' );
+add_filter( 'login_headertext', '__return_empty_string' );
 
 /**
  * Login Logo
