@@ -43,4 +43,9 @@ body, p {
 	line-height: 0;
 }
 
+// Full width button
+.wp-block-button.is-style-full {
+	display: block;
+}
+
 @import "entry-content";

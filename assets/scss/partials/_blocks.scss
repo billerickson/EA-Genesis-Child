@@ -158,6 +158,12 @@ $default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 		text-decoration: none;
 	}
 
+	.is-style-full &,
+	&.full {
+		display: block;
+		width: 100%;
+	}
+
 	&:not(.has-text-color) {
 		color: white;
 
