@@ -18,7 +18,7 @@ function be_enqueue_instant_page() {
 	if( function_exists( 'ea_is_amp' ) && ea_is_amp() )
 		return;
 
-	wp_enqueue_script( 'instantpage', get_template_directory_uri() . '/assets/js/instantpage.min.js', null, '1.2.2', true );
+	wp_enqueue_script( 'instantpage', get_stylesheet_directory_uri() . '/assets/js/instantpage.min.js', null, '1.2.2', true );
 }
 add_action( 'wp_enqueue_scripts', 'be_enqueue_instant_page' );
 
