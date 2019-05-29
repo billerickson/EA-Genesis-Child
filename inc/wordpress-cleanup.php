@@ -137,6 +137,16 @@ function ea_remove_avatars_from_comments( $avatar ) {
 add_filter( 'get_avatar', 'ea_remove_avatars_from_comments' );
 
 /**
+ * Comment form, button class
+ *
+ */
+function ea_comment_form_button_class( $args ) {
+	$args['class_submit'] = 'submit wp-block-button__link';
+	return $args;
+}
+add_filter( 'comment_form_defaults', 'ea_comment_form_button_class' );
+
+/**
  * Excerpt More
  *
  */
