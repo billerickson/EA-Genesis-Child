@@ -413,31 +413,67 @@ figcaption {
 /* WPForms
 --------------------------------------------- */
 
-div.wpforms-container.wpforms-container-full {
-	@include input-styling;
+div.wpforms-container {
+
+	.wpforms-title {
+	    @include font-sizes( 24px, 32px );
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 16px;
+		padding: 0;
+	}
+
+	.wpforms-description {
+		margin: 0 0 16px;
+		padding: 0;
+	}
 
 	.wpforms-field {
 		padding: 0;
-		margin-bottom: $base-margin;
+		margin-bottom: 32px;
+	}
+
+	.wpforms-field-label {
+		font-size: 16px;
+	}
+
+	.wpforms-recaptcha-container {
+		padding: 0;
+
+		@include media(">=tablet") {
+			margin-bottom: -78px;
+		}
 	}
 
 	.wpforms-submit-container {
 		padding: 0;
-		margin-top: $base-margin;
-		text-align: center;
+		margin-top: 32px;
+		text-align: right;
 	}
 
-	label.wpforms-error,
-	.wpforms-field-label {
-		font-size: 14px;
-		font-weight: 400;
-	}
+	&.one-line {
+		@include clearfix;
 
-	label.wpforms-error {
-		margin-top: 8px;
-	}
+			@include media(">=tablet") {
 
-	.wpforms-field-label {
-		margin-bottom: 8px;
+			.wpforms-field-container {
+				display: table;
+				width: calc(100% - 110px);
+				float: left;
+
+				.wpforms-field {
+					display: table-cell;
+					padding-right: 16px;
+					margin: 0;
+				}
+			}
+
+			.wpforms-submit-container {
+				float: right;
+				width: 110px;
+				clear: none;
+				margin: 0;
+			}
+		}
 	}
 }

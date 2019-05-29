@@ -88,6 +88,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/disable-genesis-schema.php' );
 	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
+	//include_once( get_stylesheet_directory() . '/inc/custom-logo.php' );
 	include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
 	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
@@ -95,7 +96,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/loop.php' );
 	include_once( get_stylesheet_directory() . '/inc/amp.php' );
 	include_once( get_stylesheet_directory() . '/inc/instantpage.php' );
-	//include_once( get_stylesheet_directory() . '/inc/custom-logo.php' );
+	include_once( get_stylesheet_directory() . '/inc/wpforms.php' );
 
 	// Editor Styles
 	add_theme_support( 'editor-styles' );

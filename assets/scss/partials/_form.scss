@@ -1,7 +1,26 @@
 /* Forms
 --------------------------------------------- */
 
-@include input-styling;
+input, select, textarea {
+	background: $white;
+	border: 1px solid $border-color;
+	border-radius: 4px;
+	color: $base-color;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 12px 10px;
+}
+
+select {
+	line-height: 48px;
+	height: 48px;
+}
+
+textarea {
+	width: 100%;
+}
+
+@include placeholder-color( $grey_5 );
 
 /* Search Form
 --------------------------------------------- */
