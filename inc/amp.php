@@ -33,8 +33,17 @@ function ea_amp_class( $default, $active, $variable ) {
  * AMP Toggle
  *
  */
-function ea_amp_toggle( $variable ) {
-	return ea_is_amp() ? ' on="tap:AMP.setState({' . $variable . ': !' . $variable . '})"' : '';
+function ea_amp_toggle( $variable = '', $disable = array() ) {
+	if( ! ea_is_amp() )
+		return;
+
+	$settings = $variable . ': !' . $variable;
+	if( !empty( $disable ) ) {
+		foreach( $disable as $disable_var ) {
+			$settings .= ', ' . $disable_var . ': false';
+		}
+	}
+	return ' on="tap:AMP.setState({' . $settings . '})"';
 }
 
 /**
