@@ -2,12 +2,13 @@
 
 jQuery(function($){
 
-	// Mobile menu
+	// Mobile Menu
 	$('.mobile-menu-toggle').click(function(){
-		$('body').toggleClass('mobile-menu-expanded');
+		$('.mobile-menu-toggle, .nav-primary').toggleClass('active');
 	});
-	$('.submenu-expand').click(function(){
-		$(this).parent().toggleClass('submenu-active');
+	$('.menu-item-has-children > .submenu-expand').click(function(e){
+		$(this).toggleClass('expanded');
+		e.preventDefault();
 	});
-	
+
 });

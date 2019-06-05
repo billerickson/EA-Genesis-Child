@@ -1,12 +1,1 @@
-jQuery(function(a){
-// Smooth Scroll
-function e(e){var n=null;try{n=a(e)}catch(e){
-// Perhaps worth adding some error logging here in the future.
-return!1}if((n=n.length?n:a("[name="+this.hash.slice(1)+"]")).length){var t=0;return"fixed"==a(".site-header").css("position")&&(t=a(".site-header").height()),a("body").hasClass("admin-bar")&&(t+=a("#wpadminbar").height()),a("html,body").animate({scrollTop:n.offset().top-t},1e3),!1}}
-// -- Smooth scroll on pageload
-window.location.hash&&e(window.location.hash),
-// -- Smooth scroll on click
-a('a[href*="#"]:not([href="#"]):not(.no-scroll)').click(function(){location.pathname.replace(/^\//,"")!=this.pathname.replace(/^\//,"")&&location.hostname!=this.hostname||e(this.hash)})}),// @codekit-prepend "smoothscroll.js"
-jQuery(function(e){
-// Mobile menu
-e(".mobile-menu-toggle").click(function(){e("body").toggleClass("mobile-menu-expanded")}),e(".submenu-expand").click(function(){e(this).parent().toggleClass("submenu-active")})});
+jQuery(function(e){function n(n){var t=null;try{t=e(n)}catch(e){return!1}if((t=t.length?t:e("[name="+this.hash.slice(1)+"]")).length){var a=0;return"fixed"==e(".site-header").css("position")&&(a=e(".site-header").height()),e("body").hasClass("admin-bar")&&(a+=e("#wpadminbar").height()),e("html,body").animate({scrollTop:t.offset().top-a},1e3),!1}}window.location.hash&&n(window.location.hash),e('a[href*="#"]:not([href="#"]):not(.no-scroll)').click(function(){location.pathname.replace(/^\//,"")!=this.pathname.replace(/^\//,"")&&location.hostname!=this.hostname||n(this.hash)})}),jQuery(function(e){e(".mobile-menu-toggle").click(function(){e(".mobile-menu-toggle, .nav-primary").toggleClass("active")}),e(".menu-item-has-children > .submenu-expand").click(function(n){e(this).toggleClass("expanded"),n.preventDefault()})});

@@ -32,10 +32,6 @@
 			color: $highlight;
 		}
 	}
-
-	.sub-menu {
-		padding: 7px;
-	}
 }
 
 /* Primary
@@ -47,7 +43,7 @@
 		display: none;
 		border-top: 1px solid $grey_3;
 
-		.mobile-menu-expanded & {
+		&.active {
 			background: $grey_1;
 			margin: 0 -16px;
 			padding: 8px 16px;
@@ -60,32 +56,26 @@
 
 			.menu-item {
 				float: none;
-			}
-
-			.submenu-active {
-
-				.submenu-expand {
-					transform: rotate(180deg);
-				}
-
-				& > .sub-menu {
-					display: block;
-				}
-			}
-
-			.menu > .menu-item {
 
 				& > a {
 					padding: 20px 0;
 				}
 
+				&.menu-item-has-children {
+					position: relative;
+
+					& > a {
+						padding-right: 32px;
+					}
+				}
+			}
+
+			.menu > .menu-item {
+
 				& + .menu-item {
 					border-top: 1px solid $grey_3;
 				}
 
-				&.menu-item-has-children {
-					padding-right: 32px;
-				}
 			}
 
 			.submenu-expand {
@@ -99,11 +89,20 @@
 				cursor: pointer;
 				outline: none;
 
+				&.expanded {
+					transform: rotate(180deg);
+
+					& + .sub-menu {
+						display: block;
+					}
+				}
+
 				svg {
 					@include icon-position( 16px, 56px );
 				}
 
-				&:hover svg {
+				&:hover svg,
+				&.expanded svg {
 					fill: $highlight;
 				}
 			}
@@ -114,18 +113,16 @@
 		float: right;
 		width: auto;
 
-		.menu > .menu-item {
+		.menu-item {
 
 			& > a {
 				font-size: 13px;
-				padding: 32px 16px;
+				padding: 8px 16px;
 			}
 
 			&:hover > a,
 			&.current-menu-item > a,
 			&.current-menu-ancestor > a {
-				background: $grey_1;
-				color: $base-color;
 			}
 
 			&:hover {
@@ -138,6 +135,14 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 26px;
+			}
+		}
+
+		.menu > .menu-item {
+
+			& > a {
+				padding-top: 32px;
+				padding-bottom:32px;
 			}
 		}
 
@@ -167,7 +172,7 @@
 			}
 
 			.sub-menu {
-				margin: -54px 0 0 199px;
+				margin: -40px 0 0 170px;
 			}
 		}
 	}
@@ -192,7 +197,7 @@
 	width: 100%;
 
 	&:focus,
-	.mobile-menu-expanded & {
+	&.active {
 		background: $highlight;
 		color: $white;
 		outline: none;
@@ -210,7 +215,7 @@
 		display: none;
 	}
 
-	.mobile-menu-expanded & {
+	&.active {
 
 		.menu-close {
 			display: inline;

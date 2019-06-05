@@ -39,8 +39,7 @@ add_action( 'genesis_header', 'ea_mobile_menu', 11 );
  */
 function ea_nav_add_dropdown_icons( $output, $item, $depth, $args ) {
 
-	// Only add class to 'top level' items on the 'primary' menu.
-	if ( ! isset( $args->theme_location ) || 'primary' !== $args->theme_location || $depth ) {
+	if ( ! isset( $args->theme_location ) || 'primary' !== $args->theme_location ) {
 		return $output;
 	}
 
