@@ -47,7 +47,7 @@ function ea_nav_add_dropdown_icons( $output, $item, $depth, $args ) {
 	if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		// Add SVG icon to parent items.
-		$icon = ea_icon( array( 'icon' => 'angle-down', 'size' => 16 ) );
+		$icon = ea_icon( array( 'icon' => 'navigate-down', 'size' => 16 ) );
 
 		$output .= sprintf(
 			'<span class="submenu-expand" tabindex="-1">%s</span>',
