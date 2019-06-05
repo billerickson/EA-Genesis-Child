@@ -56,3 +56,14 @@ function ea_amp_nav_dropdown( $theme_location = false, $depth = 0 ) {
 
 	return ea_amp_toggle( $key ) . ea_amp_class( 'submenu-expand', 'expanded', $key );
 }
+
+/**
+ * AMP class on Genesis Nav Menu
+ *
+ */
+function ea_amp_nav_primary_attr( $attr ) {
+	if( ea_is_amp() )
+		$attr['[class]'] = "mobileMenuActive ? 'nav-primary active' : 'nav-primary'";
+	return $attr;
+}
+add_filter( 'genesis_attr_nav-primary', 'ea_amp_nav_primary_attr', 20 );
