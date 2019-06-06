@@ -17,38 +17,70 @@ function ea_is_amp() {
 }
 
 /**
- * AMP Class
+ * Generate a class attribute and an AMP class attribute binding.
  *
+ * @param string $default Default class value.
+ * @param string $active  Value when the state enabled.
+ * @param string $state   State variable to toggle based on.
+ * @return string HTML attributes.
  */
-function ea_amp_class( $default, $active, $variable ) {
+function ea_amp_class( $default, $active, $state ) {
 	$output = '';
 	if( ea_is_amp() ) {
-		$output .= ' [class]="' . $variable . ' ? \'' . $default . ' ' . $active . '\' : \'' . $default . '\'"';
+		$output .= sprintf(
+			' [class]="%s"',
+			esc_attr(
+				sprintf(
+					'%s ? \'%s\' : \'%s\'',
+					$state,
+					$default . ' ' . $active,
+					$default
+				)
+			)
+		);
 	}
-	$output .= ' class="' . $default . '"';
+	$output .= sprintf( ' class="%s"', esc_attr( $default ) );
 	return $output;
 }
 
 /**
- * AMP Toggle
+ * Add the AMP toggle 'on' attribute.
  *
+ * @param string $state State to toggle.
+ * @param array $disable, list of states to disable
+ * @return string The 'on' attribute.
  */
-function ea_amp_toggle( $variable = '', $disable = array() ) {
+function ea_amp_toggle( $state = '', $disable = array() ) {
 	if( ! ea_is_amp() )
 		return;
 
-	$settings = $variable . ': !' . $variable;
+	$settings = sprintf(
+		'%1$s: ! %1$s',
+		esc_js( $state )
+	);
+
 	if( !empty( $disable ) ) {
-		foreach( $disable as $disable_var ) {
-			$settings .= ', ' . $disable_var . ': false';
+		foreach( $disable as $disableState ) {
+			$settings .= sprintf(
+				', %s: false',
+				esc_js( $disableState )
+			);
 		}
 	}
-	return ' on="tap:AMP.setState({' . $settings . '})"';
+
+	return sprintf(
+		' on="tap:AMP.setState({%s})"',
+		$settings
+	);
+
 }
 
 /**
- * AMP Nav Dropdown
+ * AMP Nav Dropdown toggle and class attributes.
  *
+ * @param string $theme_location Theme location.
+ * @param int    $depth          Depth.
+ * @return string The class and on attributes.
  */
 function ea_amp_nav_dropdown( $theme_location = false, $depth = 0 ) {
 
@@ -65,14 +97,3 @@ function ea_amp_nav_dropdown( $theme_location = false, $depth = 0 ) {
 
 	return ea_amp_toggle( $key ) . ea_amp_class( 'submenu-expand', 'expanded', $key );
 }
-
-/**
- * AMP class on Genesis Nav Menu
- *
- */
-function ea_amp_nav_primary_attr( $attr ) {
-	if( ea_is_amp() )
-		$attr['[class]'] = "mobileMenuActive ? 'nav-primary active' : 'nav-primary'";
-	return $attr;
-}
-add_filter( 'genesis_attr_nav-primary', 'ea_amp_nav_primary_attr', 20 );
