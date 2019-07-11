@@ -11,11 +11,9 @@
 // Theme Supports
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 add_theme_support( 'genesis-responsive-viewport' );
-add_theme_support( 'genesis-footer-widgets', 3 );
 add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
 add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
-add_theme_support( 'genesis-inpost-layouts' );
-add_theme_support( 'genesis-archive-layouts' );
+add_theme_support( 'genesis-footer-widgets', 3 );
 
 // Adds support for accessibility.
 add_theme_support(
