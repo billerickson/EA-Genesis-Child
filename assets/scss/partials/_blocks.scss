@@ -196,35 +196,6 @@ $default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 
 }
 
-// Other Buttons
-.be-button, // rename to a theme-prefixed button class
-.site-container div.wpforms-container-full .wpforms-form input[type=submit],
-.site-container div.wpforms-container-full .wpforms-form button[type=submit],
-.site-container div.wpforms-container-full .wpforms-form .wpforms-page-button {
-		background-color: $default;
-		border: none;
-		border-radius: 0;
-		box-shadow: none;
-		color: $white;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 18px;
-		line-height: 28px;
-		margin: 0;
-		padding: 12px 24px;
-		text-align: center;
-		text-decoration: none;
-		white-space: normal;
-		overflow-wrap: break-word;
-
-		&:hover,
-		&:focus {
-			background-color: darken( $default, 20% );
-			border: none;
-		}
-
-}
-
 /* Blockquote
 --------------------------------------------- */
 
