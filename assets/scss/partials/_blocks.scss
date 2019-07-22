@@ -300,32 +300,21 @@ blockquote.wp-block-quote {
 
 .wp-block-separator,
 hr {
+	background: transparent;
+	border: none;
+	width: 100%;
+	height: 32px;
+	position: relative;
 
-	&:not(.is-style-dots) {
-		background-color: $border-color;
-		border: 0;
-		height: 1px;
-	}
-
-	&:not(.is-style-wide):not(.is-style-dots) {
+	&::before {
+		background: $border-color;
+		content: '';
+		display: block;
 		width: 100%;
-		height: 4px;
-		background: transparent;
-
-		&::before {
-			content: '';
-			display: block;
-			height: 4px;
-			width: 40px;
-			background: $highlight;
-		}
-	}
-
-	&.is-style-dots:before {
-		color: $grey_9;
-		font-size: 18px;
-		letter-spacing: 12px;
-		padding-left: 12px;
+		height: 1px;
+		position: absolute;
+		top: 50%;
+		margin-top: -.5px;
 	}
 }
 

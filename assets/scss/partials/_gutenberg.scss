@@ -48,4 +48,9 @@ body, p {
 	display: block;
 }
 
+// Separator
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100%;
+}
+
 @import "entry-content";
