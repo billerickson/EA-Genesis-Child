@@ -337,32 +337,16 @@ img {
 /* Tables
 --------------------------------------------- */
 
-.table,
-.wp-block-table {
-	border-spacing: 0;
-	border-collapse: collapse;
-	width: 100%;
-	max-width: $grid-width;
-	margin-bottom: $block-margin;
+.wp-block-table  {
 
-	th,
-	td {
-		padding: 16px;
-		vertical-align: center;
-		border-top: 1px solid $border-color;
+    border-collapse: collapse;
+    width: 100%;
+
+	td, th {
+		padding: .5em;
+	    border: 1px solid;
 	}
-
-	thead th {
-		vertical-align: bottom;
-		border-bottom: 2px solid $border-color;
-	}
-
-	tbody + tbody {
-		border-top: 2px solid $border-color;
-	}
-
 }
-
 
 /* Media And Text
 --------------------------------------------- */
