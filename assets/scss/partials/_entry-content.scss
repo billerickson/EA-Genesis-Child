@@ -12,4 +12,12 @@ ul, ol {
 			padding-top: .5rem;
 		}
 	}
+
+	&.wp-block-gallery {
+		padding-left: 0;
+
+		li {
+			padding-bottom: 0;
+		}
+	}
 }
