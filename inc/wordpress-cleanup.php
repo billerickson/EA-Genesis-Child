@@ -91,19 +91,9 @@ function ea_clean_post_classes( $classes ) {
 	if( ! is_array( $classes ) )
 		return $classes;
 
-    $allowed_classes = array(
+	$allowed_classes = array(
   		'hentry',
   		'type-' . get_post_type(),
-      'one-half',
-      'one-third',
-      'two-thirds',
-      'one-fourth',
-      'two-fourths',
-      'three-fourths',
-      'one-fifth',
-      'two-fifths',
-      'three-fifths',
-      'four-fifths',
    	);
 
 	return array_intersect( $classes, $allowed_classes );
