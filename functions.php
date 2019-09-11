@@ -96,7 +96,6 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/loop.php' );
 	include_once( get_stylesheet_directory() . '/inc/amp.php' );
 	include_once( get_stylesheet_directory() . '/inc/display-posts.php' );
-	include_once( get_stylesheet_directory() . '/inc/instantpage.php' );
 	include_once( get_stylesheet_directory() . '/inc/wpforms.php' );
 
 	// Editor Styles
