@@ -1,5 +1,3 @@
-// @codekit-prepend "smoothscroll.js"
-
 jQuery(function($){
 
 	// Mobile Menu
