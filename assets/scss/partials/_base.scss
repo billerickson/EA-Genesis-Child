@@ -13,31 +13,14 @@ $grey_10: #212121;
 $black: #000;
 
 // Brand Colors
-// -- normal / darker / lighter
-$blue_1: #59BACC;
-$blue_2: #39A5B9;
-$blue_3: #80CAD8;
-$green_1: #58AD69;
-$green_2: #458D53;
-$green_3: #7ABE88;
-$orange_1: #FFBC49;
-$orange_2: #FFA916;
-$orange_3: #FFCF7C;
-$red_1: #E2574C;
-$red_2: #D83023;
-$red_3: #E98078;
-
-// Gutenberg color options
-// -- see editor-color-palette in functions.php
-$colors: (
-	'blue' 		: $blue_1,
-	'green' 	: $green_1,
-	'orange' 	: $orange_1,
-	'red' 		: $red_1,
+$brand_colors: (
+	'blue'	: #59BACC,
+	'green'	: #58AD69,
+	'red'	: #E2574C,
 );
 
 $base-color: $black;
-$highlight: $blue_1;
+$highlight: color( 'blue' );
 $border-color: $grey_4;
 
 // Content

@@ -1,4 +1,21 @@
 /**
+ * Color
+ *
+ */
+@function color( $key, $variant: null ) {
+	@if map-has-key( $brand_colors, $key ) {
+		$color: #{map-get( $brand_colors, $key )};
+		@if ( 'lighten' == $variant ) {
+			$color: lighten( $color, 10% );
+		}
+		@else if( 'darken' == $variant ) {
+			$color: darken( $color, 10% );
+		}
+		@return $color;
+	}
+}
+
+/**
  * Grid, Center Last
  *
  */
