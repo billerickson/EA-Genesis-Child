@@ -18,8 +18,9 @@ $brand_colors: (
 	'green'	: #58AD69,
 	'red'	: #E2574C,
 );
+@import "../modules/color";
 
-$base-color: $black;
+$base-color: $grey_9;
 $highlight: color( 'blue' );
 $border-color: $grey_4;
 
@@ -47,6 +48,6 @@ $breakpoints: (
   'content-width': $content-width + $grid-gap,
 );
 
-@import "../vendor/_include-media";
 @import "../modules/helpers";
+@import "../vendor/_include-media";
 @import "../modules/base-styles";
