@@ -44,7 +44,9 @@ body, p {
 }
 
 // Full width button
-.wp-block-button.is-style-full .block-editor-rich-text {
+.wp-block-button.is-style-full,
+.wp-block-button.is-style-full .block-editor-rich-text,
+div[data-type="core/button"] div[data-block] {
 	display: block;
 }
 
