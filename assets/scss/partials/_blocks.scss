@@ -149,7 +149,7 @@ h6 {
 /* Button
 --------------------------------------------- */
 
-$default: nth( nth( $brand_colors, 1 ), 2 ); // first color in $brand_colors array
+$default: nth( nth( $brand_colors, 1 ), 1 ); // first color in $brand_colors array
 
 .wp-block-button__link {
 	border-radius: 0;
@@ -173,11 +173,11 @@ $default: nth( nth( $brand_colors, 1 ), 2 ); // first color in $brand_colors arr
 	}
 
 	&:not(.has-background) {
-		background-color: $default;
+		background-color: brand-color( $default );
 
 		&:hover,
 		&:focus {
-			background-color: darken( $default, 20% );
+			background-color: brand-color( $default, 'darken' );
 		}
 	}
 
@@ -190,7 +190,7 @@ $default: nth( nth( $brand_colors, 1 ), 2 ); // first color in $brand_colors arr
 
 		&.has-#{$name}-background-color:hover,
 		&.has-#{$name}-background-color:focus {
-			background-color: darken( $color, 20% );
+			background-color: brand-color( $name, 'darken' );
 		}
 	}
 
