@@ -2,16 +2,30 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
+	background: $white;
+	border-bottom: 1px solid $border-color;
 	position: relative;
 }
 
 .title-area {
-	float: left;
-	width: 165px;
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	line-height: 30px;
+	margin: 9px 0;
+
+	@include media(">mobile_menu") {
+		float: left;
+		width: auto;
+	}
 
 	h1.site-title,
 	p.site-title {
 		margin: 0;
+
+		a {
+			color: $base-color;
+		}
 	}
 
 /*
@@ -40,5 +54,77 @@
 @include media("<tablet") {
 	#wpadminbar {
 		display: none !important;
+	}
+}
+
+/* Persistent Header
+--------------------------------------------- */
+
+@if( $persistent_desktop ) {
+	@include media(">mobile_menu") {
+
+		.site-container {
+			padding-top: $persistent_desktop;
+		}
+
+		.site-header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 999;
+			height: $persistent_desktop;
+
+			@include media("<=mobile_menu") {
+				overflow: scroll;
+				max-height: 100vh;
+			}
+		}
+
+		@include media(">=tablet") {
+			.admin-bar {
+
+				.site-container {
+					padding: 32px + $persistent_desktop;
+				}
+
+				.site-header {
+					top: 32px;
+				}
+			}
+		}
+	}
+}
+
+@if( $persistant_mobile ) {
+	@include media("<=mobile_menu") {
+
+		.site-container {
+			padding-top: $persistant_mobile;
+		}
+
+		.site-header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 999;
+			overflow: scroll;
+			max-height: 100vh;
+		}
+
+		@include media(">=tablet") {
+			.admin-bar {
+
+				.site-container {
+					padding: 32px + $persistant_mobile;
+				}
+
+				.site-header {
+					top: 32px;
+				}
+			}
+		}
+
 	}
 }

@@ -75,7 +75,7 @@
 		position: absolute;
 		top: 0;
 		width: 48px;
-		height: 56px;
+		height: 48px;
 
 		@include media(">mobile_menu") {
 			display: none;
@@ -211,8 +211,8 @@
 		.menu > .menu-item {
 
 			& > a {
-				padding-top: 32px;
-				padding-bottom:32px;
+				padding-top: 16px;
+				padding-bottom: 16px;
 			}
 		}
 

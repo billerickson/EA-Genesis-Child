@@ -36,6 +36,11 @@ $wrap_edge: $base-margin;
 $margin_2x: $base-margin * 2;
 $margin_4x: $base-margin * 4;
 
+// Persistent Menu
+$persistant_mobile: 49px;
+$persistent_desktop: 49px;
+
+
 // Include Media
 $breakpoints: (
   'phone'  : 360px,
