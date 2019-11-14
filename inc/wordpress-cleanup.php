@@ -144,3 +144,6 @@ function ea_excerpt_more() {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'ea_excerpt_more' );
+
+// Remove inline CSS for emoji
+remove_action( 'wp_print_styles', 'print_emoji_styles' );

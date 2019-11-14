@@ -34,6 +34,9 @@ add_filter( 'genesis_site_title_wrap', function( $wrap ) { return is_front_page(
 // Remove admin bar styling
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
+// Don't enqueue child theme stylesheet
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
