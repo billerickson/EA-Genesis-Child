@@ -76,17 +76,26 @@ function ea_child_theme_setup() {
 
 	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 
-	// Includes
+	// General cleanup
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
-	include_once( get_stylesheet_directory() . '/inc/markup.php' );
-	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
-	include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
-	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
-	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
+
+	// Theme
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
 	include_once( get_stylesheet_directory() . '/inc/loop.php' );
+	include_once( get_stylesheet_directory() . '/inc/markup.php' );
+	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
+
+	// Editor
+	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
+	include_once( get_stylesheet_directory() . '/inc/tinymce.php' );
+
+	// Functionality
+	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
 	include_once( get_stylesheet_directory() . '/inc/category-landing-page.php' );
+	include_once( get_stylesheet_directory() . '/inc/block-area.php' );
+
+	// Plugin Support
 	include_once( get_stylesheet_directory() . '/inc/acf.php' );
 	include_once( get_stylesheet_directory() . '/inc/amp.php' );
 	include_once( get_stylesheet_directory() . '/inc/wpforms.php' );
