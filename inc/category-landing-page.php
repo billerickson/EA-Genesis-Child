@@ -1,16 +1,17 @@
 <?php
 /**
- * Plugin Name: Category Landing Page
- * Plugin URI:	https://github.com/billerickson/Category-Landing-Page/
- * Description: Turn your category archives into rich, engaging, SEO friendly landing pages.
- * Version:     1.0.0
- * Author:      Bill Erickson
- * Author URI:  https://www.billerickson.net
- * Requires at least: 5.0
- * License:     MIT
- * License URI: http://www.opensource.org/licenses/mit-license.php
- */
+ * Category Landing Page
+ *
+ * @package      EAGenesisChild
+ * @author       Bill Erickson
+ * @since        1.0.0
+ * @license      GPL-2.0+
+**/
 
+/**
+ * Category Landing Page
+ * If you would like to use this as a standalone plugin: https://github.com/billerickson/Category-Landing-Page/
+ */
  class Category_Landing_Page {
 
  	/**
