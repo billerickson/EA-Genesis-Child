@@ -17,6 +17,17 @@ function ea_is_amp() {
 }
 
 /**
+ * WPForms AMP Support
+ *
+ */
+function be_wpforms_amp_support( $is_pro ) {
+	if( ea_is_amp() )
+		$is_pro = false;
+	return $is_pro;
+}
+add_filter( 'wpforms_amp_pro', 'be_wpforms_amp_support' );
+
+/**
  * Generate a class attribute and an AMP class attribute binding.
  *
  * @param string $default Default class value.
