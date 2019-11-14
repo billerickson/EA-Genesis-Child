@@ -1,0 +1,28 @@
+/**
+ * Brand Color
+ *
+ */
+@function brand-color( $key, $variant: null ) {
+	@if map-has-key( $brand_colors, $key ) {
+		$color: map-get( $brand_colors, $key );
+		@if ( 'lighten' == $variant ) {
+			$lighten_key: $key + '_lighten';
+			@if map-has-key( $brand_colors, $lighten_key ) {
+				$color: #{map-get( $brand_colors, $lighten_key )};
+			} @else {
+				$color: lighten( $color, 10% );
+			}
+		}
+		@else if( 'darken' == $variant ) {
+			$darken_key: $key + '_darken';
+			@if map-has-key( $brand_colors, $darken_key ) {
+				$color: #{map-get( $brand_colors, $darken_key )};
+			} @else {
+				$color: darken( $color, 10% );
+			}
+		}
+		@return $color;
+	} @else {
+		@error "The #{$key} color could not be found in $brand_colors";
+	}
+}
