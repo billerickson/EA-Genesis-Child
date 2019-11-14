@@ -37,8 +37,8 @@ $margin_2x: $base-margin * 2;
 $margin_4x: $base-margin * 4;
 
 // Persistent Menu
-$persistant_mobile: 49px;
-$persistent_desktop: 49px;
+$persistant_mobile: false; // 49px
+$persistent_desktop: false; // 49px
 
 
 // Include Media
