@@ -1,0 +1,143 @@
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+	@include base-style();
+}
+
+a {
+	color: $highlight;
+	text-decoration: none;
+	@extend %transition;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	svg {
+		@extend %transition;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+code,
+pre {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 12px;
+}
+
+code {
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+pre code {
+	padding: 0;
+	color: inherit;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+/* Paragraph
+--------------------------------------------- */
+
+p {
+	margin: 0 0 $base-margin;
+	padding: 0;
+
+	&.large,
+	&.has-large-font-size {
+    	@include font-sizes( 21px, 24px );
+	}
+
+	&.has-normal-font-size {
+		@include font-sizes( 18px, 20px );
+	}
+
+	&.small,
+	&.has-small-font-size {
+	    font-size: 14px;
+	}
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $base-color;
+	line-height: 1.2;
+	font-weight: 600;
+	margin: 0 0 16px;
+
+	a {
+		color: $base-color;
+
+		&:hover {
+			color: $highlight;
+			text-decoration: none;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 15px;
+}
