@@ -146,19 +146,19 @@ function ea_child_theme_setup() {
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name'      => __( 'small', 'ea_genesis_child' ),
+			'name'      => __( 'Small', 'ea_genesis_child' ),
 			'shortName' => __( 'S', 'ea_genesis_child' ),
 			'size'      => 12,
 			'slug'      => 'small'
 		),
 		array(
-			'name'      => __( 'regular', 'ea_genesis_child' ),
+			'name'      => __( 'Normal', 'ea_genesis_child' ),
 			'shortName' => __( 'M', 'ea_genesis_child' ),
 			'size'      => 16,
-			'slug'      => 'regular'
+			'slug'      => 'normal'
 		),
 		array(
-			'name'      => __( 'large', 'ea_genesis_child' ),
+			'name'      => __( 'Large', 'ea_genesis_child' ),
 			'shortName' => __( 'L', 'ea_genesis_child' ),
 			'size'      => 20,
 			'slug'      => 'large'
