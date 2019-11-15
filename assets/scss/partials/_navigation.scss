@@ -248,6 +248,16 @@
 	padding: 16px;
 	width: 100%;
 
+	@include media(">=tablet") {
+		position: absolute;
+		bottom: -82px;
+		right: 0;
+
+		.search-form {
+			margin: 0 auto;
+		}
+	}
+
 	@include media("<=mobile_menu") {
 		margin: 0 -48px;
 		width: calc( 100% + 96px );
