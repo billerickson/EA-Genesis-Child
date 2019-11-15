@@ -11,7 +11,6 @@
 	}
 
 	.menu-item {
-		float: left;
 		list-style: none;
 		position: relative;
 
@@ -19,9 +18,10 @@
 			border: none;
 			color: $base-color;
 			display: block;
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 400;
-			line-height: 16px;
+			line-height: 22px;
+			padding: 8px 18px;
 			position: relative;
 			text-decoration: none;
 		}
@@ -35,6 +35,96 @@
 
 	.submenu-expand {
 		@include button-reset;
+		position: absolute;
+		line-height: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 7px;
+	}
+
+	@include media(">mobile_menu") {
+		float: right;
+		width: calc( 100% - #{$menu_width} );
+		text-align: right;
+
+		.menu {
+			display: inline-block;
+			width: auto;
+			text-align: left;
+		}
+
+		.menu-item {
+			float: left;
+
+			&:hover {
+
+				& > .sub-menu {
+					left: auto;
+					opacity: 1;
+				}
+			}
+		}
+
+		.sub-menu {
+			background: $grey_1;
+			left: -9999px;
+			opacity: 0;
+			padding: 7px;
+			position: absolute;
+			width: 180px;
+			z-index: 99;
+
+			.menu-item {
+				float: none;
+			}
+
+			.sub-menu {
+				margin: -40px 0 0 170px;
+			}
+		}
+	}
+
+	@include media("<=mobile_menu") {
+		display: none;
+
+		&.active {
+			background: $grey_2;
+			border-top: 1px solid $border-color;
+			display: block;
+			margin: 0 -48px;
+			max-width: calc( 100% + 96px );
+		}
+
+		.menu > .menu-item > a {
+			padding: 11px 18px;
+		}
+
+		.submenu-expand {
+			top: 0;
+			right: 0;
+			transform: none;
+			@include icon-position( 44px );
+
+			svg {
+				@include icon-position( 12px );
+			}
+
+			&:not(.expanded) {
+				transform: rotate(180deg);
+			}
+
+			&.expanded {
+
+				& + .sub-menu {
+					display: block;
+				}
+			}
+		}
+
+		.sub-menu {
+			display: none;
+			padding-left: 8px;
+		}
 	}
 }
 
@@ -102,148 +192,12 @@
 	overflow: hidden;
 	width: 100%;
 
+	@include media("<=mobile_menu") {
+		margin: 0 -48px;
+		width: calc( 100% + 96px );
+	}
+
 	&:not(.active) {
 		display: none;
-	}
-}
-
-
-/* Primary
---------------------------------------------- */
-
-.nav-primary {
-
-	@include media("<=mobile_menu") {
-		display: none;
-		border-top: 1px solid $grey_3;
-
-		&.active {
-			background: $grey_1;
-			margin: 0 -16px;
-			padding: 8px 16px;
-			display: block;
-
-			.menu-item.search,
-			.sub-menu {
-				display: none;
-			}
-
-			.menu-item {
-				float: none;
-
-				& > a {
-					padding: 20px 0;
-				}
-
-				&.menu-item-has-children {
-					position: relative;
-
-					& > a {
-						padding-right: 32px;
-					}
-				}
-			}
-
-			.menu > .menu-item {
-
-				& + .menu-item {
-					border-top: 1px solid $grey_3;
-				}
-
-			}
-
-			.submenu-expand {
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 32px;
-				height: 56px;
-				text-align: center;
-				line-height: 0;
-				cursor: pointer;
-				outline: none;
-
-				&.expanded {
-					transform: rotate(180deg);
-
-					& + .sub-menu {
-						display: block;
-					}
-				}
-
-				svg {
-					@include icon-position( 16px, 56px );
-				}
-
-				&:hover svg,
-				&.expanded svg {
-					fill: $highlight;
-				}
-			}
-		}
-	}
-
-	@include media(">mobile_menu") {
-		float: right;
-		width: auto;
-
-		.menu-item {
-
-			& > a {
-				font-size: 13px;
-				padding: 8px 16px;
-			}
-
-			&:hover > a,
-			&.current-menu-item > a,
-			&.current-menu-ancestor > a {
-			}
-
-			&:hover {
-
-				& > .sub-menu {
-					left: auto;
-					opacity: 1;
-				}
-			}
-
-			&.menu-item-has-children > a {
-				padding-right: 26px;
-			}
-		}
-
-		.menu > .menu-item {
-
-			& > a {
-				padding-top: 16px;
-				padding-bottom: 16px;
-			}
-		}
-
-		.submenu-expand {
-			position: absolute;
-			right: 8px;
-			top: 50%;
-			margin-top: -4px;
-			line-height: 0;
-		}
-
-		.sub-menu {
-			background: $grey_1;
-			left: -9999px;
-			opacity: 0;
-			padding: 7px;
-			position: absolute;
-			width: 180px;
-			z-index: 99;
-
-			.menu-item {
-				float: none;
-			}
-
-			.sub-menu {
-				margin: -40px 0 0 170px;
-			}
-		}
 	}
 }

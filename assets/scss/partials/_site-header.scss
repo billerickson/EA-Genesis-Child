@@ -5,24 +5,23 @@
 	background: $white;
 	border-bottom: 1px solid $border-color;
 	position: relative;
+	min-height: 49px;
 }
 
 .title-area {
+	float: left;
 	width: 100%;
+	max-width: $logo_width;
 	text-align: center;
-	font-size: 24px;
-	line-height: 30px;
-	margin: 9px 0;
-
-	@include media(">mobile_menu") {
-		float: left;
-		width: auto;
-	}
+	margin: 0 auto;
 
 	h1.site-title,
 	p.site-title {
 		margin: 0;
 		font-size: 24px;
+		line-height: 30px;
+
+		padding: 8px;
 
 		a {
 			color: $base-color;
@@ -32,15 +31,27 @@
 
 /*
 	.site-title a {
-	  	background: url(../images/logo.svg) no-repeat center;
+	  	background: url(../icons/logo.svg) no-repeat center;
 	  	background-size: contain;
 		display: block;
 		text-indent: -9999em;
 		width: 100%;
 		height: 0;
-		padding-bottom: 69px / 165px * 100%;
+		padding-bottom: 139px / 623px * 100%;
 	}
 */
+
+	@include media("<=mobile_menu") {
+		float: none;
+
+		.site-title a {
+			padding-bottom: 0;
+			height: 48px;
+			background-size: auto 42px;
+		}
+	}
+
+
 }
 
 

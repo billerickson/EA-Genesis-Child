@@ -41,7 +41,9 @@ $wrap_edge: $base-margin;
 $margin_2x: $base-margin * 2;
 $margin_4x: $base-margin * 4;
 
-// Persistent Menu
+// Site Header
+$logo_width: 300px;
+$menu_width: $logo_width + $grid-gap;
 $persistant_mobile: false; // 49px
 $persistent_desktop: false; // 49px
 
