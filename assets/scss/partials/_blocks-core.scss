@@ -55,7 +55,9 @@ $default: nth( nth( $brand_colors, 1 ), 1 ); // first color in $brand_colors arr
 
 blockquote,
 blockquote.wp-block-quote {
-	background: transparent;
+	background: transparent url(../icons/utility/quote.svg) no-repeat top left;
+	background-size: 36px auto;
+	padding-top: 36px + 11px;
 	text-align: left;
 
 	p {

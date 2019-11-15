@@ -69,6 +69,11 @@
 		}
 	}
 
+	&.wp-block-quote {
+		margin-top: calc( 2 * #{$block-margin});
+		margin-bottom: calc( 2 * #{$block-margin});
+	}
+
 }
 
 /* Single Post
