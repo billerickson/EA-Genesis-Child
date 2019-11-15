@@ -20,15 +20,36 @@ function ea_site_header() {
 	echo ea_mobile_menu_toggle();
 	echo ea_search_toggle();
 
+	echo '<nav' . ea_amp_class( 'nav-menu', 'active', 'menuActive' ) . ' role="navigation">';
 	if( has_nav_menu( 'primary' ) ) {
-		echo '<nav' . ea_amp_class( 'nav-primary nav-menu', 'active', 'menuActive' ) . ' role="navigation">';
-		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
-		echo '</nav>';
+		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
 	}
+	if( has_nav_menu( 'secondary' ) ) {
+		wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'container_class' => 'nav-secondary' ) );
+	}
+	echo '</nav>';
 
 	echo '<div' . ea_amp_class( 'header-search', 'active', 'searchActive' ) . '>' . get_search_form( array( 'echo' => false ) ) . '</div>';
 }
 add_action( 'genesis_header', 'ea_site_header', 11 );
+
+/**
+ * Nav Extras
+ *
+ */
+function ea_nav_extras( $menu, $args ) {
+
+	if( 'primary' === $args->theme_location ) {
+		$menu .= '<li class="menu-item search">' . ea_search_toggle() . '</li>';
+	}
+
+	if( 'secondary' === $args->theme_location ) {
+		$menu .= '<li class="menu-item search">' . get_search_form( false ) . '</li>';
+	}
+
+	return $menu;
+}
+add_filter( 'wp_nav_menu_items', 'ea_nav_extras', 10, 2 );
 
 /**
  * Search toggle

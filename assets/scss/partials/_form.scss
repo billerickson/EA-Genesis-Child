@@ -52,8 +52,12 @@ textarea {
 		right: 4px;
 
 		svg {
-			fill: $highlight;
+			fill: $grey_7;
 			@include icon-position( 24px );
+
+			&:hover {
+				fill: $highlight;
+			}
 		}
 
 	}

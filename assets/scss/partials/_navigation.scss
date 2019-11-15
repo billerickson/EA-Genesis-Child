@@ -3,6 +3,10 @@
 
 .nav-menu {
 
+	& > * {
+		line-height: 0;
+	}
+
 	ul {
 		clear: both;
 		line-height: 1;
@@ -21,12 +25,15 @@
 			font-size: 16px;
 			font-weight: 400;
 			line-height: 22px;
-			padding: 8px 18px;
+			padding: 13px 18px;
 			position: relative;
 			text-decoration: none;
 		}
 
-		&:hover > a,
+		&:hover > a {
+			background: $grey_2;
+		}
+
 		&.current-menu-item > a,
 		&.current-menu-ancestor > a {
 			color: $highlight;
@@ -40,12 +47,56 @@
 		top: 50%;
 		transform: translateY(-50%);
 		right: 7px;
+
+		svg {
+			fill: $grey_7;
+		}
+	}
+
+	.nav-secondary {
+		.menu-item.search {
+			@include media("<=mobile_menu") {
+				padding: 4px 16px 16px;
+			}
+			@include media(">mobile_menu") {
+				margin: 5px 0 0 8px;
+
+				.search-field {
+					padding-top: 8px;
+					padding-bottom: 8px;
+					width: 268px;
+				}
+			}
+		}
+	}
+
+	.nav-primary {
+
+		.menu-item.search {
+			line-height: 0;
+
+			button {
+				padding: 12px;
+			}
+
+			@include media("<=mobile_menu") {
+				display: none;
+			}
+		}
 	}
 
 	@include media(">mobile_menu") {
 		float: right;
 		width: calc( 100% - #{$menu_width} );
 		text-align: right;
+
+		display: flex;
+		flex-direction: column-reverse;
+
+		.nav-primary + .nav-secondary {
+			margin-bottom: 16px;
+		}
+
 
 		.menu {
 			display: inline-block;
@@ -66,20 +117,23 @@
 		}
 
 		.sub-menu {
-			background: $grey_1;
+			background: $grey_2;
 			left: -9999px;
 			opacity: 0;
-			padding: 7px;
 			position: absolute;
-			width: 180px;
+			width: 215px;
 			z-index: 99;
 
 			.menu-item {
 				float: none;
+
+				&:hover > a {
+					background: $grey_3;
+				}
 			}
 
 			.sub-menu {
-				margin: -40px 0 0 170px;
+				margin: -48px 0 0 215px;
 			}
 		}
 	}
@@ -88,7 +142,7 @@
 		display: none;
 
 		&.active {
-			background: $grey_2;
+			background: $grey_3;
 			border-top: 1px solid $border-color;
 			display: block;
 			margin: 0 -48px;
@@ -142,9 +196,9 @@
 		display: none;
 	}
 
-	&:hover svg,
-	&.active svg {
-		fill: $highlight;
+	&:hover,
+	&.active {
+		background: $grey_3;
 	}
 
 	&.active {
@@ -189,7 +243,9 @@
 --------------------------------------------- */
 
 .header-search {
+	background: $grey_3;
 	overflow: hidden;
+	padding: 16px;
 	width: 100%;
 
 	@include media("<=mobile_menu") {
