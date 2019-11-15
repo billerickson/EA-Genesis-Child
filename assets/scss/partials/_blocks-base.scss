@@ -7,11 +7,11 @@ body {
 
 a {
 	color: $highlight;
-	text-decoration: none;
+	text-decoration: underline;
 	@extend %transition;
 
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 	svg {
