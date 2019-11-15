@@ -22,9 +22,11 @@
 	h1.site-title,
 	p.site-title {
 		margin: 0;
+		font-size: 24px;
 
 		a {
 			color: $base-color;
+			text-decoration: none;
 		}
 	}
 
@@ -104,7 +106,7 @@
 			left: 0;
 			width: 100%;
 			z-index: 999;
-			
+
 			overflow: scroll;
 			max-height: 100vh;
 		}

@@ -99,13 +99,14 @@ h3,
 h4,
 h5,
 h6 {
-	color: $base-color;
+	color: $grey_10;
+	font-family: $serif;
+	font-weight: 400;
 	line-height: 1.2;
-	font-weight: 600;
 	margin: 0 0 16px;
 
 	a {
-		color: $base-color;
+		color: $grey_10;
 
 		&:hover {
 			color: $highlight;
@@ -119,25 +120,17 @@ h6 {
 }
 
 h1 {
-    font-size: 36px;
+    @include font-sizes( 34px, 42px, 46px );
 }
 
 h2 {
-    font-size: 30px;
+    @include font-sizes( 26px, 32px, 36px );
 }
 
 h3 {
-    font-size: 24px;
+    @include font-sizes( 22px, 26px, 28px );
 }
 
-h4 {
-    font-size: 21px;
-}
-
-h5 {
-    font-size: 18px;
-}
-
-h6 {
-    font-size: 15px;
+h4, h5, h6 {
+    @include font-sizes( 18px, 22px );
 }

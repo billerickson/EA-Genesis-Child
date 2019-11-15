@@ -32,6 +32,10 @@
 			color: $highlight;
 		}
 	}
+
+	.submenu-expand {
+		@include button-reset;
+	}
 }
 
 /* Toggles
@@ -220,12 +224,8 @@
 			position: absolute;
 			right: 8px;
 			top: 50%;
-			margin-top: -5px;
+			margin-top: -4px;
 			line-height: 0;
-
-			svg {
-				@include icon-position( 10px );
-			}
 		}
 
 		.sub-menu {
