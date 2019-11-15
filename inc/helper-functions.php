@@ -129,25 +129,29 @@ function ea_icon( $atts = array() ) {
 	if( empty( $atts['icon'] ) )
 		return;
 
-	$icon_path = get_stylesheet_directory() . '/assets/icons/' . $atts['group'] . '/' . $atts['icon'] . '.svg';
+	$icon_path = get_theme_file_path( '/assets/icons/' . $atts['group'] . '/' . $atts['icon'] . '.svg' );
 	if( ! file_exists( $icon_path ) )
 		return;
 
-	$icon = file_get_contents( $icon_path );
+		$icon = file_get_contents( $icon_path );
 
-	$class = 'svg-icon';
-	if( !empty( $atts['class'] ) )
-		$class .= ' ' . esc_attr( $atts['class'] );
+		$class = 'svg-icon';
+		if( !empty( $atts['class'] ) )
+			$class .= ' ' . esc_attr( $atts['class'] );
 
-	$repl = sprintf( '<svg class="' . $class . '" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $atts['size'], $atts['size'] );
-	$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
-	$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
-	$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
+		if( false !== $atts['size'] ) {
+			$repl = sprintf( '<svg class="' . $class . '" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $atts['size'], $atts['size'] );
+			$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
+		} else {
+			$svg = preg_replace( '/^<svg /', '<svg class="' . $class . '"', trim( $icon ) );
+		}
+		$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
+		$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
 
-	if( !empty( $atts['label'] ) ) {
-		$svg = str_replace( '<svg class', '<svg aria-label="' . esc_attr( $atts['label'] ) . '" class', $svg );
-		$svg = str_replace( 'aria-hidden="true"', '', $svg );
-	}
+		if( !empty( $atts['label'] ) ) {
+			$svg = str_replace( '<svg class', '<svg aria-label="' . esc_attr( $atts['label'] ) . '" class', $svg );
+			$svg = str_replace( 'aria-hidden="true"', '', $svg );
+		}
 
-	return $svg;
+		return $svg;
 }
