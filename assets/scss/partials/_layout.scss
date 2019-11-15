@@ -27,7 +27,7 @@ input[type="search"] {
 		padding: 40px 0;
 	}
 
-	& > .wrap {
+	.full-width-content & > .wrap {
 		max-width: map-get( $breakpoints, 'content-width' );
 	}
 }
@@ -78,7 +78,6 @@ input[type="search"] {
 
 @include media(">=medium") {
 
-	.sidebar-content,
 	.content-sidebar {
 
 		.site-main {
@@ -90,13 +89,24 @@ input[type="search"] {
 			float: right;
 			width: 335px / 1168px * 100%;
 		}
-	}
 
-	.sidebar-content .site-main {
-		float: right;
-	}
+		@supports( display: $grid ) {
+			.content-area {
+				display: grid;
+				grid-template-columns: 1fr 300px;
+				grid-column-gap: $grid-gap;
+			}
 
-	.sidebar-content .sidebar-primary {
-		float: left;
+			.site-main {
+				float: none;
+				width: 100%;
+				max-width: $content-width;
+			}
+
+			.sidebar-primary {
+				float: none;
+				width: 100%;
+			}
+		}
 	}
 }
