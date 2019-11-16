@@ -91,3 +91,16 @@ function ea_search_form() {
 	return ob_get_clean();
 }
 add_filter( 'genesis_search_form', 'ea_search_form' );
+
+/**
+ * Disable customizer theme settings
+ *
+ */
+function ea_disable_customizer_theme_settings( $config ) {
+	$remove = [ 'genesis_header', 'genesis_single', 'genesis_archives', 'genesis_footer' ];
+	foreach( $remove as $item ) {
+		unset( $config['genesis']['sections'][ $item ] );
+	}
+	return $config;
+}
+add_filter( 'genesis_customizer_theme_settings_config', 'ea_disable_customizer_theme_settings' );
