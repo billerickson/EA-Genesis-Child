@@ -44,7 +44,7 @@ function ea_social_links() {
 		if( !empty( $url ) && !empty( $settings['prepend'] ) )
 			$url = $settings['prepend'] . $url;
 		if( !empty( $url ) )
-			$output[] = '<li><a href="' . esc_url_raw( $url ) . '" target="_blank" rel="noopener noreferrer">' . ea_icon( array( 'icon' => $social, 'group' => 'social' ) ) . '<span class="label">' . esc_html( $settings['label'] ) . '</span></a></li>';
+			$output[] = '<li><a href="' . esc_url_raw( $url ) . '" target="_blank" rel="noopener noreferrer">' . ea_icon( array( 'icon' => $social, 'group' => 'social', 'label' => $settings['label'] ) ) . '<span class="label">' . esc_html( $settings['label'] ) . '</span></a></li>';
 	}
 
 	if( !empty( $output ) )
