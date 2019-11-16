@@ -1,11 +1,144 @@
+/* Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.footer-widgets {
+	background: brand-color( 'blue' );
+	padding: 40px 0 10px;
+	position: relative;
+
+	ul {
+		margin-bottom: 30px;
+	}
+
+	li {
+		list-style-type: none;
+		margin-bottom: 12px;
+	}
+
+	.widget-title {
+		color: $white;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		svg {
+			fill: $white;
+			@include icon-position( 20px );
+			margin-right: 12px;
+		}
+	}
+
+	@include media("<tablet") {
+		.social-links li {
+				display: inline-block;
+				margin: 0;
+		}
+
+		.social-links .label {
+			display: none;
+		}
+
+		.footer-widgets-1 {
+			float: left;
+			width: calc( 50% - 8px );
+		}
+
+		.footer-widgets-2 {
+			float: right;
+			width: calc( 50% - 8px );
+		}
+
+		.footer-widgets-3 {
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+
+	@include media(">=tablet") {
+		.wrap {
+			@include columns( 3, 'div' );
+		}
+	}
+}
+
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	padding-top: 40px;
+	background: brand-color( 'blue', 'darken' );
+	color: rgba( $white, .75 );
+	font-size: 14px;
+	padding: 32px 0;
 	text-align: center;
-}
 
-.site-footer p {
-	margin-bottom: 0;
+	.wrap > *:last-child {
+		margin-bottom: 0;
+	}
+
+	a {
+		color: rgba( $white, .75 );
+
+		&:hover {
+			color: rgba( $white, 1 );
+		}
+	}
+
+	.footer-links a + a {
+		margin-left: 12px;
+	}
+
+	.cafemedia {
+		text-transform: uppercase;
+	}
+
+	.backtotop {
+		background: rgba( $black, .75 );
+		border-radius: 3px;
+		display: inline-block;
+		line-height: 20px;
+		padding: 10px;
+		text-decoration: none;
+
+		svg {
+			fill: $white;
+			margin-left: 4px;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			background: rgba( $black, 1 );
+		}
+	}
+
+	@include media(">=tablet") {
+		text-align: left;
+
+		.footer-left {
+			float: left;
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.copyright,
+		.footer-links {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		.backtotop {
+			float: right;
+		}
+	}
+
 }

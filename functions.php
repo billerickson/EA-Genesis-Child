@@ -19,7 +19,7 @@ Devs, contact me if you need access
  *
  */
 if ( ! isset( $content_width ) )
-    $content_width = 1024;
+    $content_width = 768;
 
 /**
  * Global enqueues
@@ -105,10 +105,11 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
 
 	// Theme
-	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
-	include_once( get_stylesheet_directory() . '/inc/loop.php' );
 	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
+	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
+	include_once( get_stylesheet_directory() . '/inc/loop.php' );
+	include_once( get_stylesheet_directory() . '/inc/site-footer.php' );
 
 	// Editor
 	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
@@ -118,6 +119,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
 	include_once( get_stylesheet_directory() . '/inc/category-landing-page.php' );
 	include_once( get_stylesheet_directory() . '/inc/block-area.php' );
+	include_once( get_stylesheet_directory() . '/inc/social-links.php' );
 
 	// Plugin Support
 	include_once( get_stylesheet_directory() . '/inc/acf.php' );
@@ -174,12 +176,7 @@ function ea_child_theme_setup() {
 		array(
 			'name'  => __( 'Blue', 'ea_genesis_child' ),
 			'slug'  => 'blue',
-			'color'	=> '#59BACC',
-		),
-		array(
-			'name'  => __( 'Green', 'ea_genesis_child' ),
-			'slug'  => 'green',
-			'color' => '#58AD69',
+			'color'	=> '#05306F',
 		),
 		array(
 			'name'  => __( 'Grey', 'ea_genesis_child' ),
