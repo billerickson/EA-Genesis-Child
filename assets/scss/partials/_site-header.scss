@@ -58,13 +58,13 @@
 /* Admin Bar
 --------------------------------------------- */
 
-@include media(">=tablet" ) {
+@include media(">782px" ) {
 	.admin-bar .site-container {
 		padding-top: 32px;
 	}
 }
 
-@include media("<tablet") {
+@include media("<=782px") {
 	#wpadminbar {
 		display: none !important;
 	}
@@ -89,7 +89,7 @@
 			height: $persistent_desktop;
 		}
 
-		@include media(">=tablet") {
+		@include media(">782px") {
 			.admin-bar {
 
 				.site-container {
@@ -122,7 +122,7 @@
 			max-height: 100vh;
 		}
 
-		@include media(">=tablet") {
+		@include media(">782px") {
 			.admin-bar {
 
 				.site-container {
