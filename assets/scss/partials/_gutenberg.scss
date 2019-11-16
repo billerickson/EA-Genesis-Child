@@ -16,17 +16,7 @@ body, p {
     max-width: $content-width;
 
 	/* Wide column width */
-	&[data-align="wide"] {
-		max-width: none;
-
-		@include media(">=medium") {
-			max-width: none;
-			margin-left: calc(25vw - 25%);
-			margin-right: calc(25vw - 25%);
-		}
-	}
-
-	/* Full column width */
+	&[data-align="wide"],
 	&[data-align="full"] {
 		max-width: none;
 	}

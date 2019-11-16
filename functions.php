@@ -182,14 +182,9 @@ function ea_child_theme_setup() {
 			'color' => '#58AD69',
 		),
 		array(
-			'name'  => __( 'Orange', 'ea_genesis_child' ),
-			'slug'  => 'orange',
-			'color' => '#FFBC49',
-		),
-		array(
-			'name'	=> __( 'Red', 'ea_genesis_child' ),
-			'slug'	=> 'red',
-			'color'	=> '#E2574C',
+			'name'  => __( 'Grey', 'ea_genesis_child' ),
+			'slug'  => 'grey',
+			'color' => '#FAFAFA',
 		),
 	) );
 

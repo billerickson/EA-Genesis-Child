@@ -150,3 +150,36 @@ img {
 		background-color: $color;
 	}
 }
+
+/* Group
+--------------------------------------------- */
+
+.wp-block-group {
+	padding: 40px 16px;
+
+	@include media(">=tablet") {
+		padding: 60px 16px;
+	}
+
+	@include media(">=medium") {
+		padding: 70px 16px;
+	}
+
+	.wp-block-group__inner-container {
+		max-width: $content_width;
+		margin: 0 auto;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Dark background
+	&.has-background:not(.has-grey-background-color) {
+		color: $white;
+
+		h1, h2, h3, h4, h5, h6, p {
+			color: $white;
+		}
+	}
+}
