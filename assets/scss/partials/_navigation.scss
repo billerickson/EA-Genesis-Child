@@ -90,21 +90,7 @@
 		width: calc( 100% - #{$menu_width} );
 		text-align: right;
 		display: flex;
-		//flex-direction: column-reverse;
-
-		.nav-primary {
-			order: 2;
-			width: 100%;
-			max-width: 100%;
-			flex-basis: 100%;
-		}
-
-		.nav-secondary {
-			order: 1;
-			width: 100%;
-			max-width: 100%;
-			flex-basis: 100%;
-		}
+		flex-direction: column-reverse;
 
 		.nav-primary + .nav-secondary {
 			margin-bottom: 16px;
