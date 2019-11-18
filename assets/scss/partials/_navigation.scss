@@ -88,9 +88,14 @@
 	@include media(">mobile_menu") {
 		float: right;
 		width: calc( 100% - #{$menu_width} );
-		text-align: right;
 		display: flex;
 		flex-flow: column-reverse nowrap;
+
+		.nav-primary,
+		.nav-secondary {
+			display: flex;
+			justify-content: flex-end;
+		}
 
 		.nav-primary + .nav-secondary {
 			margin-bottom: 16px;
@@ -100,7 +105,6 @@
 		.menu {
 			display: inline-block;
 			width: auto;
-			text-align: left;
 		}
 
 		.menu-item {
