@@ -129,7 +129,7 @@ img {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 }
 
 .wp-block-image figcaption {
@@ -184,6 +184,7 @@ img {
 	.wp-block-group__inner-container {
 		max-width: $content_width;
 		margin: 0 auto;
+		@include clearfix;
 
 		& > *:last-child {
 			margin-bottom: 0;
