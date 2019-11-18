@@ -53,3 +53,57 @@ function ea_archive_loop() {
 
 	}
 }
+
+/**
+ * Remove entry-title if h1 block used
+ * @link https://www.billerickson.net/building-a-header-block-in-wordpress/
+ */
+function be_remove_entry_title() {
+
+	if( ! ( is_singular() && function_exists( 'parse_blocks' ) ) )
+		return;
+
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	$has_h1 = be_has_h1_block( $blocks );
+
+	if( $has_h1 ) {
+		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+	}
+}
+add_action( 'genesis_before_entry', 'be_remove_entry_title' );
+
+/**
+ * Recursively searches content for h1 blocks.
+ *
+ * @link https://www.billerickson.net/building-a-header-block-in-wordpress/
+ *
+ * @param array $blocks
+ * @return bool
+ */
+function be_has_h1_block( $blocks = array() ) {
+	foreach ( $blocks as $block ) {
+
+		if( ! isset( $block['blockName'] ) )
+			continue;
+
+		// Custom header block
+		if( 'acf/header' === $block['blockName'] ) {
+			return true;
+
+		// Heading block
+		} elseif( 'core/heading' === $block['blockName'] && isset( $block['attrs']['level'] ) && 1 === $block['attrs']['level'] ) {
+			return true;
+
+		// Scan inner blocks for headings
+		} elseif( isset( $block['innerBlocks'] ) && !empty( $block['innerBlocks'] ) ) {
+			$inner_h1 = be_has_h1_block( $block['innerBlocks'] );
+			if( $inner_h1 )
+				return true;
+		}
+	}
+
+	return false;
+}

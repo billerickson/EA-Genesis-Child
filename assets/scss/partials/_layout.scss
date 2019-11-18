@@ -22,9 +22,9 @@ input[type="search"] {
 }
 
 .site-inner {
-	padding: 20px 0;
+	padding: 36px 0;
 	@include media(">=tablet") {
-		padding: 40px 0;
+		padding: 48px 0;
 	}
 
 	.full-width-content & > .wrap {
