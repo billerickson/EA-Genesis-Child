@@ -44,6 +44,28 @@ function ea_dequeue_jquery_migrate( &$scripts ){
 add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
 
 /**
+ * Clean body classes
+ *
+ */
+function ea_clean_body_classes( $classes ) {
+	if( is_singular() )
+		$classes[] = 'singular';
+
+	$allowed_classes = [
+		'singular',
+		'archive',
+		'admin-bar',
+		'full-width-content',
+		'content-sidebar',
+		'wide-content',
+	];
+
+	return array_intersect( $classes, $allowed_classes );
+
+}
+add_filter( 'body_class', 'ea_clean_body_classes', 20 );
+
+/**
  * Clean Nav Menu Classes
  *
  */
