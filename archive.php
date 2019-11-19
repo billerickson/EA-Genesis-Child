@@ -25,4 +25,9 @@ add_filter( 'body_class', 'ea_blog_archive_body_class' );
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 8 );
 
+// Remove description on paginated archives
+if( get_query_var( 'paged' ) ) {
+	remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_intro_text', 12, 3 );
+}
+
 genesis();
