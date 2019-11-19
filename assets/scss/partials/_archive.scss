@@ -1,6 +1,42 @@
-/* Archive
----------------------------------------------------------------------------------------------------- */
+.archive {
 
+	.site-main {
+
+		@include media(">small", "<medium") {
+			@include columns(2);
+		}
+
+		@include media(">=medium") {
+			@include columns(4);
+		}
+	}
+}
+
+/* Archive Header
+--------------------------------------------- */
+
+.archive-description {
+	text-align: center;
+	width: 100%;
+	max-width: $content-width;
+	margin: 0 auto $grid-gap;
+}
+
+/* Breadcrumbs
+--------------------------------------------- */
+
+.breadcrumb {
+	font-size: 16px;
+	margin-bottom: 24px;
+
+	a {
+		color: $base-color;
+
+		&:hover {
+			color: $highlight;
+		}
+	}
+}
 /* Entry Navigation
 --------------------------------------------- */
 

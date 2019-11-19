@@ -10,15 +10,11 @@
 
 echo '<article class="post-summary">';
 
-	echo '<a class="entry-image-link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . get_the_post_thumbnail( get_the_ID(), 'medium' ) . '</a>';
+	ea_post_summary_image();
 
-	echo '<header class="entry-header">';
-		echo '<h2 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-	echo '</header>';
-
-	echo '<div class="entry-content">';
-		the_excerpt();
-		echo '<p><a class="read-more" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">Read More<span class="screen-reader-text"> of ' . get_the_title() . '</span></a></p>';
+	echo '<div class="post-summary__content">';
+		ea_entry_category();
+		ea_post_summary_title();
 	echo '</div>';
 
 echo '</article>';
