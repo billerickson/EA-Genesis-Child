@@ -44,12 +44,21 @@ function ea_dequeue_jquery_migrate( &$scripts ){
 add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
 
 /**
+ * Singular body class
+ *
+ */
+function ea_singular_body_class( $classes ) {
+	if( is_singular() )
+		$classes[] = 'singular';
+	return $classes;
+}
+add_filter( 'body_class', 'ea_singular_body_class' );
+
+/**
  * Clean body classes
  *
  */
 function ea_clean_body_classes( $classes ) {
-	if( is_singular() )
-		$classes[] = 'singular';
 
 	$allowed_classes = [
 		'singular',
