@@ -33,7 +33,7 @@ textarea {
 
 	.search-field {
 		border: none;
-		padding-right: 32px;
+		padding-right: 44px;
 		width: 100%;
 	}
 
@@ -43,17 +43,18 @@ textarea {
 		padding: 0;
 		margin: 0;
 		min-width: 0;
-		width: 24px;
-		height: 24px;
+		width: 44px;
+		height: 44px;
+		line-height: 0;
 		text-align: center;
 		position: absolute;
 		top: 50%;
-		margin-top: -12px;
-		right: 4px;
+		margin-top: -22px;
+		right: 0;
 
 		svg {
 			fill: $grey_7;
-			@include icon-position( 24px );
+			@include icon-position( 20px );
 
 			&:hover {
 				fill: $highlight;
