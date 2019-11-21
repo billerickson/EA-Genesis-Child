@@ -223,29 +223,31 @@
 
 			article {
 				padding: $base-margin;
+				position: relative;
 			}
 
-			&.staff {
-				border-color: $highlight;
-				border-left-width: 4px;
+			&.staff > article {
+				background: rgba( $highlight, .05 );
+				border-left: 2px solid $highlight;
 			}
 		}
 
 		& > li {
 			border-radius: 3px;
 			overflow: hidden;
-			margin-bottom: $block-margin;
+			margin-bottom: 15px;
 		}
 
 		.comment-author {
-			color: $grey_8;
-			font-size: 16px;
-			text-transform: uppercase;
-			line-height: 28px;
+			color: $base-color;
+			display: inline-block;
+			vertical-align: middle;
 			margin: 0;
+			font-family: $serif;
+			@include font-sizes( 18px, 22px );
 
 			a {
-				color: $grey_8;
+				color: $base-color;
 				text-decoration: none;
 
 				&:hover {
@@ -258,13 +260,18 @@
 			}
 		}
 
+		.comment-edit-link {
+			display: none;
+		}
+
 		.comment-meta {
-			font-size: 12px;
-			margin-bottom: 12px;
+			font-size: 14px;
 			color: $grey_6;
+			vertical-align: middle;
 
 			a {
 				color: $grey_6;
+				font-weight: 400;
 				text-decoration: none;
 
 				&:hover {
@@ -280,9 +287,13 @@
 			}
 		}
 
-		.reply {
-			font-weight: 700;
-			margin-top: 12px;
+		.comment-reply-link {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			font-size: 16px;
+			text-transform: uppercase;
+			text-decoration: none;
 		}
 
 		ul.children {
@@ -294,35 +305,60 @@
 		}
 
 	}
+}
 
-	.comment-respond {
+.nav-links {
+	@include clearfix;
 
-		label {
-			display: block;
-			margin-right: 12px;
-			font-weight: 700;
+	.nav-previous {
+		float: left;
+	}
 
-			&[for="subscribe"],
-			&[for="wp-comment-cookies-consent"] {
-				display: inline-block;
-			}
+	.nav-next {
+		float: right;
+	}
+}
+
+.comment-navigation {
+
+	a {
+		font-size: 20px;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+}
+
+.comment-respond {
+	margin: 30px 0;
+
+	@include media(">=tablet") {
+		margin: 60px 0;
+	}
+
+	label {
+		display: block;
+		margin-right: 12px;
+
+		&[for="subscribe"],
+		&[for="wp-comment-cookies-consent"] {
+			display: inline-block;
+		}
+	}
+
+	@include media(">=tablet") {
+
+		.comment-form-author,
+		.comment-form-email {
+			float: left;
+			width: calc( 50% - 16px );
 		}
 
-		@include media(">=tablet") {
+		.comment-form-email {
+			margin-left: 32px;
+		}
 
-			.comment-form-author,
-			.comment-form-email {
-				float: left;
-				width: calc( 50% - 16px );
-			}
-
-			.comment-form-email {
-				margin-left: 32px;
-			}
-
-			input[type="submit"] {
-				width: auto;
-			}
+		input[type="submit"] {
+			width: auto;
 		}
 	}
 }
