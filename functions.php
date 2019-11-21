@@ -212,7 +212,7 @@ add_filter( 'comment_form_defaults', 'ea_comment_text' );
  *
  */
 function ea_template_hierarchy( $template ) {
-	if( is_home() || is_search() )
+	if( is_home() )
 		$template = get_query_template( 'archive' );
 	return $template;
 }
