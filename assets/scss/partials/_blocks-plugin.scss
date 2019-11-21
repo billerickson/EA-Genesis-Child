@@ -65,3 +65,106 @@ div.wpforms-container {
 		}
 	}
 }
+
+/* Shared Counts
+--------------------------------------------- */
+
+.shared-counts-wrap {
+
+	&.style-icon {
+
+		svg {
+			fill: $grey_5;
+			@include icon-position( 24px );
+		}
+
+		.shared-counts-button {
+			line-height: 0;
+			padding: 10px;
+
+			&:hover svg {
+				fill: $highlight;
+			}
+
+			&:not(.included_total) {
+				.shared-counts-label,
+				.shared-counts-count {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.style-button {
+
+		@supports( display: $grid ) {
+			display: grid;
+			grid-template-columns: repeat( 2, 1fr );
+			grid-column-gap: 16px;
+
+			@include media(">=tablet") {
+				grid-template-columns: repeat( 4, 1fr );
+			}
+		}
+
+		h3 {
+			color: $grey_8;
+			text-transform: uppercase;
+			font-weight: 600;
+			text-align: center;
+			grid-column: 1 / -1;
+		}
+
+		.shared-counts-button {
+			background: $grey_6;
+			border-radius: 3px;
+			color: $white;
+			display: block;
+			font-size: 16px;
+			font-weight: 600;
+			padding: 18px;
+			text-align: center;
+			text-decoration: none;
+			margin-bottom: 15px;
+
+			&:hover {
+				background: $grey_8;
+			}
+
+			svg {
+				fill: $white;
+				@include icon-position( 24px );
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+
+			&.facebook {
+				background: $facebook;
+
+				&:hover {
+					background: darken( $facebook, 10% );
+				}
+			}
+
+			&.pinterest {
+				background: $pinterest;
+
+				&:hover {
+					background: darken( $pinterest, 10% );
+				}
+			}
+
+			&.twitter {
+				background: $twitter;
+
+				&:hover {
+					background: darken( $twitter, 10% );
+				}
+			}
+		}
+
+		.shared-counts-count {
+			display: none;
+		}		
+	}
+}

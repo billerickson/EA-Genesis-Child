@@ -70,23 +70,106 @@
 		margin-right: auto;
 	}
 
-	&.wp-block-quote {
+	&.wp-block-quote,
+	&.post-listing-block {
 		margin-top: calc( 2 * #{$block-margin});
 		margin-bottom: calc( 2 * #{$block-margin});
 	}
 
+	&.wp-block-search {
+		max-width: 568px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+/* Entry Meta
+--------------------------------------------- */
+
+.entry-author {
+	font-size: 14px;
+
+	.avatar {
+		border-radius: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 4px;
+	}
+
+	a {
+		color: $base-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $highlight;
+		}
+	}
+}
+
+.breadcrumb {
+	font-size: 16px;
+	margin-bottom: 24px;
+
+	a {
+		color: $base-color;
+
+		&:hover {
+			color: $highlight;
+		}
+	}
+
+	.single & {
+		border-top: 1px solid $border-color;
+		padding-top: 32px;
+		text-align: center;
+	}
+}
+
+.author-box {
+	position: relative;
+	padding-left: 120px;
+	min-height: 120px;
+
+	.archive & {
+		grid-column: 1 / -1;
+		max-width: $content-width;
+		margin: 0 auto $grid-gap;
+	}
+
+	.author-box-title {
+		@include font-sizes( 22px, 28px );
+	}
+
+	.avatar {
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
 
 /* Single Post
 --------------------------------------------- */
 
-.page, .single {
+.singular {
 
 	.entry-header {
-		margin-bottom: 30px;
+		margin-bottom: 18px;
 
-		@include media("<tablet") {
-			margin-bottom: 16px;
+		@include media(">=tablet") {
+			margin-bottom: 48px;
+			overflow: hidden;
+			width: 100%;
+
+			.entry-author {
+				float: left;
+				margin: 0;
+			}
+
+			.shared-counts-wrap {
+				float: right;
+			}
 		}
 
 		*:last-child {
@@ -95,6 +178,30 @@
 	}
 }
 
+.after-entry {
+
+	& > * {
+		margin: 24px 0;
+
+		@include media(">=tablet") {
+			margin: 42px 0;
+		}
+	}
+}
+
+.related-posts {
+	@supports( display: $grid ) {
+		@include media(">=tablet") {
+			display: grid;
+			grid-template-columns: repeat( 3, 1fr );
+			grid-column-gap: 16px;
+
+			header {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+}
 
 /* Comments
 --------------------------------------------- */

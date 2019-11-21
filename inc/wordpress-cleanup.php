@@ -62,6 +62,8 @@ function ea_clean_body_classes( $classes ) {
 
 	$allowed_classes = [
 		'singular',
+		'single',
+		'page',
 		'archive',
 		'admin-bar',
 		'full-width-content',

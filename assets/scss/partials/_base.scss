@@ -19,6 +19,10 @@ $brand_colors: (
 );
 @import "../modules/brand-color";
 
+$facebook: #3B5998;
+$twitter: #00B6F1;
+$pinterest: #CB2027;
+
 $base-color: $grey_9;
 $highlight: brand-color( 'blue' );
 $border-color: $grey_4;

@@ -46,9 +46,12 @@ remove_action( 'wp_head', 'genesis_load_favicon' );
 // Remove Header Description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
+// Remove post info and meta
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
 // Remove unused sidebars
 unregister_sidebar( 'header-right' );
-//unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 
 // Remove layout metabox
