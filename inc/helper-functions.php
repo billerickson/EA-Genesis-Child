@@ -155,3 +155,14 @@ function ea_icon( $atts = array() ) {
 
 		return $svg;
 }
+
+/**
+ * Has Action
+ *
+ */
+function ea_has_action( $hook ) {
+	ob_start();
+	do_action( $hook );
+	$output = ob_get_clean();
+	return !empty( $output );
+}

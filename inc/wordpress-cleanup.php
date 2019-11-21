@@ -134,6 +134,20 @@ function ea_clean_post_classes( $classes ) {
 add_filter( 'post_class', 'ea_clean_post_classes', 5 );
 
 /**
+ * Archive Title, remove prefix
+ *
+ */
+function ea_archive_title_remove_prefix( $title ) {
+	$title_pieces = explode( ': ', $title );
+	if( count( $title_pieces ) > 1 ) {
+		unset( $title_pieces[0] );
+		$title = join( ': ', $title_pieces );
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
+
+/**
  * Staff comment class
  *
  */

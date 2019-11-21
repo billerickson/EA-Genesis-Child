@@ -55,7 +55,7 @@ class BE_ACF_Customizations {
 
 			acf_register_block_type(array(
 				'name'				=> 'post-listing',
-				'title'				=> __( 'Post Listing', 'grownandflown2020' ),
+				'title'				=> __( 'Post Listing', 'ea_genesis_child' ),
 				'mode'				=> 'auto',
 				'render_template'	=> 'partials/blocks/post-listing.php',
 				'category'			=> 'widgets',

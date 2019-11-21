@@ -46,7 +46,7 @@ function ea_global_enqueues() {
 	wp_dequeue_style( 'child-theme' );
 	wp_register_style( 'ea-fonts', ea_theme_fonts_url() );
 	wp_register_style( 'ea-critical', get_stylesheet_directory_uri() . '/assets/css/critical.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/critical.css' ) );
-	wp_register_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), CHILD_THEME_VERSION );
+	wp_register_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 
 	if( $using_critical_css = true ) {
 		wp_enqueue_style( 'ea-critical' );
@@ -153,20 +153,20 @@ function ea_child_theme_setup() {
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name'      => __( 'Small', 'grownandflown2020' ),
-			'shortName' => __( 'S', 'grownandflown2020' ),
+			'name'      => __( 'Small', 'ea_genesis_child' ),
+			'shortName' => __( 'S', 'ea_genesis_child' ),
 			'size'      => 14,
 			'slug'      => 'small'
 		),
 		array(
-			'name'      => __( 'Normal', 'grownandflown2020' ),
-			'shortName' => __( 'M', 'grownandflown2020' ),
+			'name'      => __( 'Normal', 'ea_genesis_child' ),
+			'shortName' => __( 'M', 'ea_genesis_child' ),
 			'size'      => 20,
 			'slug'      => 'normal'
 		),
 		array(
-			'name'      => __( 'Large', 'grownandflown2020' ),
-			'shortName' => __( 'L', 'grownandflown2020' ),
+			'name'      => __( 'Large', 'ea_genesis_child' ),
+			'shortName' => __( 'L', 'ea_genesis_child' ),
 			'size'      => 24,
 			'slug'      => 'large'
 		),

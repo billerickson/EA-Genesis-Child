@@ -9,7 +9,7 @@
 **/
 
 // Add wide layout
-genesis_register_layout( 'wide-content', [ 'label' => __( 'Wide Content', 'grownandflown2020' ), ] );
+genesis_register_layout( 'wide-content', [ 'label' => __( 'Wide Content', 'ea_genesis_child' ), ] );
 
 // Remove sidebar for wide layout
 add_action( 'genesis_meta', function() {

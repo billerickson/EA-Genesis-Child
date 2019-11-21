@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop
+ * Social Links
  *
  * @package      EAGenesisChild
  * @author       Bill Erickson
