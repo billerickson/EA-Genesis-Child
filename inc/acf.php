@@ -23,6 +23,8 @@ class BE_ACF_Customizations {
 		// Register Blocks
 		add_action('acf/init', array( $this, 'register_blocks' ) );
 
+		// Dynamic options
+		add_filter( 'acf/load_field', array( $this, 'dynamic_layouts' ) );
 	}
 
 	/**
@@ -51,6 +53,39 @@ class BE_ACF_Customizations {
 		if( ! function_exists('acf_register_block_type') )
 			return;
 
+			acf_register_block_type(array(
+				'name'				=> 'post-listing',
+				'title'				=> __( 'Post Listing', 'grownandflown2020' ),
+				'mode'				=> 'auto',
+				'render_template'	=> 'partials/blocks/post-listing.php',
+				'category'			=> 'widgets',
+				'icon'				=> 'feedback',
+				'supports'			=> [ 'anchor' => true, 'align' => false ],
+			));
+
 	}
+
+	/**
+	 * Dynamic layouts
+	 *
+	 */
+	function dynamic_layouts( $field ) {
+		if( 'post_listing_layout' !== $field['name'] )
+			return $field;
+
+		$field['choices'] = [];
+		$field['default'] = false;
+		$layouts = ea_post_listing_layouts();
+		foreach( $layouts as $key => $details ) {
+			$field['choices'][ $key ] = $details['label'];
+
+			// Set default to first layout
+			if( false === $field['default'] )
+				$field['default'] = $key;
+		}
+
+		return $field;
+	}
+
 }
 new BE_ACF_Customizations();

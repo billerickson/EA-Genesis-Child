@@ -121,6 +121,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/category-landing-page.php' );
 	include_once( get_stylesheet_directory() . '/inc/block-area.php' );
 	include_once( get_stylesheet_directory() . '/inc/social-links.php' );
+	include_once( get_stylesheet_directory() . '/inc/post-listing.php' );
 
 	// Plugin Support
 	include_once( get_stylesheet_directory() . '/inc/acf.php' );
