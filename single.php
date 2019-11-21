@@ -31,6 +31,9 @@ function ea_single_after_entry() {
 	// Breadcrumbs
 	genesis_do_breadcrumbs();
 
+	// Publish date
+	echo '<p class="publish-date">Published on ' . get_the_date( 'F j, Y' ) . '</p>';
+
 	// Sharing
 	do_action( 'ea_entry_footer_share' );
 
