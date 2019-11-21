@@ -69,6 +69,7 @@ function be_remove_entry_title() {
 
 	if( $has_h1 ) {
 		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+		remove_action( 'genesis_entry_header', 'genesis_do_breadcrumbs', 8 );
 		remove_action( 'genesis_entry_header', 'ea_entry_category', 8 );
 		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 		remove_action( 'genesis_entry_header', 'ea_entry_author', 12 );

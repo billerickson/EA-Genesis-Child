@@ -25,7 +25,7 @@ add_action( 'genesis_meta', function() {
  *
  */
 function ea_gutenberg_layout_style() {
-	wp_enqueue_script( 'ea-editor', get_stylesheet_directory_uri() . '/assets/js/editor.js', array( 'wp-blocks', 'wp-dom' ), filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ), true );
+	wp_enqueue_style( 'ea-layout', get_stylesheet_directory_uri() . '/assets/css/genesis-layout.css', [], filemtime( get_stylesheet_directory() . '/assets/css/genesis-layout.css' ) );
 }
 add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_layout_style' );
 
