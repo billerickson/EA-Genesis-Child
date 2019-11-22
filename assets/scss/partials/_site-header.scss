@@ -12,7 +12,7 @@
 	float: left;
 	width: 100%;
 	max-width: $logo_width;
-	text-align: center;
+	text-align: left;
 	margin: 0 auto;
 
 	h1.site-title,
@@ -43,6 +43,7 @@
 
 	@include media("<=mobile_menu") {
 		float: none;
+		text-align: center;
 
 		.site-title a {
 			padding-bottom: 0;
