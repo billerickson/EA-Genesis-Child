@@ -40,22 +40,22 @@ add_action( 'genesis_meta', function() {
 });
 
 /**
- * Gutenberg layout style
+ * Editor layout style
  *
  */
-function ea_gutenberg_layout_style() {
-	wp_enqueue_style( 'ea-layout', get_stylesheet_directory_uri() . '/assets/css/genesis-layout.css', [], filemtime( get_stylesheet_directory() . '/assets/css/genesis-layout.css' ) );
+function ea_editor_layout_style() {
+	wp_enqueue_style( 'ea-editor-layout', get_stylesheet_directory_uri() . '/assets/css/editor-layout.css', [], filemtime( get_stylesheet_directory() . '/assets/css/editor-layout.css' ) );
 }
-add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_layout_style' );
+add_action( 'enqueue_block_editor_assets', 'ea_editor_layout_style' );
 
 /**
- * Gutenberg layout class
+ * Editor layout class
  * @link https://www.billerickson.net/change-gutenberg-content-width-to-match-layout/
  *
  * @param string $classes
  * @return string
  */
-function ea_gutenberg_layout_class( $classes ) {
+function ea_editor_layout_class( $classes ) {
 	$screen = get_current_screen();
 	if( ! $screen->is_block_editor() )
 		return $classes;
@@ -74,4 +74,4 @@ function ea_gutenberg_layout_class( $classes ) {
 	$classes .= ' ' . $layout . ' ';
 	return $classes;
 }
-add_filter( 'admin_body_class', 'ea_gutenberg_layout_class' );
+add_filter( 'admin_body_class', 'ea_editor_layout_class' );
