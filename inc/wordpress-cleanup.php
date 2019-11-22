@@ -68,7 +68,7 @@ function ea_clean_body_classes( $classes ) {
 		'admin-bar',
 		'full-width-content',
 		'content-sidebar',
-		'wide-content',
+		'content',
 	];
 
 	return array_intersect( $classes, $allowed_classes );

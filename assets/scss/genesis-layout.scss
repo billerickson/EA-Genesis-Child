@@ -1,6 +1,6 @@
 @import "partials/base";
 
-.wide-content .editor-styles-wrapper .wp-block,
-.wide-content .editor-styles-wrapper .wp-block-group:not(.narrow) .wp-block-group__inner-container {
+.full-width-content .editor-styles-wrapper .wp-block,
+.full-width-content .editor-styles-wrapper .wp-block-group:not(.narrow) .wp-block-group__inner-container {
 	max-width: $grid-width;
 }

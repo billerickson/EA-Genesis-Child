@@ -23,7 +23,7 @@
 	}
 
 	.full-width-content &,
-	.wide-content & {
+	.content & {
 		&.alignwide {
 			margin: calc( 2 * #{$block-margin} ) calc(50% - 50vw);
 			max-width: 100vw;

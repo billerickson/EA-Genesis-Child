@@ -107,7 +107,7 @@ function ea_child_theme_setup() {
 	// Theme
 	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
-	include_once( get_stylesheet_directory() . '/inc/wide-layout.php' );
+	include_once( get_stylesheet_directory() . '/inc/layouts.php' );
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
 	include_once( get_stylesheet_directory() . '/inc/loop.php' );
 	include_once( get_stylesheet_directory() . '/inc/author-box.php' );

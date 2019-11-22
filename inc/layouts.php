@@ -1,6 +1,6 @@
 <?php
 /**
- * Wide Layout
+ * Layouts
  *
  * @package      EAGenesisChild
  * @author       Bill Erickson
@@ -8,13 +8,32 @@
  * @license      GPL-2.0+
 **/
 
-// Add wide layout
-genesis_register_layout( 'wide-content', [ 'label' => __( 'Wide Content', 'ea_genesis_child' ), ] );
+// Unregister genesis layouts
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content' );
+//genesis_unregister_layout( 'content-sidebar' );
 
-// Remove sidebar for wide layout
+// Add new layouts
+genesis_register_layout( 'content', [ 'label' => __( 'Content', 'ea_genesis_child' ), ] );
+
+// Remove layout metabox
+//remove_theme_support( 'genesis-inpost-layouts' );
+remove_theme_support( 'genesis-archive-layouts' );
+
+// Don't load default data into empty sidebar
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+add_action( 'genesis_sidebar', function() { dynamic_sidebar( 'sidebar' ); } );
+
+// Add New Sidebars
+// genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
+
+
+// Remove sidebar for content layout
 add_action( 'genesis_meta', function() {
 	$layout = genesis_site_layout();
-	if( 'wide-content' === $layout ) {
+	if( 'content' === $layout ) {
 		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
 		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 	}

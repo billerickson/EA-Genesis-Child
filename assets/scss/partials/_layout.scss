@@ -27,7 +27,7 @@ input[type="search"] {
 		padding: 48px 0;
 	}
 
-	.singular.full-width-content & > .wrap {
+	.singular.content & > .wrap {
 		max-width: map-get( $breakpoints, 'content-width' );
 	}
 }

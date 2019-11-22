@@ -54,25 +54,6 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
 
-// Remove layout metabox
-//remove_theme_support( 'genesis-inpost-layouts' );
-remove_theme_support( 'genesis-archive-layouts' );
-
-// Remove layouts
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
-genesis_unregister_layout( 'sidebar-content' );
-//genesis_unregister_layout( 'content-sidebar' );
-
-// Don't load default data into empty sidebar
-remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-add_action( 'genesis_sidebar', function() { dynamic_sidebar( 'sidebar' ); } );
-
-
-// Add New Sidebars
-// genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
-
 /**
  * Remove Genesis Templates
  *
