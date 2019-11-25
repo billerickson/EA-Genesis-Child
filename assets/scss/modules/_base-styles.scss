@@ -4,6 +4,10 @@
 	@include font-sizes( 18px, 20px );
 	font-weight: 400;
 	line-height: 1.55;
+
+	@media print {
+		font-family: sans-serif;
+	}
 }
 
 %transition {
