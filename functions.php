@@ -120,15 +120,12 @@ function ea_child_theme_setup() {
 
 	// Functionality
 	include_once( get_stylesheet_directory() . '/inc/login-logo.php' );
-	include_once( get_stylesheet_directory() . '/inc/category-landing-page.php' );
 	include_once( get_stylesheet_directory() . '/inc/block-area.php' );
 	include_once( get_stylesheet_directory() . '/inc/social-links.php' );
-	include_once( get_stylesheet_directory() . '/inc/post-listing.php' );
 
 	// Plugin Support
 	include_once( get_stylesheet_directory() . '/inc/acf.php' );
 	include_once( get_stylesheet_directory() . '/inc/amp.php' );
-	include_once( get_stylesheet_directory() . '/inc/pwa.php' );
 	include_once( get_stylesheet_directory() . '/inc/shared-counts.php' );
 	include_once( get_stylesheet_directory() . '/inc/wpforms.php' );
 
