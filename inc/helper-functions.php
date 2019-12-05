@@ -28,19 +28,28 @@ add_filter( 'ea_the_content', 'do_shortcode'       );
  */
 function ea_first_term( $taxonomy = 'category', $field = false, $post_id = false ) {
 
-	$post_id = $post_id ? $post_id : get_the_ID();
+	$defaults = [
+		'taxonomy'	=> 'category',
+		'field'		=> null,
+		'post_id'	=> null,
+	];
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$post_id = !empty( $args['post_id'] ) ? intval( $args['post_id'] ) : get_the_ID();
+	$field = !empty( $args['field'] ) ? esc_attr( $args['field'] ) : false;
 	$term = false;
 
 	// Use WP SEO Primary Term
 	// from https://github.com/Yoast/wordpress-seo/issues/4038
 	if( class_exists( 'WPSEO_Primary_Term' ) ) {
-		$term = get_term( ( new WPSEO_Primary_Term( $taxonomy,  $post_id ) )->get_primary_term(), $taxonomy );
+		$term = get_term( ( new WPSEO_Primary_Term( $args['taxonomy'],  $post_id ) )->get_primary_term(), $args['taxonomy'] );
 	}
 
 	// Fallback on term with highest post count
 	if( ! $term || is_wp_error( $term ) ) {
 
-		$terms = get_the_terms( $post_id, $taxonomy );
+		$terms = get_the_terms( $post_id, $args['taxonomy'] );
 
 		if( empty( $terms ) || is_wp_error( $terms ) )
 			return false;
@@ -74,7 +83,7 @@ function ea_first_term( $taxonomy = 'category', $field = false, $post_id = false
 	}
 
 	// Output
-	if( $field && isset( $term->$field ) )
+	if( !empty( $field ) && isset( $term->$field ) )
 		return $term->$field;
 
 	else
