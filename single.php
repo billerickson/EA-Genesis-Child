@@ -49,7 +49,7 @@ function ea_single_after_entry() {
 	$loop = new WP_Query( [
 		'posts_per_page'	=> 3,
 		'post__not_in'		=> [ get_the_ID() ],
-		'category_name'		=> ea_first_term( 'category', 'slug' ),
+		'category_name'		=> ea_first_term( [ 'field' => 'slug' ] ),
 	] );
 	if( $loop->have_posts() ):
 		echo '<section class="post-listing-block layout3">';
