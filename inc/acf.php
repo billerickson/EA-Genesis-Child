@@ -22,9 +22,6 @@ class BE_ACF_Customizations {
 
 		// Register Blocks
 		add_action('acf/init', array( $this, 'register_blocks' ) );
-
-		// Dynamic options
-		add_filter( 'acf/load_field', array( $this, 'dynamic_layouts' ) );
 	}
 
 	/**
