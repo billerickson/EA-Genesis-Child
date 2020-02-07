@@ -14,7 +14,7 @@ class BE_ACF_Customizations {
 
 		// Only allow fields to be edited on development
 		if ( ! defined( 'WP_LOCAL_DEV' ) || ! WP_LOCAL_DEV ) {
-			add_filter( 'acf/settings/show_admin', '__return_false' );
+			//add_filter( 'acf/settings/show_admin', '__return_false' );
 		}
 
 		// Register options page
