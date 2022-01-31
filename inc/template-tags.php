@@ -25,7 +25,7 @@ function ea_entry_category() {
 function ea_post_summary_title() {
 	global $wp_query;
 	$tag = ( is_singular() || -1 === $wp_query->current_post ) ? 'h3' : 'h2';
-	echo '<' . $tag . ' class="post-summary__title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></' . $tag . '>';
+	echo '<' . $tag . ' class="text-3xl font-bold underline text-lime-600 post-summary__title"><a class="text-3xl font-bold underline text-lime-600 post-summary__title" href="' . get_permalink() . '">' . get_the_title() . '</a></' . $tag . '>';
 }
 
 /**

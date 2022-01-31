@@ -11,7 +11,7 @@
 // Theme Supports
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 add_theme_support( 'genesis-responsive-viewport' );
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
+add_theme_support( 'genesis-structural-wraps', array( 'menu-secondary', 'site-inner', 'footer-widgets', 'footer' ) );
 add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu', 'secondary' => 'Secondary Navigation Menu' ) );
 add_theme_support( 'genesis-footer-widgets', 3 );
 
@@ -23,7 +23,7 @@ add_theme_support(
 		'headings',
 		'rems',
 		'search-form',
-		'skip-links',
+		// 'skip-links',
 		'screen-reader-text',
 	)
 );
@@ -45,6 +45,9 @@ remove_action( 'wp_head', 'genesis_load_favicon' );
 
 // Remove Header Description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+
+// Remove Title Area
+remove_action( 'genesis_header', 'genesis_do_header' );
 
 // Remove post info and meta
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );

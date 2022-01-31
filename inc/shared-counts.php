@@ -90,7 +90,7 @@ function ea_production_url( $url = false ) {
 
 	return esc_url( $url );
 }
-
+ 
 /**
  * Use Production URL for Share Count API
  * @author Bill Erickson

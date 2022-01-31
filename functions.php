@@ -30,8 +30,12 @@ if ( ! isset( $content_width ) )
 function ea_global_enqueues() {
 
 	// javascript
-	if( ! ea_is_amp() ) {
+	if( ! ea_is_amp() ) { 
 		wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/global-min.js' ), true );
+        // TailwindCSS CDN
+		wp_enqueue_script( 'cb-script', get_stylesheet_directory_uri() . '/assets/js/tailwindcss.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/tailwindcss.js' ), false );
+		// AlpineJS CDN
+		wp_enqueue_script( 'cb-alpinejs', get_stylesheet_directory_uri() . '/assets/js/alpine.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/js/alpine.min.js' ), false );
 
 		// Move jQuery to footer
 		if( ! is_admin() ) {
@@ -39,15 +43,34 @@ function ea_global_enqueues() {
 			wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
 			wp_enqueue_script( 'jquery' );
 		}
-
 	}
 
 	// css
 	wp_dequeue_style( 'child-theme' );
 	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
-	wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
+	// wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 }
 add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
+
+/**
+ * Add a defer attribute to the designated <script> tags.
+ *
+ * See: http://calendar.perfplanet.com/2016/prefer-defer-over-async/
+ *
+ * @since 1.0.0
+ */
+function cb_script_loader_tags( $tag, $handle ) {
+
+	switch( $handle ) {
+		// case 'jquery':
+		case 'cb-alpinejs':
+			return str_replace( ' src', ' defer src', $tag );
+	}
+
+	return $tag;
+
+}
+add_filter('script_loader_tag', 'cb_script_loader_tags', 10, 2);
 
 /**
  * Gutenberg scripts and styles
@@ -77,7 +100,7 @@ function ea_theme_fonts_url() {
  */
 function ea_child_theme_setup() {
 
-	define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
+	// define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 
 	// General cleanup
 	include_once( get_stylesheet_directory() . '/inc/wordpress-cleanup.php' );
@@ -92,6 +115,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/author-box.php' );
 	include_once( get_stylesheet_directory() . '/inc/template-tags.php' );
 	include_once( get_stylesheet_directory() . '/inc/site-footer.php' );
+	include_once( get_stylesheet_directory() . '/inc/header.php' );
 
 	// Editor
 	include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );

@@ -59,7 +59,6 @@ add_filter( 'body_class', 'ea_singular_body_class' );
  *
  */
 function ea_clean_body_classes( $classes ) {
-
 	$allowed_classes = [
 		'singular',
 		'single',
@@ -69,6 +68,7 @@ function ea_clean_body_classes( $classes ) {
 		'full-width-content',
 		'content-sidebar',
 		'content',
+		'font-avenirnext-medium',
 	];
 
 	return array_intersect( $classes, $allowed_classes );
